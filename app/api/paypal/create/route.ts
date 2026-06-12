@@ -6,20 +6,20 @@ export async function POST(req: Request) {
     const supabase = getSupabase();
 
     const body = await req.json();
-    const { userId, prompt } = body;
+    const { userId } = body;
 
-    if (!userId || !prompt) {
+    if (!userId) {
       return NextResponse.json(
-        { error: "Missing userId or prompt" },
+        { error: "Missing userId" },
         { status: 400 }
       );
     }
 
     const { data, error } = await supabase
-      .from("generations")
+      .from("subscriptions")
       .insert({
         user_id: userId,
-        prompt,
+        active: false,
         created_at: new Date().toISOString(),
       })
       .select()
