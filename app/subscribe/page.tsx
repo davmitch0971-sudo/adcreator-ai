@@ -1,73 +1,58 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-
-const MONTHLY_URL = process.env.NEXT_PUBLIC_PAYPAL_MONTHLY_URL!;
-const YEARLY_URL = process.env.NEXT_PUBLIC_PAYPAL_YEARLY_URL!;
+import React, { useState } from "react";
 
 export default function SubscribePage() {
-  const router = useRouter();
-  const [isPro, setIsPro] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    const sub = localStorage.getItem("adcreator_subscription");
-    if (sub === "pro") {
-      setIsPro(true);
+  const handleSubscribe = async () => {
+    try {
+      setLoading(true);
+      setMessage("");
+
+      const res = await fetch("/api/paypal/validate", {
+        method: "POST",
+      });
+
+      const data = await res.json();
+
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        setMessage("Unable to start subscription.");
+      }
+    } catch (err) {
+      setMessage("Subscription failed.");
+    } finally {
+      setLoading(false);
     }
-  }, []);
-
-  const markAsPro = () => {
-    localStorage.setItem("adcreator_subscription", "pro");
-    setIsPro(true);
-    router.push("/dashboard");
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-4xl font-bold mb-4">Upgrade to 🔥 AdCreator AI Pro</h1>
-      <p className="text-white/70 max-w-xl mb-8">
-        Choose a plan below, complete your PayPal subscription, then click
-        &quot;I&apos;ve Subscribed&quot; to unlock your account.
-      </p>
+    <main className="flex flex-col items-center justify-center min-h-screen p-6 bg-black text-white">
+      <div className="max-w-lg w-full bg-neutral-900 p-8 rounded-xl shadow-xl border border-neutral-700">
+        <h1 className="text-3xl font-bold mb-4 text-center">
+          Subscribe to FixPilot‑AI Pro
+        </h1>
 
-      <div className="flex flex-col md:flex-row gap-6 mb-8">
-        <a
-          href={MONTHLY_URL}
-          target="_blank"
-          className="px-6 py-4 rounded-xl bg-white/5 border border-white/15 hover:border-red-500 transition text-left"
-        >
-          <div className="text-lg font-semibold mb-1">Monthly</div>
-          <div className="text-2xl font-bold mb-1">$9.99</div>
-          <div className="text-white/60 text-sm">
-            Full access, billed every month. Cancel anytime.
-          </div>
-        </a>
-
-        <a
-          href={YEARLY_URL}
-          target="_blank"
-          className="px-6 py-4 rounded-xl bg-white/5 border border-yellow-400/60 hover:border-yellow-400 transition text-left"
-        >
-          <div className="text-lg font-semibold mb-1">Yearly (Best Value)</div>
-          <div className="text-2xl font-bold mb-1">$79</div>
-          <div className="text-white/60 text-sm">
-            Save vs monthly. Full access for a full year.
-          </div>
-        </a>
-      </div>
-
-      <button
-        onClick={markAsPro}
-        className="px-8 py-3 rounded-lg bg-red-600 hover:bg-red-700 font-semibold transition"
-      >
-        I&apos;ve Subscribed – Unlock My Account
-      </button>
-
-      {isPro && (
-        <p className="mt-4 text-green-400 text-sm">
-          Subscription marked as active. Redirecting to dashboard…
+        <p className="text-neutral-300 text-center mb-6">
+          Unlock unlimited ad generation, dashboard access, and premium tools.
         </p>
-      )}
+
+        <div className="flex flex-col items-center gap-4">
+          <button
+            onClick={handleSubscribe}
+            disabled={loading}
+            className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition font-semibold"
+          >
+            {loading ? "Processing..." : "Subscribe with PayPal"}
+          </button>
+
+          {message && (
+            <p className="text-red-400 text-center text-sm">{message}</p>
+          )}
+        </div>
+      </div>
     </main>
   );
