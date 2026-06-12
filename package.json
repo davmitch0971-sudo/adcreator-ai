@@ -1,0 +1,17 @@
+{
+  "name": "adcreator-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@supabase/supabase-js": "^2.108.1",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
