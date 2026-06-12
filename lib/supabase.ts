@@ -11,4 +11,4 @@ export function getSupabase() {
     );
   }
   return client;
-}	
+}
