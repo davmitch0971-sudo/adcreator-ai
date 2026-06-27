@@ -1,66 +1,54 @@
-const path = require('path');
 const express = require('express');
-const cors = require('cors');
-const fetch = require('node-fetch');
-
+const path = require('path');
 const app = express();
-app.use(express.static(path.join(__dirname, 'adcreator-backend', 'adcreator', 'www')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'adcreator-backend', 'adcreator', 'www', 'index.html'));
-});
-app.use(cors());
 app.use(express.json());
 
-app.post('/api/ads', async (req, res) => {
-  try {
-    const prompt = req.body.prompt;
-
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY,
-        'HTTP-Referer': 'https://render.com',
-        'X-Title': 'AdCreator'
-      },
-      body: JSON.stringify({
-        model: 'openai/gpt-4o-mini',
-        messages: [
-          { role: 'system', content: 'You are a world-class ad copywriter. Write high-converting ad copy.' },
-          { role: 'user', content: prompt }
-        ]
-      })
-    });
-
-    const data = await response.json();
-    res.json(data);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Ad generation failed' });
-  }
+// Serve your styled index.html at the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'adcreator-backend', 'index.html'));
 });
 
-app.get("/", (req, res) => {
-    res.send("AdCreator Backend is Running");
+// Ad variant predictive generation endpoint
+app.post('/api/generate', async (req, res) => {
+    try {
+        const payload = req.body || {};
+        const promptText = payload.prompt || '';
+        
+        // Predictive response simulating 3 optimized variants (social, search, display)
+        const mockResponse = {
+            variants: [
+                {
+                    channel: "Social (e.g., Instagram/Facebook)",
+                    headline: "Stop Scrolling & Start Scaling 🚀",
+                    body: `Transform your workflow with our predictive ad engine. Built for innovators who demand results, ${promptText} makes scaling effortless.`,
+                    cta: "Try It Now",
+                    metrics: { ctr: "4.2%", conversionRate: "3.8%" }
+                },
+                {
+                    channel: "Search (Google Ads)",
+                    headline: "Optimize Campaigns Instantly",
+                    body: `Looking for top-tier growth marketing tools for ${promptText}? Leverage predictive analytics to maximize ROI.`,
+                    cta: "Get Started",
+                    metrics: { ctr: "6.5%", conversionRate: "4.5%" }
+                },
+                {
+                    channel: "Display Banner",
+                    headline: "The Next-Gen Ad Engine",
+                    body: `Automate your ad variations for ${promptText} seamlessly. Expert growth marketing made simple.`,
+                    cta: "Discover More",
+                    metrics: { ctr: "1.8%", conversionRate: "2.1%" }
+                }
+            ]
+        };
+
+        res.json(mockResponse);
+    } catch (err) {
+        res.status(500).json({ error: "Failed to generate ad variants." });
+    }
 });
 
 const PORT = process.env.PORT || 10000;
-
-
 app.listen(PORT, () => {
-  console.log('AdCreator backend running on port ' + PORT);
-});
-
-// Ad generation logic
-app.post('/api/ads', async (req, res) => {
-    try {
-        const payload = req.body;
-        const predictivePrompt = `You are an expert growth marketer and predictive analyst. Given the following campaign details and constraints, produce multiple ad variants (headlines, body, CTA), and for each variant estimate expected performance indicators (CTR, conversion rate, best channel). Provide 3 distinct ad variants optimized for different channels (social, search, display). Output JSON with keys: variants (array). Details: ${JSON.stringify(payload)}`;
-        
-        // Add your AI call logic here
-        res.json({ status: "success", prompt: predictivePrompt });
-    } catch (err) {
-        res.status(500).json({ error: "Ad generation failed" });
-    }
+    console.log(`AdCreator backend running on port ${PORT}`);
 });
