@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AdCreator AI – High-Converting Ad Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #0b0d14;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: none;
+      background: #111320;
+      color: white;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #3b82f6;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #111320;
+      border-radius: 6px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AdCreator AI</h1>
+
+  <h3>Signup</h3>
+  <label>Email</label>
+  <input id="signup-email" type="email">
+
+  <label>Password</label>
+  <input id="signup-password" type="password">
+
+  <button onclick="signup()">Create Account</button>
+
+  <h3>Login</h3>
+  <label>Email</label>
+  <input id="login-email" type="email">
+
+  <label>Password</label>
+  <input id="login-password" type="password">
+
+  <button onclick="login()">Login</button>
+
+  <h3>Generate Ad</h3>
+  <label>Describe your product</label>
+  <textarea id="prompt"></textarea>
+
+  <button onclick="generateAd()">Generate</button>
+
+  <div id="output"></div>
+
+<script>
+const BACKEND = "https://sustainability-wake-readings-diary.trycloudflare.com";
+let token = "";
+
+async function signup() {
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("signup-password").value;
+
+  const res = await fetch(BACKEND + "/auth/signup", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({email, password})
+  });
+
+  const data = await res.json();
+  if (data.token) {
+    token = data.token;
+    document.getElementById("output").innerText = "Signup successful. Token saved.";
+  } else {
+    document.getElementById("output").innerText = "Signup error: " + data.error;
+  }
+}
+
+async function login() {
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
+
+  const res = await fetch(BACKEND + "/auth/login", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({email, password})
+  });
+
+  const data = await res.json();
+  if (data.token) {
+    token = data.token;
+    document.getElementById("output").innerText = "Login successful. Token saved.";
+  } else {
+    document.getElementById("output").innerText = "Login error: " + data.error;
+  }
+}
+
+async function generateAd() {
+  if (!token) {
+    document.getElementById("output").innerText = "You must login first.";
+    return;
+  }
+
+  const prompt = document.getElementById("prompt").value;
+
+  const res = await fetch(BACKEND + "/api/generate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + token
+    },
+    body: JSON.stringify({prompt})
+  });
+
+  const data = await res.json();
+  document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+}
+</script>
+
+</body>
