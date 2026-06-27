@@ -4,6 +4,11 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'adcreator-backend', 'adcreator', 'www')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'adcreator-backend', 'adcreator', 'www', 'index.html'));
+});
 app.use(cors());
 app.use(express.json());
 
@@ -41,9 +46,7 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 10000;
-app.get('/', (req, res) => {
-    res.sendFile(require('path').join(__dirname, 'adcreator-ai', 'adcreator-backend', 'index.html'));
-});
+
 
 app.listen(PORT, () => {
   console.log('AdCreator backend running on port ' + PORT);
