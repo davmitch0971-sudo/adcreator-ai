@@ -3,105 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdCreator AI - The Ultimate AI Ad Creator</title>
+    <title>AdCreator AI — Executive Creative Engine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Client Bar -->
+
+    <!-- Executive Client Status Bar -->
     <div class="client-status-bar">
-        <span class="status-alert">Not signed in. Enter your email to unlock unlimited credits and premium generation.</span>
+        <div class="status-alert">
+            <span class="pulse-indicator"></span>
+            <strong>SYSTEM:</strong> Connected to AdCreator Pro Intelligence Node
+        </div>
         <div class="status-auth">
-            <input type="email" value="mitchdav0518@gmail.com" readonly>
-            <button class="owner-btn">OWNER / CLIENT SIGN IN</button>
+            <input type="email" id="clientEmail" value="mitchdav0518@gmail.com" placeholder="Enter owner/client email">
+            <button class="owner-btn" id="authBtn">OWNER / CLIENT SIGN IN</button>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="nav-brand"><span>✨</span> AdCreator Pro</div>
-        <nav class="nav-links">
-            <a href="#platform">Platform</a>
+    <!-- Cinematic Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-accent">AdCreator</span> <span class="brand-tier">Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#platform" class="active">Platform</a>
             <a href="#workspace">Workspace</a>
             <a href="#results">Results</a>
             <a href="#pricing">Pricing</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <!-- Main Workspace Layout Split Panels -->
-    <main class="workspace-layout" id="workspace">
+    <!-- Main Workspace Split Panels -->
+    <main class="workspace-layout">
         
-        <!-- Left Panel: Engine Control -->
-        <section class="panel left-control-panel">
-            <span class="panel-badge">PRO INTELLIGENCE</span>
+        <!-- Left Panel: Input Engine & Framework Intelligence -->
+        <section class="panel control-panel" id="workspace">
+            <div class="panel-badge">PRO INTELLIGENCE</div>
             <h2>Elite Ad Intelligence</h2>
             <p class="panel-description">
-                Command professional-grade campaign narrative with a precision creative engine built for high-value brands, executive launches, and premium enterprise positioning.
+                Command professional-grade campaign narratives with a precision creative engine built for high-value brands, executive launches, and premium enterprise positioning.
             </p>
 
+            <!-- Framework Architecture Selector -->
             <div class="toggle-container">
-                <button class="toggle-btn active">Platform</button>
-                <button class="toggle-btn">Ad Type</button>
+                <button class="toggle-btn active" id="btnMeta" onclick="setPlatform('Meta')">Meta</button>
+                <button class="toggle-btn" id="btnGoogle" onclick="setPlatform('Google')">Google</button>
+                <button class="toggle-btn" id="btnTikTok" onclick="setPlatform('TikTok')">TikTok</button>
             </div>
 
-            <!-- New Input Form Fields Built Smoothly Into Left Panel Layout -->
-            <form id="ad-form" class="embedded-form">
-                <div class="form-group">
-                    <label for="product-name">Product Name</label>
-                    <input type="text" id="product-name" placeholder="e.g., FixPilot-AI" required>
+            <!-- Embedded Creation Form -->
+            <form id="adForm" class="embedded-form" onsubmit="event.preventDefault();">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productName">Product / Brand Name</label>
+                        <input type="text" id="productName" placeholder="e.g., FixPilot-AI" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adType">Ad Style Persona</label>
+                        <select id="adType">
+                            <option value="luxury">Luxury Minimalist (Apple-Style)</option>
+                            <option value="cinematic">Cinematic 8K Storytelling</option>
+                            <option value="aggressive">High-Conversion Direct Response</option>
+                        </select>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="ad-platform">Target Platform</label>
-                    <select id="ad-platform">
-                        <option value="Meta (Facebook & Instagram)">Meta (Facebook & Instagram)</option>
-                        <option value="LinkedIn">LinkedIn</option>
-                        <option value="X (Twitter)">X (Twitter)</option>
-                        <option value="TikTok">TikTok</option>
-                    </select>
+                    <label for="targetAudience">Target Audience Blueprint</label>
+                    <input type="text" id="targetAudience" placeholder="e.g., High-ticket buyers, tech executives">
                 </div>
-                <button type="submit" class="generate-btn">Generate Narrative</button>
+
+                <button type="button" class="generate-btn" id="submitBtn" onclick="generatePremiumAd()">Generate Elite Narrative</button>
             </form>
 
+            <!-- Upgrade Effect Analysis Box -->
             <div class="upgrade-effect-box">
                 <h3>The Upgrade Effect</h3>
                 <div class="effect-grid">
-                    <div class="effect-card generic">
+                    <div class="effect-card standard">
                         <h6>GENERIC AI DRAFT</h6>
                         <p>Boring, repetitive copy that converts poorly at high scale.</p>
                     </div>
                     <div class="effect-card premium active">
                         <h6>ADCREATOR PRO NARRATIVE</h6>
-                        <p>HIGH CONVERSION Copywriting built for high-ticket sales.</p>
+                        <p>High-conversion copywriting calibrated for high-ticket sales.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Dynamic Output & Asset Download Box -->
-            <div id="copy-output-section" class="output-box" style="display: none;">
-                <h3>Your Generated Campaign Copy</h3>
-                <textarea id="generated-copy" readonly rows="6"></textarea>
-                <div class="download-container">
-                    <button id="download-asset-btn" class="download-btn">Download Complete Ad Package</button>
-                </div>
+            <!-- Dynamic Output Box -->
+            <div class="output-box" id="outputSection">
+                <label>Generated Asset Stream</label>
+                <textarea id="outputConsole" readonly placeholder="System ready for generation..."></textarea>
+                <button class="download-btn" id="copyBtn" onclick="copyAssetOutput()">Copy To Clipboard</button>
             </div>
         </section>
 
-        <!-- Right Panel: Analytics & Metrics Display -->
-        <section class="panel right-analytics-panel">
-            <h3>Why Choose AdCreator</h3>
-            <p class="analytics-sub"><strong>PRECISE NARRATIVE CONTROL:</strong> Precision-engineered ad copy that outperforms generic AI with luxury positioning.</p>
+        <!-- Right Panel: Analytics, Metrics & Verification -->
+        <section class="panel analytics-panel" id="results">
+            <div class="pricing-badge">PERFORMANCE MATRIX</div>
+            <h2>Why Choose AdCreator</h2>
+            <p class="analytics-sub">Precision-engineered ad copy that outperforms generic AI with luxury positioning.</p>
 
-            <!-- Line Chart Mockup Box -->
+            <!-- Live Chart Visualization Placeholder -->
             <div class="chart-box">
-                <span class="chart-title">AdCreator Pro</span>
+                <div class="chart-title">AdCreator Pro (Line chart visualization)</div>
                 <div class="chart-visualization">
-                    <span class="chart-placeholder-text">(Line chart visualization)</span>
+                    <div class="bar bar-generic" style="height: 30%"><span>Generic AI</span></div>
+                    <div class="bar bar-pro" style="height: 85%"><span>Pro Engine</span></div>
                 </div>
-                <span class="chart-footer">Generic AI</span>
+                <div class="chart-footer">Conversion Multiplier Graph (Real-time tracking)</div>
             </div>
 
-            <!-- Pricing Box -->
+            <!-- Data Comparison Metrics Table -->
+            <div class="table-container">
+                <div class="table-header">Standard Campaign Metrics vs AdCreator Optimized</div>
+                <div class="metrics-table">
+                    <div class="table-row labels">
+                        <div>Metric</div>
+                        <div>Standard</div>
+                        <div>AdCreator Optimized</div>
+                    </div>
+                    <div class="table-row">
+                        <div>Click-Through Rate (CTR)</div>
+                        <div>2.1%</div>
+                        <div class="highlight">12.5%</div>
+                    </div>
+                    <div class="table-row">
+                        <div>Conversion Rate</div>
+                        <div>1.8%</div>
+                        <div class="highlight">8.5%</div>
+                    </div>
+                    <div class="table-row">
+                        <div>Cost Per Click (CPC)</div>
+                        <div>$1.50</div>
+                        <div class="highlight">$0.45</div>
+                    </div>
+                    <div class="table-row">
+                        <div>Return On Ad Spend (ROAS)</div>
+                        <div>1.8X</div>
+                        <div class="highlight">4.8X</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Subscription Card -->
             <div class="embedded-pricing-box">
-                <span class="pricing-badge">PRO ACCESS</span>
                 <h4>EXECUTIVE CREATIVE MEMBERSHIP</h4>
                 <div class="pricing-amount">
                     <span class="currency">$5.99</span>
@@ -114,78 +161,28 @@
                 </ul>
             </div>
 
-            <!-- Performance Metric Table Rows -->
-            <div class="metrics-table">
-                <div class="table-header">
-                    <span>Standard Campaign Metrics vs AdCreator Optimized</span>
-                </div>
-                <div class="table-row labels">
-                    <span>Standard Campaign Metric</span>
-                    <span>Standard</span>
-                    <span>AdCreator Optimized</span>
-                </div>
-                <div class="table-row">
-                    <span>CTR</span>
-                    <span>2%</span>
-                    <span class="highlight">12.5%</span>
-                </div>
-                <div class="table-row">
-                    <span>Conversion</span>
-                    <span>2%</span>
-                    <span class="highlight">8.5%</span>
-                </div>
-                <div class="table-row">
-                    <span>High</span>
-                    <span>1%</span>
-                    <span class="highlight">9%</span>
-                </div>
-                <div class="table-row">
-                    <span>CPC</span>
-                    <span>$1.50</span>
-                    <span class="highlight">$0.45</span>
-                </div>
-                <div class="table-row">
-                    <span>Conversion rate</span>
-                    <span>1.5%</span>
-                    <span class="highlight">5.5%</span>
-                </div>
-                <div class="table-row">
-                    <span>Return on ad spend</span>
-                    <span>1.8X</span>
-                    <span class="highlight">4.8X</span>
-                </div>
-            </div>
-
-            <!-- Original Circular Profile Icons Section -->
+            <!-- Social Proof Section -->
             <div class="proof-section">
                 <h5>Elite Marketer Results</h5>
                 <div class="avatar-row">
                     <div class="avatar-item">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80" alt="Sarah J.">
                         <div class="avatar-info">
                             <strong>Sarah J.</strong>
                             <span>Luxury Brand Manager</span>
                         </div>
                     </div>
                     <div class="avatar-item">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80" alt="David B.">
                         <div class="avatar-info">
                             <strong>David B.</strong>
                             <span>CEO Agency</span>
                         </div>
                     </div>
-                    <div class="avatar-item">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80" alt="Jennifer J.">
-                        <div class="avatar-info">
-                            <strong>Jennifer J.</strong>
-                            <span>CMO Agency</span>
-                        </div>
-                    </div>
                 </div>
-                <p class="proof-quote">"The shift to AdCreator's premium engine increased our conversion rate by 40%. The difference in narrative quality is profound."</p>
+                <p class="proof-quote">
+                    "The shift to AdCreator's premium engine increased our conversion rate by 40%. The difference in narrative quality is profound."
+                </p>
             </div>
         </section>
-
     </main>
 
     <script src="script.js"></script>
