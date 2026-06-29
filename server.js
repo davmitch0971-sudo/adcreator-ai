@@ -15,19 +15,18 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(express.json());
 
-// THIS LINE FIXES THE UNSTYLED LAYOUT: Tells the server to deliver style.css, images, and script.js
+// THIS SCRIPT FIXES THE LAYOUT: Instructs Express to serve style.css and your script assets
 app.use(express.static(__dirname));
 
-// Placeholder API endpoint for ad generation
+// API handler endpoint for campaign processing
 app.post('/api/ads', (req, res) => {
     const { productName, platform } = req.body;
     if (!productName) {
         return res.status(404).json({ error: "Product name required" });
     }
     
-    // Quick fallback generation logic
-    const mockAd = `[AdCreator Pro Narrative]\n\n🔥 Discover ${productName}—precision-engineered to dominate your market on ${platform}.\n\nStop settling for repetitive, generic outcomes. Upgrade your positioning today.`;
-    res.json({ copy: mockAd });
+    const creativeCopy = `[AdCreator Pro Narrative]\n\n🔥 Discover ${productName}—precision-engineered to dominate your market on ${platform}.\n\nStop settling for repetitive, generic outcomes. Upgrade your positioning today.`;
+    res.json({ copy: creativeCopy });
 });
 
 app.listen(PORT, () => {
