@@ -1,29 +1,48 @@
 const express = require('express');
-const path = require('path');
-const app = express();
+const cors = require('cors');
+const fetch = require('node-fetch');
+const path = require('path'); // Added to handle file paths correctly
 
+const app = express();
+app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'adcreator-backend')));
+// Serve static files from the project root
+app.use(express.static(__dirname));
 
+// Route to explicitly serve index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'adcreator-backend', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/api/generate', async (req, res) => {
+// AI generation endpoint
+app.post('/api/ads', async (req, res) => {
     try {
-        const payload = req.body || {};
-        res.json({
-            status: "success",
-            message: "Ad package generated successfully",
-            data: payload
+        const { prompt } = req.body;
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [
+                    { role: 'system', content: 'You are a world-class ad copywriter. Write high-converting ad copy.' },
+                    { role: 'user', content: prompt }
+                ]
+            })
         });
+        const data = await response.json();
+        res.json(data);
     } catch (err) {
-        res.status(500).json({ error: "Failed to generate ad variants." });
+        console.error(err);
+        res.status(500).json({ error: 'Ad generation failed' });
     }
 });
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`AdCreator backend running on port ${PORT}`);
+    console.log('AdCreator backend running on port ' + PORT);
 });
+
