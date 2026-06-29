@@ -3,122 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdCreator | Luxury AI-Powered Creative Engine</title>
+    <title>AdCreator AI - The Ultimate AI Ad Creator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <!-- Navigation -->
     <header class="navbar">
-        <div class="brand">ADCREATOR</div>
+        <div class="nav-brand"><span>✨</span> AdCreator Pro</div>
         <nav class="nav-links">
-            <a href="#features">Platform</a>
+            <a href="#platform">Platform</a>
             <a href="#workspace">Workspace</a>
-            <a href="#proof">Results</a>
+            <a href="#results">Results</a>
             <a href="#pricing">Pricing</a>
         </nav>
-        <a href="#pricing" class="btn-nav">Get in touch</a>
     </header>
 
-    <section class="hero-section">
-        <span class="eyebrow"> TIER-1 ENTERPRISE INTELLIGENCE </span>
-        <h1>Write, Plan, and Design Your Brand<br>In One Focused Workspace</h1>
-        <p class="hero-subtext">Precision-engineered ad copy and campaign narrative designed for high-value brands, executive launches, and luxury positioning.</p>
-        
-        <div class="cta-group">
-            <a href="#pricing" class="btn-primary">Get started</a>
-            <a href="#workspace" class="btn-secondary">View product</a>
+    <!-- Hero Section -->
+    <section class="hero-section" id="platform">
+        <div class="hero-content">
+            <span class="over-title">AI-POWERED CAMPAIGN BUILDER</span>
+            <h1>The Ultimate AI Ad Creator for Every Social Media Platform.</h1>
+            <p class="sub-headline">Instantly generate professional, high-converting ad copy for Facebook, Instagram, X, and more—all in one focused workspace.</p>
+            <div class="hero-buttons">
+                <a href="#workspace" class="cta-button">Get Started</a>
+                <a href="#pricing" class="secondary-button">View Product</a>
+            </div>
+        </div>
+        <div class="system-bar">
+            <span>System Status: Active | AI Engine Ready</span>
+            <span class="user-email">mitchdav0518@gmail.com</span>
         </div>
     </section>
 
-    <section id="workspace" class="workspace-preview">
-        <div class="glow-accent"></div>
-        <div class="workspace-ui-box">
-            <header class="workspace-header">
-                <div class="workspace-status">System Status: Active | Precision Engine Ready</div>
-                <div class="workspace-user">mitchdav0518@gmail.com | OWNER</div>
-            </header>
+    <!-- Workspace / Generator Section -->
+    <main class="dashboard-container" id="workspace">
+        <section class="generator-card">
+            <span class="over-title">ADVANCED AI ENGINE</span>
+            <h2>Elite Ad Intelligence</h2>
+            <p class="section-subtext">Create professional, expert-level marketing copy that easily outperforms basic, repetitive AI tools.</p>
             
-            <main class="dashboard-split">
-                <div class="dash-left">
-                    <span class="badge">PRO ENGINE</span>
-                    <h2>Elite Ad Intelligence</h2>
-                    <p>Command professional-grade campaign narrative that easily outperforms generic boilerplate AI systems.</p>
-                    <div class="selector-row">
-                        <button class="s-btn active">Platform</button>
-                        <button class="s-btn">Ad Type</button>
+            <form id="ad-form">
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="e.g., FixPilot-AI" required>
+                </div>
+                <div class="form-group">
+                    <label for="ad-platform">Target Platform</label>
+                    <select id="ad-platform">
+                        <option value="Meta (Facebook & Instagram)">Meta (Facebook & Instagram)</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="X (Twitter)">X (Twitter)</option>
+                        <option value="TikTok">TikTok</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button">Generate Narrative</button>
+            </form>
+
+            <!-- Creative Processing Comparison Cards -->
+            <div class="effect-processing-container">
+                <h4>EFFECT PROCESSING CARDS</h4>
+                <div class="processing-grid">
+                    <div class="card generic-card">
+                        <h5>LEGACY AI COMPILATION (DEGRADED)</h5>
+                        <p>Boring, repetitive copy that looks lazy and fails to convert casual clicks into paying customers.</p>
                     </div>
-                    
-                    <h3 class="subhead">Effect Processing Cards</h3>
-                    <div class="cards-holder">
-                        <div class="engine-card">
-                            <strong>GENERIC AI DRAFT</strong>
-                            <p>Boring, repetitive copy that converts poorly at high scale.</p>
-                        </div>
-                        <div class="engine-card active-card">
-                            <strong>ADCREATOR PRO NARRATIVE</strong>
-                            <p>HIGH-CONVERSION Copywriting precision-engineered for luxury positioning.</p>
-                        </div>
+                    <div class="card premium-card active">
+                        <h5>ADCREATOR PRO COPY</h5>
+                        <p>High-conversion copywriting engineered to make your business look like an established, premium brand.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="dash-right">
-                    <div class="pricing-mini">
-                        <h3>EXECUTIVE MEMBERSHIP</h3>
-                        <div class="price-mini-tag">$5.99<span>/mo</span></div>
-                    </div>
-
-                    <div class="chart-dashboard-preview">
-                        <div class="chart-line-visual">Performance Uplift Stream</div>
-                    </div>
-
-                    <table class="metrics-table">
-                        <thead><tr><th>Metric</th><th>Standard</th><th>AdCreator</th></tr></thead>
-                        <tbody>
-                            <tr><td>CTR</td><td>2.0%</td><td>12.5%</td></tr>
-                            <tr><td>Conv.</td><td>2.0%</td><td>8.5%</td></tr>
-                        </tbody>
-                    </table>
-
-                    <div id="proof" class="social-proof-module">
-                        <h5>Elite Marketer Results</h5>
-                        <div class="proof-row">
-                            <div class="avatars-stack">
-                                <img src="sarah.jpg" alt="Sarah"><img src="david.jpg" alt="David"><img src="jennifer.jpg" alt="Jennifer">
-                            </div>
-                            <p class="quote"><em>"The shift to AdCreator's premium engine increased conversion by 40%."</em></p>
-                        </div>
-                    </div>
+            <!-- Output & Asset Download Section -->
+            <div id="copy-output-section" style="display: none; margin-top: 30px;">
+                <h3>Your Generated Campaign Copy</h3>
+                <textarea id="generated-copy" readonly rows="8"></textarea>
+                <div class="download-container" style="margin-top: 15px;">
+                    <button id="download-asset-btn" class="cta-button download-btn">Download Complete Ad Package</button>
                 </div>
-            </main>
+            </div>
+        </section>
+    </main>
+
+    <!-- Social Proof Results Section -->
+    <section class="results-section" id="results">
+        <div class="container">
+            <h3>Elite Marketer Results</h3>
+            <div class="testimonials-container">
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Sarah" class="avatar">
+                    <span class="username">Sarah K.</span>
+                </div>
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="David" class="avatar">
+                    <span class="username">David M.</span>
+                </div>
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" alt="Jennifer" class="avatar">
+                    <span class="username">Jennifer L.</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="pricing" class="pricing-section">
-        <div class="pricing-headline">
-            <h2>Simple Pricing for<br>AI-Powered Creative Work</h2>
-            <p>Unlock the full enterprise-grade narrative engine instantly.</p>
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-header">
+            <h2>Premium Features. Unbeatable Price.</h2>
+            <p>Get instant access to our most powerful copywriting tools without paying massive agency fees.</p>
         </div>
-
-        <div class="pricing-card pro-card">
-            <div class="card-badge">RECOMMENDED</div>
-            <h3>Pro Intelligence</h3>
-            <div class="price-big">$5.99<span>/ mo</span></div>
-            <p class="price-desc">Scale your advertising narratives with professional precision.</p>
-            <ul class="feature-list">
-                <li>Precision luxury ad narratives</li>
-                <li>High-converting enterprise copy</li>
-                <li>Fast-track PayPal onboarding</li>
-                <li>Real-time telemetry delta</li>
-            </ul>
-            <a href="#" class="btn-pricing-cta">Upgrade Now</a>
+        <div class="pricing-card-container">
+            <div class="pricing-card premium">
+                <h3>Pro Intelligence</h3>
+                <div class="price"><span>$5.99</span>/mo</div>
+                <p class="tagline">Scale your advertising campaigns with professional precision.</p>
+                <ul class="features-list">
+                    <li>✓ Premium ad copy for any industry</li>
+                    <li>✓ High-converting marketing framework</li>
+                    <li>✓ Secure, fast checkout onboarding</li>
+                    <li>✓ Real-time campaign text generation</li>
+                </ul>
+                <button class="cta-button upgrade-btn">Upgrade Now</button>
+            </div>
         </div>
     </section>
-
-    <footer class="app-footer">
-        <div class="footer-brand">AIVERA × ADCREATOR</div>
-        <p>Built for elite enterprise positioning. © 2026 All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
