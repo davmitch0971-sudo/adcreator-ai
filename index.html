@@ -1,1 +1,540 @@
+# Premium Dashboard UI (AdCreator AI)
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AdCreator AI — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="lux-body">
+
+  <div class="lux-shell">
+
+    <!-- HEADER -->
+    <header class="lux-header">
+      <div class="lux-logo">
+        <div class="lux-logo-icon">▲</div>
+        <div class="lux-logo-text">
+          <span class="lux-logo-title">AdCreator AI</span>
+          <span class="lux-logo-sub">Enterprise Brand Intelligence</span>
+        </div>
+      </div>
+
+      <nav class="lux-nav">
+        <a class="lux-nav-item lux-nav-active">Dashboard</a>
+        <a class="lux-nav-item">Workspace</a>
+        <a class="lux-nav-item">Analytics</a>
+        <a class="lux-nav-item">Settings</a>
+      </nav>
+
+      <div class="lux-user">
+        <span class="lux-user-email">mitchdav0518@gmail.com</span>
+        <div class="lux-user-avatar">MD</div>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <main class="lux-grid">
+
+      <!-- LEFT SIDE -->
+      <section class="lux-left">
+
+        <!-- HERO -->
+        <div class="lux-hero">
+          <h1 class="lux-hero-title">
+            Executive Overview<br />
+            Creative Intelligence Matrix
+          </h1>
+          <p class="lux-hero-sub">
+            Advanced generative streaming architectures processing live tokens.
+            Precision calibrated for extreme brand positioning.
+          </p>
+        </div>
+
+        <!-- MATRIX PREVIEW -->
+        <div class="lux-matrix">
+          <div class="lux-matrix-header">
+            <span class="lux-matrix-title">Brand Graph Engine</span>
+            <span class="lux-matrix-sub">Live orchestration nodes</span>
+          </div>
+
+          <div class="lux-matrix-graph">
+            <div class="lux-node lux-node-main">AdCreator Core</div>
+            <div class="lux-node lux-node-slack">Slack</div>
+            <div class="lux-node lux-node-atlassian">Atlassian</div>
+            <div class="lux-node lux-node-mailchimp">Mailchimp</div>
+
+            <div class="lux-line lux-line-1"></div>
+            <div class="lux-line lux-line-2"></div>
+            <div class="lux-line lux-line-3"></div>
+          </div>
+
+          <div class="lux-matrix-footer">
+            Real-time brand graph · Live sync · Zero-copy workflows
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT SIDE -->
+      <section class="lux-right">
+
+        <!-- STATUS -->
+        <div class="lux-status">
+          <div class="lux-status-header">
+            <span class="lux-status-title">Matrix Online</span>
+            <span class="lux-status-pill">Online</span>
+          </div>
+
+          <div class="lux-status-grid">
+            <div class="lux-status-item">
+              <span class="lux-status-label">System Uptime</span>
+              <span class="lux-status-value">99.99%</span>
+              <span class="lux-status-note">Redundant failover mesh</span>
+            </div>
+
+            <div class="lux-status-item">
+              <span class="lux-status-label">Active Core Workers</span>
+              <span class="lux-status-value">1 / 1</span>
+              <span class="lux-status-note">Optimized compute thread</span>
+            </div>
+
+            <div class="lux-status-item">
+              <span class="lux-status-label">Compute Tokens</span>
+              <span class="lux-status-value">419.2K</span>
+              <span class="lux-status-note">Allocated threshold</span>
+            </div>
+          </div>
+
+          <div class="lux-status-actions">
+            <button class="lux-btn-outline">Deploy Instance</button>
+            <button class="lux-btn-outline">Run Diagnostic</button>
+          </div>
+        </div>
+
+        <!-- LOGS -->
+        <div class="lux-logs">
+          <div class="lux-logs-header">System Logs & Telemetry</div>
+          <div class="lux-logs-body">
+            <div class="lux-log">[System] Matrix system booted successfully.</div>
+            <div class="lux-log">[9:14:31 PM] Interface initialization matrix complete.</div>
+            <div class="lux-log">[9:14:52 PM] OpenRouter node handshake verified.</div>
+            <div class="lux-log">[9:15:07 PM] Brand graph cache warmed.</div>
+          </div>
+        </div>
+
+        <!-- CONFIG -->
+        <div class="lux-config">
+          <div class="lux-config-header">Environment Security</div>
+
+          <div class="lux-config-row">
+            <span class="lux-config-label">OpenRouter API Key</span>
+            <span class="lux-config-value lux-secure">Secure</span>
+          </div>
+
+          <div class="lux-config-row">
+            <span class="lux-config-label">Admin Email Anchor</span>
+            <span class="lux-config-value">mitchdav0518@gmail.com</span>
+          </div>
+
+          <div class="lux-config-row">
+            <span class="lux-config-label">Client Origin Scope</span>
+            <span class="lux-config-value">Production · adcreator.ai</span>
+          </div>
+
+          <button class="lux-btn-config">Commit Configurations</button>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="lux-footer">
+      <span>© 2026 AdCreator AI Enterprise Architecture.</span>
+      <span>System deployed for mitchdav0518@gmail.com.</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
+<style>
+
+/* ROOT */
+:root {
+  --bg: #050816;
+  --panel: #0b1020;
+  --panel-soft: #0f172a;
+  --accent: #4f46e5;
+  --accent2: #22c55e;
+  --text: #e5e7eb;
+  --text-soft: #9ca3af;
+  --border: #1f2937;
+  --radius: 18px;
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.85);
+  --glow: 0 0 40px rgba(79, 70, 229, 0.45);
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+/* BODY */
+.lux-body {
+  margin: 0;
+  background: radial-gradient(circle at top left, #111827 0%, #020617 40%, #000 100%);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+/* SHELL */
+.lux-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* HEADER */
+.lux-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.lux-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lux-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #4f46e5, #1d4ed8, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow);
+}
+
+.lux-logo-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.lux-logo-sub {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.lux-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.lux-nav-item {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--text-soft);
+  border: 1px solid transparent;
+}
+
+.lux-nav-active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(79, 70, 229, 0.18);
+}
+
+.lux-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lux-user-email {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.lux-user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* GRID */
+.lux-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 24px;
+}
+
+/* HERO */
+.lux-hero {
+  background: radial-gradient(circle at top left, #111827, #020617);
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.lux-hero-title {
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+.lux-hero-sub {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* MATRIX */
+.lux-matrix {
+  margin-top: 18px;
+  background: radial-gradient(circle at top right, #1f2937, #020617);
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.lux-matrix-header {
+  margin-bottom: 12px;
+}
+
+.lux-matrix-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lux-matrix-sub {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.lux-matrix-graph {
+  position: relative;
+  height: 180px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.18), rgba(15, 23, 42, 0.95));
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.lux-node {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.lux-node-main {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  box-shadow: var(--glow);
+}
+
+.lux-node-slack {
+  top: 20%;
+  left: 18%;
+}
+
+.lux-node-atlassian {
+  top: 22%;
+  right: 16%;
+}
+
+.lux-node-mailchimp {
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lux-line {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.6), rgba(22, 197, 94, 0.6));
+  opacity: 0.7;
+}
+
+.lux-line-1 {
+  width: 2px;
+  height: 60px;
+  left: 50%;
+  top: 30%;
+}
+
+.lux-line-2 {
+  width: 80px;
+  height: 2px;
+  top: 50%;
+  left: 30%;
+}
+
+.lux-line-3 {
+  width: 80px;
+  height: 2px;
+  top: 50%;
+  right: 30%;
+}
+
+.lux-matrix-footer {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+/* RIGHT SIDE */
+.lux-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* STATUS */
+.lux-status {
+  background: var(--panel);
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.lux-status-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lux-status-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lux-status-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.25);
+  color: #bbf7d0;
+  border: 1px solid rgba(34, 197, 94, 0.7);
+}
+
+.lux-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.lux-status-item {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.lux-status-label {
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+.lux-status-value {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lux-status-note {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.lux-status-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.lux-btn-outline {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+/* LOGS */
+.lux-logs {
+  background: var(--panel-soft);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.lux-logs-header {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.lux-log {
+  font-size: 11px;
+  color: var(--text-soft);
+  margin-bottom: 4px;
+}
+
+/* CONFIG */
+.lux-config {
+  background: var(--panel-soft);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.lux-config-header {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.lux-config-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.lux-secure {
+  color: #bbf7d0;
+}
+
+.lux-btn-config {
+  margin-top: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+/* FOOTER */
+.lux-footer {
+  margin-top: 22px;
+  font-size: 11px;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+}
+
+</style>

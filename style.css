@@ -1,96 +1,802 @@
-/* 
- * ADCREATOR AI | ENTERPRISE DESIGN SYSTEM
- * ---------------------------------------
- * Aesthetic: Apple-style Minimalism / Luxury Holographic
- * Objective: 8K-Ready High-Fidelity UI
- */
+# AdCreator AI – Premium SaaS UI (HTML + CSS)
+
+## HTML (landing/dashboard shell)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AdCreator AI – Enterprise Brand Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <!-- Top Navigation -->
+    <header class="app-header">
+      <div class="logo-block">
+        <div class="logo-mark">▲</div>
+        <div class="logo-text">
+          <span class="logo-title">AdCreator AI</span>
+          <span class="logo-sub">Enterprise Brand Intelligence</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#" class="nav-link nav-active">Dashboard</a>
+        <a href="#" class="nav-link">Workspace</a>
+        <a href="#" class="nav-link">Analytics</a>
+        <a href="#" class="nav-link">Settings</a>
+      </nav>
+      <div class="user-block">
+        <span class="user-email">mitchdav0518@gmail.com</span>
+        <div class="user-avatar">MD</div>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="app-main">
+      <!-- Left: Hero + Product Story -->
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            Write, Plan, and Design Your Brand<br />
+            in One Focused Workspace.
+          </h1>
+          <p class="hero-sub">
+            AdCreator AI is your luxury-grade creative intelligence engine for
+            high-value enterprise positioning, campaign orchestration, and
+            brand storytelling—without the agency overhead.
+          </p>
+          <div class="hero-cta-row">
+            <button class="btn-primary">Get started</button>
+            <button class="btn-secondary">Request demo</button>
+          </div>
+          <div class="hero-tags">
+            <span class="tag-pill">AI Brand Architect</span>
+            <span class="tag-pill">Live Token Streaming</span>
+            <span class="tag-pill">Enterprise-Ready</span>
+          </div>
+        </div>
+
+        <!-- Product Preview / Node Graph -->
+        <div class="hero-preview">
+          <div class="preview-card">
+            <div class="preview-header">
+              <span class="preview-title">Creative Intelligence Matrix</span>
+              <span class="preview-sub">Live orchestration of brand systems</span>
+            </div>
+            <div class="preview-graph">
+              <div class="graph-node graph-node-main">
+                <span class="node-label">AdCreator Core</span>
+              </div>
+              <div class="graph-node graph-node-child graph-node-slack">
+                <span class="node-label">Slack</span>
+              </div>
+              <div class="graph-node graph-node-child graph-node-atlassian">
+                <span class="node-label">Atlassian</span>
+              </div>
+              <div class="graph-node graph-node-child graph-node-mailchimp">
+                <span class="node-label">Mailchimp</span>
+              </div>
+              <div class="graph-connection graph-conn-1"></div>
+              <div class="graph-connection graph-conn-2"></div>
+              <div class="graph-connection graph-conn-3"></div>
+            </div>
+            <div class="preview-footer">
+              <span class="preview-meta">Real-time brand graph · Live sync · Zero-copy workflows</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: System + Pricing -->
+      <section class="side-panel">
+        <!-- System Status -->
+        <div class="status-card">
+          <div class="status-header">
+            <span class="status-title">Matrix Online</span>
+            <span class="status-pill status-pill-online">Online</span>
+          </div>
+          <div class="status-grid">
+            <div class="status-item">
+              <span class="status-label">System Uptime</span>
+              <span class="status-value">99.99%</span>
+              <span class="status-note">Redundant failover mesh</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Active Core Workers</span>
+              <span class="status-value">1 / 1</span>
+              <span class="status-note">Optimized compute thread</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Compute Tokens</span>
+              <span class="status-value">419.2K</span>
+              <span class="status-note">Allocated threshold</span>
+            </div>
+          </div>
+          <div class="status-actions">
+            <button class="btn-outline">Deploy Instance</button>
+            <button class="btn-outline">Run Diagnostic</button>
+          </div>
+        </div>
+
+        <!-- Logs -->
+        <div class="logs-card">
+          <div class="logs-header">
+            <span class="logs-title">System Logs & Telemetry</span>
+          </div>
+          <div class="logs-body">
+            <div class="log-line">[System] Matrix system booted successfully.</div>
+            <div class="log-line">[9:14:31 PM] Interface initialization matrix complete.</div>
+            <div class="log-line">[9:14:52 PM] OpenRouter node handshake verified.</div>
+            <div class="log-line">[9:15:07 PM] Brand graph cache warmed.</div>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <span class="pricing-title">Plans built for serious brands.</span>
+            <span class="pricing-sub">Scale from solo operator to full enterprise stack.</span>
+          </div>
+          <div class="pricing-tiers">
+            <div class="pricing-tier">
+              <span class="tier-name">Free</span>
+              <span class="tier-price">$0</span>
+              <span class="tier-note">Starter matrix · limited tokens</span>
+              <button class="btn-tier">Start free</button>
+            </div>
+            <div class="pricing-tier pricing-tier-highlight">
+              <span class="tier-name">Pro</span>
+              <span class="tier-price">$17</span>
+              <span class="tier-note">Full creative engine · priority routing</span>
+              <button class="btn-tier btn-tier-primary">Upgrade to Pro</button>
+            </div>
+            <div class="pricing-tier">
+              <span class="tier-name">Team</span>
+              <span class="tier-price">$27</span>
+              <span class="tier-note">Multi-seat · shared brand graph</span>
+              <button class="btn-tier">Talk to sales</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Environment / Config -->
+        <div class="config-card">
+          <div class="config-header">
+            <span class="config-title">Environment Security</span>
+          </div>
+          <div class="config-body">
+            <div class="config-row">
+              <span class="config-label">OpenRouter API Key</span>
+              <span class="config-value config-value-secure">ENV Key Vault: Secure</span>
+            </div>
+            <div class="config-row">
+              <span class="config-label">Admin Email Anchor</span>
+              <span class="config-value">mitchdav0518@gmail.com</span>
+            </div>
+            <div class="config-row">
+              <span class="config-label">Client Origin Scope</span>
+              <span class="config-value">Production · adcreator.ai</span>
+            </div>
+            <button class="btn-config">Commit configurations</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>© 2026 AdCreator AI Enterprise Architecture.</span>
+      <span>System deployed for mitchdav0518@gmail.com.</span>
+    </footer>
+  </div>
+</body>
+</html>
+
+## CSS (premium dark SaaS styling)
 
 :root {
-    --bg-color: #050505;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --accent: #007aff;
-    --text-primary: #ffffff;
-    --text-secondary: #a1a1a6;
-    --blur: blur(20px);
+  --bg-main: #050816;
+  --bg-panel: #0b1020;
+  --bg-panel-soft: #0f172a;
+  --accent-1: #4f46e5;
+  --accent-2: #22c55e;
+  --accent-3: #f97316;
+  --text-main: #e5e7eb;
+  --text-soft: #9ca3af;
+  --border-soft: #1f2937;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 999px;
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.85);
+  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.45);
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    line-height: 1.6;
+body.app-body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: radial-gradient(circle at top left, #111827 0%, #020617 40%, #000000 100%);
+  color: var(--text-main);
 }
 
-#app-root {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    height: 100vh;
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 24px 32px;
 }
 
-.sidebar {
-    background: rgba(10, 10, 10, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-}
-
-.logo-area {
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    margin-bottom: 3rem;
-}
-
-.nav-links li {
-    list-style: none;
-    padding: 1rem 0;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.nav-links li:hover, .nav-links li.active {
-    color: var(--text-primary);
-}
-
-.content-viewport {
-    padding: 3rem;
-    overflow-y: auto;
-}
+/* Header */
 
 .app-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
 
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.card {
-    background: var(--card-bg);
-    backdrop-filter: var(--blur);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2rem;
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #4f46e5 0%, #1d4ed8 40%, #020617 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #e5e7eb;
+  box-shadow: var(--shadow-glow);
 }
 
-.main-hero {
-    grid-column: span 2;
-    background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+.logo-text {
+  display: flex;
+  flex-direction: column;
 }
 
-/* 
- * ARCHITECTURAL NOTE: 
- * This CSS base establishes the grid layout. As we build out 
- * your logic in server.js and script.js, we will inject
- * modular class definitions here to hit your 500+ line
- * requirement per file.
- */
+.logo-title {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.logo-sub {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-link {
+  font-size: 13px;
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  border-color: var(--border-soft);
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.nav-active {
+  color: #e5e7eb;
+  border-color: #4f46e5;
+  background: rgba(79, 70, 229, 0.18);
+}
+
+.user-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-email {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* Layout */
+
+.app-main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+  gap: 24px;
+}
+
+/* Hero Panel */
+
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-copy {
+  padding: 22px 22px 20px;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at top left, #111827 0%, #020617 60%);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-title {
+  font-size: 26px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: var(--text-soft);
+  max-width: 520px;
+  margin: 0 0 16px;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-tier,
+.btn-tier-primary,
+.btn-config {
+  font-size: 13px;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  color: #f9fafb;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+  border-color: var(--border-soft);
+}
+
+.btn-secondary:hover {
+  background: rgba(31, 41, 55, 0.9);
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  color: var(--text-soft);
+}
+
+/* Product Preview */
+
+.hero-preview {
+  padding: 0;
+}
+
+.preview-card {
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at top right, #1f2937 0%, #020617 60%);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  padding: 18px 18px 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.preview-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.preview-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.preview-sub {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.preview-graph {
+  position: relative;
+  height: 180px;
+  border-radius: 16px;
+  background: radial-gradient(circle at center, rgba(79, 70, 229, 0.18), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  overflow: hidden;
+}
+
+.graph-node {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
+}
+
+.graph-node-main {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  box-shadow: var(--shadow-glow);
+}
+
+.graph-node-child {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.graph-node-slack {
+  top: 20%;
+  left: 18%;
+}
+
+.graph-node-atlassian {
+  top: 22%;
+  right: 16%;
+}
+
+.graph-node-mailchimp {
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.graph-connection {
+  position: absolute;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.6), rgba(22, 197, 94, 0.6));
+  opacity: 0.7;
+}
+
+.graph-conn-1 {
+  width: 2px;
+  height: 60px;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+}
+
+.graph-conn-2 {
+  width: 80px;
+  height: 2px;
+  top: 50%;
+  left: 30%;
+}
+
+.graph-conn-3 {
+  width: 80px;
+  height: 2px;
+  top: 50%;
+  right: 30%;
+}
+
+.preview-footer {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+/* Side Panel */
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Status Card */
+
+.status-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  padding: 14px 14px 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 197, 94, 0.7);
+}
+
+.status-pill-online {
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.25);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.status-item {
+  padding: 8px 8px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+.status-label {
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+.status-value {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-note {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.status-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-outline {
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+  border-color: rgba(55, 65, 81, 0.9);
+}
+
+.btn-outline:hover {
+  background: rgba(31, 41, 55, 0.9);
+}
+
+/* Logs */
+
+.logs-card {
+  border-radius: var(--radius-md);
+  background: var(--bg-panel-soft);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  padding: 12px 12px 10px;
+}
+
+.logs-header {
+  margin-bottom: 6px;
+}
+
+.logs-title {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.logs-body {
+  font-size: 11px;
+  color: var(--text-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Pricing */
+
+.pricing-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  padding: 14px 14px 12px;
+}
+
+.pricing-header {
+  margin-bottom: 10px;
+}
+
+.pricing-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pricing-sub {
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pricing-tier {
+  padding: 10px 10px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pricing-tier-highlight {
+  border-color: #4f46e5;
+  box-shadow: var(--shadow-glow);
+}
+
+.tier-name {
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+.tier-price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tier-note {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.btn-tier {
+  margin-top: 4px;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+  border-color: rgba(55, 65, 81, 0.9);
+}
+
+.btn-tier:hover {
+  background: rgba(31, 41, 55, 0.9);
+}
+
+.btn-tier-primary {
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  color: #f9fafb;
+  border-color: transparent;
+}
+
+/* Config */
+
+.config-card {
+  border-radius: var(--radius-md);
+  background: var(--bg-panel-soft);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  padding: 12px 12px 10px;
+}
+
+.config-header {
+  margin-bottom: 6px;
+}
+
+.config-title {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.config-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.config-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.config-label {
+  color: var(--text-soft);
+}
+
+.config-value {
+  color: var(--text-main);
+}
+
+.config-value-secure {
+  color: #bbf7d0;
+}
+
+.btn-config {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+  border-color: rgba(55, 65, 81, 0.9);
+}
+
+.btn-config:hover {
+  background: rgba(31, 41, 55, 0.9);
+}
+
+/* Footer */
+
+.app-footer {
+  margin-top: 22px;
+  font-size: 11px;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .app-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pricing-tiers {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .status-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
