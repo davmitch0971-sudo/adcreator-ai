@@ -13,7 +13,6 @@ import fs from 'fs';
 import logger from './config/logger.js';
 import { streamOpenRouterCompletion } from './services/openRouter.js';
 
-// Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -46,13 +45,21 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.use(express.json({ limit: '25mb' })); // High-capacity payload acceptance
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json({ limit: '25mb' }));
 
-// --- RATE-LIMITING ENGINE (DDoS Protection) ---
+// --- EXPLICIT STATIC ASSET ROUTING ---
+const publicDir = path.join(__dirname, 'public');
+app.use(express.static(publicDir));
+
+// Explicit fallback route to guarantee index.html loads assets cleanly
+app.get('/', (req, res) => {
+    res.sendFile(path.join(publicDir, 'index.html'));
+});
+
+// --- RATE-LIMITING ENGINE ---
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, 
-    max: 250, // Premium tier allocation: 250 reqs per 15 min window, per IP
+    max: 250,
     standardHeaders: true,
     legacyHeaders: false,
     message: { error: 'Rate-ceiling penetrated. Gateway locked for cooldown.' }
@@ -73,7 +80,6 @@ app.post('/api/generate', [
     }
 
     const { prompt, model } = req.body;
-
     logger.info(`[SourceIntelligence-Engine] Processing invocation sequence for IP: ${req.ip}`);
 
     try {
@@ -86,7 +92,7 @@ app.post('/api/generate', [
     }
 });
 
-// --- TELEMETRY & HARDWARE PROFILING ---
+// --- TELEMETRY ---
 app.get('/health', (req, res) => {
     res.status(200).json({
         status: 'nominal',

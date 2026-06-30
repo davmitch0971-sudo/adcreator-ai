@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="AdCreator AI: Enterprise-grade intelligence for brand design and creative workflows.">
     <meta name="author" content="Mitch">
-    <meta name="keywords" content="AI, Enterprise, Design, AdCreator, Workflow, Stream">
     <title>AdCreator AI | Enterprise Intelligence Matrix</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,19 +18,19 @@
                 <span class="logo-icon">▲</span> ADCREATOR <span class="accent">AI</span>
             </div>
             <ul class="nav-links">
-                <li class="nav-item active" data-target="#dashboard-view">
+                <li class="nav-item active" data-target="dashboard-view">
                     <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
                     Dashboard
                 </li>
-                <li class="nav-item" data-target="#workspace-view">
+                <li class="nav-item" data-target="workspace-view">
                     <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5"/><polyline points="14 2 14 8 20 8"/><path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l1-3.95 5.42-5.44z"/></svg>
                     Workspace
                 </li>
-                <li class="nav-item" data-target="#analytics-view">
+                <li class="nav-item" data-target="analytics-view">
                     <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
                     Analytics
                 </li>
-                <li class="nav-item" data-target="#settings-view">
+                <li class="nav-item" data-target="settings-view">
                     <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                     Settings
                 </li>
@@ -60,7 +59,7 @@
                             <h2>Creative Intelligence Matrix</h2>
                             <p>Advanced generative streaming architectures processing live tokens. Precision calibrated for extreme brand positioning.</p>
                             <div class="action-row">
-                                <button class="btn-primary" onclick="switchView('#workspace-view')">Deploy Instance</button>
+                                <button class="btn-primary" onclick="switchView('workspace-view')">Deploy Instance</button>
                                 <button class="btn-secondary" onclick="triggerHealthCheck()">Run Diagnostic</button>
                             </div>
                         </div>
@@ -79,8 +78,8 @@
                     
                     <div class="card stat-widget" role="contentinfo" aria-label="Active Core Workers">
                         <h3>Active Core Workers</h3>
-                        <div class="metric-value" id="workers-count">8 / 8</div>
-                        <div class="metric-subtext">Multi-core load balancing</div>
+                        <div class="metric-value">1 / 1</div>
+                        <div class="metric-subtext">Optimized compute thread</div>
                     </div>
 
                     <div class="card stat-widget" role="contentinfo" aria-label="Compute Tokens">
@@ -91,13 +90,8 @@
 
                     <div class="card activity-feed" role="region" aria-label="Real-time Operational Log">
                         <h3>System Logs & Telemetry</h3>
-                        <div class="log-scroller">
-                            <div class="log-item"><span class="log-time">[18:37:01]</span> [MasterCore] Spawning parallel workers.</div>
-                            <div class="log-item"><span class="log-time">[18:37:05]</span> [SourceIntelligence] API handshake validated.</div>
-                            <div class="log-item"><span class="log-time">[18:37:12]</span> [EngineGate] Session pipeline primed.</div>
-                            <div class="log-item"><span class="log-time">[18:37:28]</span> [OpenRouterService] Stream connection authenticated.</div>
-                            <div class="log-item"><span class="log-time">[18:37:44]</span> [ProxySecurity] Helmet & CORS initialized.</div>
-                            <div class="log-item"><span class="log-time">[18:38:00]</span> [Matrix] System state: Nominal.</div>
+                        <div class="log-scroller" id="log-box">
+                            <div class="log-item"><span class="log-time">[System]</span> Matrix system booted successfully.</div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +119,7 @@
                                 <textarea id="ai-prompt" rows="6" class="premium-textarea" placeholder="Input high-value creative prompt here..."></textarea>
                             </div>
 
-                            <button id="submit-prompt-btn" class="btn-primary btn-block" onclick="executeAistream()">Initialize Generation Stream</button>
+                            <button id="submit-btn" class="btn-primary btn-block" onclick="executeStream()">Initialize Generation Stream</button>
                         </div>
                     </div>
 
@@ -136,7 +130,7 @@
                                 <div class="stream-badge"><span class="pulse-blue"></span> Live Streaming Engine</div>
                             </div>
                             <div class="stream-content-wrapper">
-                                <pre id="stream-output-window" class="stream-window">Awaiting invocation parameters...</pre>
+                                <pre id="output-window" class="stream-window">Awaiting invocation parameters...</pre>
                             </div>
                         </div>
                     </div>
@@ -148,7 +142,7 @@
                     <div class="card" style="grid-column: span 3;">
                         <h3>Hardware Telemetry Metrics</h3>
                         <p>Real-time system hardware profiling, memory usage, and load arrays.</p>
-                        <div style="margin-top: 20px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; font-family: monospace;" id="hardware-telemetry-box">
+                        <div style="margin-top: 20px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; font-family: monospace; color: #fff;" id="hw-box">
                             Pinging hardware telemetry registers...
                         </div>
                     </div>
@@ -172,7 +166,7 @@
                     <div class="card">
                         <h3>Environment Security</h3>
                         <p style="font-size: 0.85rem; color: #a1a1a6; margin: 15px 0;">Ensure OpenRouter API key exists within your hidden .env file.</p>
-                        <div class="status-pill status-success">ENV Key Vault: Secure</div>
+                        <div style="background: rgba(52,199,89,0.15); border: 1px solid #34c759; color: #34c759; padding: 10px; border-radius: 10px; text-align: center; font-size: 0.85rem; font-weight: 600;">ENV Key Vault: Secure</div>
                     </div>
                 </div>
             </section>
@@ -184,63 +178,82 @@
     </div>
 
     <script>
-        // Global View Switching Logic
-        function switchView(targetSelector) {
-            document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            
-            const targetView = document.querySelector(targetSelector);
-            if(targetView) targetView.classList.add('active');
-
-            const activeNav = document.querySelector(`[data-target="${targetSelector.replace('#','')}"]`);
-            if(activeNav) activeNav.classList.add('active');
-
-            // Set Title Dynamically
-            const titleMap = {
-                '#dashboard-view': 'Executive Overview',
-                '#workspace-view': 'Creative Workspace Suite',
-                '#analytics-view': 'Analytics Matrix',
-                '#settings-view': 'System Settings Console'
-            };
-            document.getElementById('page-title').textContent = titleMap[targetSelector] || 'Executive Overview';
-        }
-
-        // Navigation Initialization
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const target = this.getAttribute('data-target');
-                switchView('#' + target);
-            });
-        });
-
-        // Backend Telemetry Probe for Dashboard
-        async function triggerHealthCheck() {
-            try {
-                const response = await fetch('/health');
-                const data = await response.json();
-                document.getElementById('hardware-telemetry-box').innerHTML = JSON.stringify(data, null, 4).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
-                alert('Hardware diagnostic pinged successfully.');
-            } catch (err) {
-                alert('Diagnostic ping failed: ' + err.message);
+        // Log Tracker Utility
+        function appendLog(message) {
+            const logBox = document.getElementById('log-box');
+            if (logBox) {
+                const time = new Date().toLocaleTimeString();
+                const logItem = document.createElement('div');
+                logItem.className = 'log-item';
+                logItem.innerHTML = `<span class="log-time">[${time}]</span> ${message}`;
+                logBox.appendChild(logItem);
+                logBox.scrollTop = logBox.scrollHeight;
             }
         }
 
-        // High-Fidelity Streaming Implementation
-        async function executeAistream() {
+        // View Switching Array
+        function switchView(viewId) {
+            document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            
+            const targetView = document.getElementById(viewId);
+            if(targetView) targetView.classList.add('active');
+
+            const activeNav = document.querySelector(`[data-target="${viewId}"]`);
+            if(activeNav) activeNav.classList.add('active');
+
+            const titles = {
+                'dashboard-view': 'Executive Overview',
+                'workspace-view': 'Creative Workspace Suite',
+                'analytics-view': 'Analytics Matrix',
+                'settings-view': 'System Settings Console'
+            };
+            
+            const titleEl = document.getElementById('page-title');
+            if(titleEl) titleEl.textContent = titles[viewId] || 'Executive Overview';
+            appendLog(`Switched view to ${viewId}`);
+        }
+
+        // Sidebar Wiring
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const target = this.getAttribute('data-target');
+                switchView(target);
+            });
+        });
+
+        // Health Telemetry Probe
+        async function triggerCheck() {
+            try {
+                const res = await fetch('/health');
+                const data = await res.json();
+                const hwBox = document.getElementById('hw-box');
+                if(hwBox) {
+                    hwBox.innerHTML = JSON.stringify(data, null, 4).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
+                }
+                appendLog('System hardware diagnostic checked successfully.');
+            } catch (err) {
+                alert('Diagnostic probe failed: ' + err.message);
+                appendLog('Error running hardware telemetry diagnostic.');
+            }
+        }
+
+        // Streaming Logic
+        async function executeStream() {
             const promptText = document.getElementById('ai-prompt').value;
             const modelSelect = document.getElementById('model-select').value;
-            const outputWindow = document.getElementById('stream-output-window');
-            const submitBtn = document.getElementById('submit-prompt-btn');
+            const outputWindow = document.getElementById('output-window');
+            const submitBtn = document.getElementById('submit-btn');
 
             if (!promptText.trim()) {
                 alert('Directive matrix void. Please input prompt text.');
                 return;
             }
 
-            // Lock UI and reset stream window
             submitBtn.disabled = true;
             submitBtn.textContent = 'Streaming Generation Pipeline Active...';
             outputWindow.textContent = '';
+            appendLog(`Initializing generation stream with model: ${modelSelect}`);
 
             try {
                 const response = await fetch('/api/generate', {
@@ -254,28 +267,27 @@
                     throw new Error(errData.error || 'Server stream failed');
                 }
 
-                // Parse stream data via TextDecoderStream (Native, elite SSE processing)
                 const reader = response.body.getReader();
                 const decoder = new TextDecoder();
                 
                 while (true) {
                     const { value, done } = await reader.read();
                     if (done) break;
-                    
-                    const chunkText = decoder.decode(value, { stream: true });
-                    // Append chunks directly into the terminal stream output
-                    outputWindow.textContent += chunkText;
-                    // Auto-scroll output window to bottom
+                    outputWindow.textContent += decoder.decode(value, { stream: true });
                     outputWindow.scrollTop = outputWindow.scrollHeight;
                 }
-
+                appendLog('Generation stream finalized successfully.');
             } catch (err) {
                 outputWindow.textContent += `\n[FatalExceptionTrap]: ${err.message}`;
+                appendLog(`Error during stream execution: ${err.message}`);
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Initialize Generation Stream';
             }
         }
+
+        appendLog('Interface initialization matrix complete.');
     </script>
 </body>
 </html>
+
