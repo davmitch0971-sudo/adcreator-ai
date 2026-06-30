@@ -1,4 +1,3 @@
-import { Readable } from 'stream';
 import logger from '../config/logger.js';
 
 export async function streamOpenRouterCompletion(prompt, model, res) {
@@ -11,40 +10,73 @@ export async function streamOpenRouterCompletion(prompt, model, res) {
 
     logger.info(`[OpenRouterService] Initiating stream | Model: ${targetModel}`);
 
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'HTTP-Referer': process.env.SITE_URL || 'https://adcreator-ai.enterprise.io',
-            'X-Title': 'AdCreator AI Elite Intelligence Matrix',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            model: targetModel,
-            messages: [{ role: 'user', content: prompt }],
-            stream: true
-        })
+    // High-end SSE headers
+    res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'X-Accel-Buffering': 'no'
     });
 
-    if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Upstream integration fault: ${response.status} | Payload: ${constText}`);
-    }
+    try {
+        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'HTTP-Referer': process.env.SITE_URL || 'https://adcreator-ai.enterprise.io',
+                'X-Title': 'AdCreator AI Elite Intelligence Matrix',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: targetModel,
+                messages: [{ role: 'user', content: prompt }],
+                stream: true
+            })
+        });
 
-    // Set high-end SSE headers
-    res.setHeader('Content-Type', 'text/event-stream');
-    res.setHeader('Cache-Control', 'no-cache');
-    res.setHeader('Connection', 'keep-alive');
-    res.setHeader('X-Accel-Buffering', 'no'); 
-
-    // Transform Web Stream ReadableStream to Node.js Stream
-    const nodeStream = Readable.fromWeb(response.body);
-    nodeStream.pipe(res);
-
-    nodeStream.on('error', (err) => {
-        logger.error(`[StreamPipeError] Pipeline disruption: ${err.message}`);
-        if (!res.headersSent) {
-            res.status(500).json({ error: 'Data stream broken during LLM execution.' });
+        if (!response.ok) {
+            const errorText = await response.text();
+            logger.error(`[UpstreamError] Status: ${response.status} | Text: ${errorText}`);
+            res.write(`data: [ERROR] Upstream integration fault: ${response.status}\n\n`);
+            res.end();
+            return;
         }
-    });
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder('utf-8');
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            const chunk = decoder.decode(value, { stream: true });
+            const lines = chunk.split('\n');
+            
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (trimmed.startsWith('data: ')) {
+                    const dataPart = trimmed.substring(6);
+                    if (dataPart === '[DONE]') {
+                        continue;
+                    }
+                    try {
+                        const parsed = JSON.parse(dataPart);
+                        const content = parsed.choices?.[0]?.delta?.content || '';
+                        if (content) {
+                            res.write(content);
+                        }
+                    } catch (e) {
+                        // Silently catch incomplete JSON chunks encountered during streaming
+                    }
+                }
+            }
+        }
+        res.end();
+    } catch (err) {
+        logger.error(`[StreamExecutionException] Trace: ${err.stack}`);
+        if (!res.writableEnded) {
+            res.write(`data: [EXCEPTION] Data stream broken during LLM execution.\n\n`);
+            res.end();
+        }
+    }
 }

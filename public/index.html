@@ -60,7 +60,7 @@
                             <p>Advanced generative streaming architectures processing live tokens. Precision calibrated for extreme brand positioning.</p>
                             <div class="action-row">
                                 <button class="btn-primary" onclick="switchView('workspace-view')">Deploy Instance</button>
-                                <button class="btn-secondary" onclick="triggerHealthCheck()">Run Diagnostic</button>
+                                <button class="btn-secondary" onclick="triggerCheck()">Run Diagnostic</button>
                             </div>
                         </div>
                         <div class="holographic-node">
@@ -142,7 +142,7 @@
                     <div class="card" style="grid-column: span 3;">
                         <h3>Hardware Telemetry Metrics</h3>
                         <p>Real-time system hardware profiling, memory usage, and load arrays.</p>
-                        <div style="margin-top: 20px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; font-family: monospace; color: #fff;" id="hw-box">
+                        <div style="margin-top: 20px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; font-family: monospace; color: #fff; overflow-x: auto;" id="hw-box">
                             Pinging hardware telemetry registers...
                         </div>
                     </div>
@@ -238,7 +238,7 @@
             }
         }
 
-        // Streaming Logic
+        // Streaming Logic with resilient direct-stream text reading
         async function executeStream() {
             const promptText = document.getElementById('ai-prompt').value;
             const modelSelect = document.getElementById('model-select').value;
@@ -263,7 +263,7 @@
                 });
 
                 if (!response.ok) {
-                    const errData = await response.json();
+                    const errData = await response.json().catch(() => ({ error: 'Server stream failed' }));
                     throw new Error(errData.error || 'Server stream failed');
                 }
 
@@ -273,6 +273,7 @@
                 while (true) {
                     const { value, done } = await reader.read();
                     if (done) break;
+                    // Directly append raw text chunks as they hit the pipeline
                     outputWindow.textContent += decoder.decode(value, { stream: true });
                     outputWindow.scrollTop = outputWindow.scrollHeight;
                 }
