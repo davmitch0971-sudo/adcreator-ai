@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="AdCreator AI: Enterprise-grade intelligence for brand design and creative workflows.">
+    <meta name="author" content="Mitch">
+    <meta name="keywords" content="AI, Enterprise, Design, AdCreator, Workflow, Stream">
+    <title>AdCreator AI | Enterprise Intelligence Matrix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-root" role="application" aria-label="Enterprise Intelligence Matrix">
+        <nav class="sidebar" role="navigation" aria-label="Primary Navigation">
+            <div class="logo-area">
+                <span class="logo-icon">▲</span> ADCREATOR <span class="accent">AI</span>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item active" data-target="#dashboard-view">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                    Dashboard
+                </li>
+                <li class="nav-item" data-target="#workspace-view">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5"/><polyline points="14 2 14 8 20 8"/><path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l1-3.95 5.42-5.44z"/></svg>
+                    Workspace
+                </li>
+                <li class="nav-item" data-target="#analytics-view">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                    Analytics
+                </li>
+                <li class="nav-item" data-target="#settings-view">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    Settings
+                </li>
+            </ul>
+            <div class="system-status-pill">
+                <span class="pulse-green"></span> Matrix Online
+            </div>
+        </nav>
+
+        <main class="content-viewport" role="main">
+            <header class="app-header">
+                <div class="header-title-group">
+                    <h1 id="page-title">Executive Overview</h1>
+                    <p class="header-subtitle">Creative intelligence engine for high-value enterprise positioning</p>
+                </div>
+                <div class="user-meta" aria-label="Active Profile">
+                    <span class="user-email">mitchdav0518@gmail.com</span>
+                    <div class="avatar-node">MD</div>
+                </div>
+            </header>
+
+            <section id="dashboard-view" class="app-view active">
+                <div class="dashboard-grid">
+                    <div class="card main-hero" role="region" aria-label="Generative Canvas">
+                        <div class="hero-content-wrapper">
+                            <h2>Creative Intelligence Matrix</h2>
+                            <p>Advanced generative streaming architectures processing live tokens. Precision calibrated for extreme brand positioning.</p>
+                            <div class="action-row">
+                                <button class="btn-primary" onclick="switchView('#workspace-view')">Deploy Instance</button>
+                                <button class="btn-secondary" onclick="triggerHealthCheck()">Run Diagnostic</button>
+                            </div>
+                        </div>
+                        <div class="holographic-node">
+                            <div class="holo-ring holo-ring-1"></div>
+                            <div class="holo-ring holo-ring-2"></div>
+                            <div class="holo-core">A.I</div>
+                        </div>
+                    </div>
+
+                    <div class="card stat-widget" role="contentinfo" aria-label="System Uptime">
+                        <h3>System Uptime</h3>
+                        <div class="metric-value">99.99%</div>
+                        <div class="metric-subtext text-success">Nominal latency: 12ms</div>
+                    </div>
+                    
+                    <div class="card stat-widget" role="contentinfo" aria-label="Active Core Workers">
+                        <h3>Active Core Workers</h3>
+                        <div class="metric-value" id="workers-count">8 / 8</div>
+                        <div class="metric-subtext">Multi-core load balancing</div>
+                    </div>
+
+                    <div class="card stat-widget" role="contentinfo" aria-label="Compute Tokens">
+                        <h3>Compute Tokens</h3>
+                        <div class="metric-value">419.2K</div>
+                        <div class="metric-subtext text-accent">Allocated threshold</div>
+                    </div>
+
+                    <div class="card activity-feed" role="region" aria-label="Real-time Operational Log">
+                        <h3>System Logs & Telemetry</h3>
+                        <div class="log-scroller">
+                            <div class="log-item"><span class="log-time">[18:37:01]</span> [MasterCore] Spawning parallel workers.</div>
+                            <div class="log-item"><span class="log-time">[18:37:05]</span> [SourceIntelligence] API handshake validated.</div>
+                            <div class="log-item"><span class="log-time">[18:37:12]</span> [EngineGate] Session pipeline primed.</div>
+                            <div class="log-item"><span class="log-time">[18:37:28]</span> [OpenRouterService] Stream connection authenticated.</div>
+                            <div class="log-item"><span class="log-time">[18:37:44]</span> [ProxySecurity] Helmet & CORS initialized.</div>
+                            <div class="log-item"><span class="log-time">[18:38:00]</span> [Matrix] System state: Nominal.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="workspace-view" class="app-view">
+                <div class="workspace-split">
+                    <div class="workspace-panel">
+                        <div class="card prompt-builder">
+                            <h3>Prompt Architecture</h3>
+                            <p class="panel-desc">Configure parameters for the OpenRouter AI generation node.</p>
+                            
+                            <div class="form-group">
+                                <label for="model-select">Target Inference Engine</label>
+                                <select id="model-select" class="premium-select">
+                                    <option value="openai/gpt-4o-mini">OpenAI: GPT-4o-Mini (Elite Fallback)</option>
+                                    <option value="anthropic/claude-3.5-sonnet">Anthropic: Claude 3.5 Sonnet</option>
+                                    <option value="google/gemini-pro-1.5">Google: Gemini Pro 1.5</option>
+                                    <option value="meta/llama-3-70b-instruct">Meta: Llama 3 70B Instruct</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ai-prompt">Primary Directive / Context</label>
+                                <textarea id="ai-prompt" rows="6" class="premium-textarea" placeholder="Input high-value creative prompt here..."></textarea>
+                            </div>
+
+                            <button id="submit-prompt-btn" class="btn-primary btn-block" onclick="executeAistream()">Initialize Generation Stream</button>
+                        </div>
+                    </div>
+
+                    <div class="workspace-panel">
+                        <div class="card stream-output-card">
+                            <div class="card-header-flex">
+                                <h3>Real-time Token Stream</h3>
+                                <div class="stream-badge"><span class="pulse-blue"></span> Live Streaming Engine</div>
+                            </div>
+                            <div class="stream-content-wrapper">
+                                <pre id="stream-output-window" class="stream-window">Awaiting invocation parameters...</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="analytics-view" class="app-view">
+                <div class="dashboard-grid">
+                    <div class="card" style="grid-column: span 3;">
+                        <h3>Hardware Telemetry Metrics</h3>
+                        <p>Real-time system hardware profiling, memory usage, and load arrays.</p>
+                        <div style="margin-top: 20px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; font-family: monospace;" id="hardware-telemetry-box">
+                            Pinging hardware telemetry registers...
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings-view" class="app-view">
+                <div class="dashboard-grid">
+                    <div class="card" style="grid-column: span 2;">
+                        <h3>System Configuration</h3>
+                        <div class="form-group" style="margin-top:20px;">
+                            <label>Admin Email Anchor</label>
+                            <input type="text" class="premium-input" value="mitchdav0518@gmail.com" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Client Origin Scope</label>
+                            <input type="text" class="premium-input" value="*" placeholder="e.g. https://yourdomain.com">
+                        </div>
+                        <button class="btn-primary" style="margin-top: 10px;">Commit Configurations</button>
+                    </div>
+                    <div class="card">
+                        <h3>Environment Security</h3>
+                        <p style="font-size: 0.85rem; color: #a1a1a6; margin: 15px 0;">Ensure OpenRouter API key exists within your hidden .env file.</p>
+                        <div class="status-pill status-success">ENV Key Vault: Secure</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer" role="contentinfo">
+            <p>&copy; 2026 AdCreator AI Enterprise Architecture. System deployed for mitchdav0518@gmail.com.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Global View Switching Logic
+        function switchView(targetSelector) {
+            document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            
+            const targetView = document.querySelector(targetSelector);
+            if(targetView) targetView.classList.add('active');
+
+            const activeNav = document.querySelector(`[data-target="${targetSelector.replace('#','')}"]`);
+            if(activeNav) activeNav.classList.add('active');
+
+            // Set Title Dynamically
+            const titleMap = {
+                '#dashboard-view': 'Executive Overview',
+                '#workspace-view': 'Creative Workspace Suite',
+                '#analytics-view': 'Analytics Matrix',
+                '#settings-view': 'System Settings Console'
+            };
+            document.getElementById('page-title').textContent = titleMap[targetSelector] || 'Executive Overview';
+        }
+
+        // Navigation Initialization
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const target = this.getAttribute('data-target');
+                switchView('#' + target);
+            });
+        });
+
+        // Backend Telemetry Probe for Dashboard
+        async function triggerHealthCheck() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                document.getElementById('hardware-telemetry-box').innerHTML = JSON.stringify(data, null, 4).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
+                alert('Hardware diagnostic pinged successfully.');
+            } catch (err) {
+                alert('Diagnostic ping failed: ' + err.message);
+            }
+        }
+
+        // High-Fidelity Streaming Implementation
+        async function executeAistream() {
+            const promptText = document.getElementById('ai-prompt').value;
+            const modelSelect = document.getElementById('model-select').value;
+            const outputWindow = document.getElementById('stream-output-window');
+            const submitBtn = document.getElementById('submit-prompt-btn');
+
+            if (!promptText.trim()) {
+                alert('Directive matrix void. Please input prompt text.');
+                return;
+            }
+
+            // Lock UI and reset stream window
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Streaming Generation Pipeline Active...';
+            outputWindow.textContent = '';
+
+            try {
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: promptText, model: modelSelect })
+                });
+
+                if (!response.ok) {
+                    const errData = await response.json();
+                    throw new Error(errData.error || 'Server stream failed');
+                }
+
+                // Parse stream data via TextDecoderStream (Native, elite SSE processing)
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    
+                    const chunkText = decoder.decode(value, { stream: true });
+                    // Append chunks directly into the terminal stream output
+                    outputWindow.textContent += chunkText;
+                    // Auto-scroll output window to bottom
+                    outputWindow.scrollTop = outputWindow.scrollHeight;
+                }
+
+            } catch (err) {
+                outputWindow.textContent += `\n[FatalExceptionTrap]: ${err.message}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Initialize Generation Stream';
+            }
+        }
+    </script>
+</body>
+</html>

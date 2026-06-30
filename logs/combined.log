@@ -1,0 +1,3 @@
+{"level":"info","message":"[SourceIntelligence-Master-Core] Allocating 0 parallel workers...","timestamp":"2026-06-29 18:57:04"}
+{"level":"info","message":"[SourceIntelligence-Node-Core] Gateway active | Port: 3000","timestamp":"2026-06-29 18:59:13"}
+{"level":"warn","message":"[SystemTermination] Kill instruction (SIGINT) received. Initiating unbind sequence...","timestamp":"2026-06-29 19:00:57"}

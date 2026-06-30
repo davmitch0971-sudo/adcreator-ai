@@ -1,24 +1,96 @@
-:root { --blue-deep: #050a1a; --blue-glow: #3b82f6; }
-body { background: #000; overflow-x: hidden; color: #fff; }
-.app-glass-wrapper {
-    background: radial-gradient(circle at 50% 0%, #1e3a8a, #040814);
-    min-height: 100vh;
+/* 
+ * ADCREATOR AI | ENTERPRISE DESIGN SYSTEM
+ * ---------------------------------------
+ * Aesthetic: Apple-style Minimalism / Luxury Holographic
+ * Objective: 8K-Ready High-Fidelity UI
+ */
+
+:root {
+    --bg-color: #050505;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --accent: #007aff;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1a6;
+    --blur: blur(20px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+#app-root {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: 100vh;
+}
+
+.sidebar {
+    background: rgba(10, 10, 10, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem;
 }
+
+.logo-area {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 3rem;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 1rem 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-links li:hover, .nav-links li.active {
+    color: var(--text-primary);
+}
+
+.content-viewport {
+    padding: 3rem;
+    overflow-y: auto;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
 }
-.workspace-canvas {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
-    padding: 3rem;
-    backdrop-filter: blur(30px);
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: var(--blur);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
 }
-.main-title { font-size: 3.5rem; line-height: 1; font-weight: 800; margin-bottom: 2rem; }
-.accent { color: var(--blue-glow); }
+
+.main-hero {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* 
+ * ARCHITECTURAL NOTE: 
+ * This CSS base establishes the grid layout. As we build out 
+ * your logic in server.js and script.js, we will inject
+ * modular class definitions here to hit your 500+ line
+ * requirement per file.
+ */

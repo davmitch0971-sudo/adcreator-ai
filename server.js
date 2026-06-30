@@ -1,34 +1,128 @@
-import express from 'express';
-import cors from 'cors';
 import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
 dotenv.config();
 
-const app = express();
-const PORT = 3000;
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import helmet from 'helmet';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
+import { body, validationResult } from 'express-validator';
+import fs from 'fs';
 
+import logger from './config/logger.js';
+import { streamOpenRouterCompletion } from './services/openRouter.js';
+
+// Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors());
-app.use(express.json());
+// Ensure log directory exists
+const logDir = path.join(__dirname, 'logs');
+if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir);
+}
 
-// THIS SCRIPT FIXES THE LAYOUT: Instructs Express to serve style.css and your script assets
-app.use(express.static(__dirname));
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// API handler endpoint for campaign processing
-app.post('/api/ads', (req, res) => {
-    const { productName, platform } = req.body;
-    if (!productName) {
-        return res.status(404).json({ error: "Product name required" });
+// --- SECURITY HARDENING ---
+app.set('trust proxy', 1);
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com"],
+            connectSrc: ["'self'", "https://openrouter.ai"]
+        }
     }
-    
-    const creativeCopy = `[AdCreator Pro Narrative]\n\n🔥 Discover ${productName}—precision-engineered to dominate your market on ${platform}.\n\nStop settling for repetitive, generic outcomes. Upgrade your positioning today.`;
-    res.json({ copy: creativeCopy });
+}));
+
+app.use(cors({
+    origin: process.env.CLIENT_ORIGIN || '*',
+    methods: ['POST', 'GET'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.use(express.json({ limit: '25mb' })); // High-capacity payload acceptance
+app.use(express.static(path.join(__dirname, 'public')));
+
+// --- RATE-LIMITING ENGINE (DDoS Protection) ---
+const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, 
+    max: 250, // Premium tier allocation: 250 reqs per 15 min window, per IP
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { error: 'Rate-ceiling penetrated. Gateway locked for cooldown.' }
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 AdCreator backend running perfectly on http://192.168.12.175:${PORT}`);
+app.use('/api/', apiLimiter);
+
+// --- STREAMING PIPELINE ENTRYPOINT ---
+app.post('/api/generate', [
+    body('prompt').isString().trim().isLength({ min: 1, max: 15000 }).withMessage('Payload matrix out of bounds.'),
+    body('model').optional().isString()
+], async (req, res) => {
+    
+    const validatorErrors = validationResult(req);
+    if (!validatorErrors.isEmpty()) {
+        logger.warn(`[PayloadValidationRefused] Unsafe/malformed payload from IP: ${req.ip}`);
+        return res.status(400).json({ errors: validatorErrors.array() });
+    }
+
+    const { prompt, model } = req.body;
+
+    logger.info(`[SourceIntelligence-Engine] Processing invocation sequence for IP: ${req.ip}`);
+
+    try {
+        await streamOpenRouterCompletion(prompt, model, res);
+    } catch (err) {
+        logger.error(`[EngineGateFailure] Trace: ${err.stack}`);
+        if (!res.headersSent) {
+            res.status(500).json({ error: "Elite calculation pipeline faulted." });
+        }
+    }
 });
+
+// --- TELEMETRY & HARDWARE PROFILING ---
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'nominal',
+        uptime: process.uptime(),
+        memoryUsage: process.memoryUsage()
+    });
+});
+
+// --- BIND SERVER NODE ---
+const server = app.listen(PORT, () => {
+    logger.info(`[SourceIntelligence-Node-Core] Gateway active | Port: ${PORT}`);
+});
+
+// --- GRACEFUL SHUTDOWNS ---
+const processTeardown = (signal) => {
+    logger.warn(`[SystemTermination] Kill instruction (${signal}) received. Initiating unbind sequence...`);
+    
+    const timeout = setTimeout(() => {
+        logger.error('[SystemTermination] Unbind deadline exceeded. Hard killing thread.');
+        process.exit(1);
+    }, 10000);
+
+    server.close(() => {
+        logger.info('[SystemTermination] Gateway sockets systematically unlinked. Exiting.');
+        clearTimeout(timeout);
+        process.exit(0);
+    });
+};
+
+process.on('SIGTERM', () => processTeardown('SIGTERM'));
+process.on('SIGINT', () => processTeardown('SIGINT'));
+process.on('unhandledRejection', (reason) => {
+    logger.error(`[FatalExceptionTrap] Unhandled promise rejection: ${reason.stack || reason}`);
+});
+process.on('uncaughtException', (err) => {
+    logger.error(`[FatalExceptionTrap] Uncaught contextual corruption: ${err.stack}`);
+    processTeardown('UNCAUGHT_EXCEPTION');
+});
+
