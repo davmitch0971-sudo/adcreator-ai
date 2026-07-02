@@ -48,6 +48,7 @@ const navItems = [
   { path: "/global-orchestration", label: "Global Orchestration" },
   { path: "/autonomous-director", label: "Autonomous Director" },
   { path: "/planetary-grid", label: "Planetary Grid" },
+  { path: "/multiversal-fabric", label: "Multiversal Fabric" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
