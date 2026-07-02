@@ -13,7 +13,8 @@ const navItems = [
   { path: "/account", label: "Account Settings" },
   { path: "/profile", label: "User Profile" },
   { path: "/billing-portal", label: "Billing Portal" },
-  { path: "/brands", label: "Brand Manager" }
+  { path: "/brands", label: "Brand Manager" },
+  { path: "/projects", label: "Project Manager" }
 ];
 
 export default function Dashboard() {
