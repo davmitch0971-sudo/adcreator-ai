@@ -31,6 +31,7 @@ import AiAutoMusic from "./pages/AiAutoMusic";
 import AiBillingEngine from "./pages/AiBillingEngine";
 import AiSubscriptionManager from "./pages/AiSubscriptionManager";
 import AiUserAnalytics from "./pages/AiUserAnalytics";
+import AiCrm from "./pages/AiCrm";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -70,6 +71,7 @@ export default function App() {
             <Route path="billing" element={<AiBillingEngine />} />
             <Route path="subscription" element={<AiSubscriptionManager />} />
             <Route path="user-analytics" element={<AiUserAnalytics />} />
+            <Route path="crm" element={<AiCrm />} />
           </Route>
         </Routes>
       </Router>

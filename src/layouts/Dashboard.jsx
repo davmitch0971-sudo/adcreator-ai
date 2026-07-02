@@ -30,6 +30,7 @@ const navItems = [
   { path: "/billing", label: "Billing" },
   { path: "/subscription", label: "Subscription" },
   { path: "/user-analytics", label: "User Analytics" },
+  { path: "/crm", label: "CRM" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
