@@ -6,7 +6,8 @@ const navItems = [
   { path: "/pricing", label: "Pricing" },
   { path: "/checkout", label: "Checkout" },
   { path: "/signup", label: "Signup" },
-  { path: "/login", label: "Login" }
+  { path: "/login", label: "Login" },
+  { path: "/onboarding", label: "Onboarding" }
 ];
 
 export default function Dashboard() {

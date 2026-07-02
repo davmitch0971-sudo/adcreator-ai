@@ -5,6 +5,7 @@ import PricingPage from "./pages/PricingPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import OnboardingPage from "./pages/OnboardingPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="checkout" element={<CheckoutPage />} />
             <Route path="signup" element={<SignupPage />} />
             <Route path="login" element={<LoginPage />} />
+            <Route path="onboarding" element={<OnboardingPage />} />
           </Route>
         </Routes>
       </Router>
