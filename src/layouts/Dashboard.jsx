@@ -7,7 +7,8 @@ const navItems = [
   { path: "/checkout", label: "Checkout" },
   { path: "/signup", label: "Signup" },
   { path: "/login", label: "Login" },
-  { path: "/onboarding", label: "Onboarding" }
+  { path: "/onboarding", label: "Onboarding" },
+  { path: "/account", label: "Account Settings" }
 ];
 
 export default function Dashboard() {
