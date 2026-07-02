@@ -44,6 +44,7 @@ import AIEmailSequenceGeneratorPage from "./pages/AIEmailSequenceGeneratorPage";
 import AIBrandVoiceGeneratorPage from "./pages/AIBrandVoiceGeneratorPage";
 import AICreativeBriefGeneratorPage from "./pages/AICreativeBriefGeneratorPage";
 import AIVideoAdGeneratorPage from "./pages/AIVideoAdGeneratorPage";
+import AIOfferBuilderPage from "./pages/AIOfferBuilderPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -96,6 +97,7 @@ export default function App() {
             <Route path="ai-brand-voice-generator" element={<AIBrandVoiceGeneratorPage />} />
             <Route path="ai-creative-brief-generator" element={<AICreativeBriefGeneratorPage />} />
             <Route path="ai-video-ad-generator" element={<AIVideoAdGeneratorPage />} />
+            <Route path="ai-offer-builder" element={<AIOfferBuilderPage />} />
           </Route>
         </Routes>
       </Router>
