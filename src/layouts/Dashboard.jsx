@@ -28,6 +28,7 @@ const navItems = [
   { path: "/auto-voice-sync", label: "Auto‑Voice‑Sync" },
   { path: "/auto-music", label: "Auto‑Music" },
   { path: "/billing", label: "Billing" },
+  { path: "/subscription", label: "Subscription" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }

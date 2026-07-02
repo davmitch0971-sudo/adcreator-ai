@@ -29,6 +29,7 @@ import AiAutoVfx from "./pages/AiAutoVfx";
 import AiAutoVoiceSync from "./pages/AiAutoVoiceSync";
 import AiAutoMusic from "./pages/AiAutoMusic";
 import AiBillingEngine from "./pages/AiBillingEngine";
+import AiSubscriptionManager from "./pages/AiSubscriptionManager";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -66,6 +67,7 @@ export default function App() {
             <Route path="auto-voice-sync" element={<AiAutoVoiceSync />} />
             <Route path="auto-music" element={<AiAutoMusic />} />
             <Route path="billing" element={<AiBillingEngine />} />
+            <Route path="subscription" element={<AiSubscriptionManager />} />
           </Route>
         </Routes>
       </Router>
