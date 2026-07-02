@@ -33,6 +33,7 @@ const navItems = [
   { path: "/crm", label: "CRM" },
   { path: "/team", label: "Team" },
   { path: "/distribution", label: "Distribution" },
+  { path: "/engagement", label: "Engagement" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
