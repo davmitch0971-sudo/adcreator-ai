@@ -25,6 +25,7 @@ const navItems = [
   { path: "/auto-color-grade", label: "Auto‑Color‑Grade" },
   { path: "/auto-sound-design", label: "Auto‑Sound‑Design" },
   { path: "/auto-vfx", label: "Auto‑VFX" },
+  { path: "/auto-voice-sync", label: "Auto‑Voice‑Sync" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
