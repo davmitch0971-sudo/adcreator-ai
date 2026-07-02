@@ -45,6 +45,7 @@ const navItems = [
   { path: "/api-gateway", label: "API Gateway" },
   { path: "/tenant-runtime", label: "Tenant Runtime" },
   { path: "/cloud-control", label: "Cloud Control" },
+  { path: "/global-orchestration", label: "Global Orchestration" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
