@@ -22,6 +22,7 @@ const navItems = [
   { path: "/auto-camera-moves", label: "Auto‑Camera‑Moves" },
   { path: "/auto-transitions", label: "Auto‑Transitions" },
   { path: "/auto-edit", label: "Auto‑Edit" },
+  { path: "/auto-color-grade", label: "Auto‑Color‑Grade" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }

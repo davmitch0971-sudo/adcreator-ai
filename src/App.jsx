@@ -23,6 +23,7 @@ import AiAutoShotlist from "./pages/AiAutoShotlist";
 import AiAutoCameraMoves from "./pages/AiAutoCameraMoves";
 import AiAutoTransitions from "./pages/AiAutoTransitions";
 import AiAutoEdit from "./pages/AiAutoEdit";
+import AiAutoColorGrade from "./pages/AiAutoColorGrade";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
             <Route path="auto-camera-moves" element={<AiAutoCameraMoves />} />
             <Route path="auto-transitions" element={<AiAutoTransitions />} />
             <Route path="auto-edit" element={<AiAutoEdit />} />
+            <Route path="auto-color-grade" element={<AiAutoColorGrade />} />
           </Route>
         </Routes>
       </Router>
