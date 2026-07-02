@@ -60,7 +60,9 @@ const navItems = [
   { path: "/ai-audience-research-engine", label: "AI Audience Research Engine" },
   { path: "/ai-market-trends-insights-engine", label: "AI Market Trends & Insights Engine" },
   { path: "/ai-campaign-analytics-os", label: "AI Campaign Analytics OS" },
-  { path: "/ai-offer-optimization-engine", label: "AI Offer Optimization Engine" }
+  { path: "/ai-offer-optimization-engine", label: "AI Offer Optimization Engine" },
+  { path: "/ai-creative-qa-compliance-engine", label: "AI Creative QA & Compliance Engine" },
+  { path: "/ai-retention-lifecycle-engine", label: "AI Retention & Lifecycle Engine" }
 ];
 
 export default function Dashboard() {

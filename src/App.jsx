@@ -60,6 +60,7 @@ import AIMarketTrendsInsightsEnginePage from "./pages/AIMarketTrendsInsightsEngi
 import AICampaignAnalyticsOSPage from "./pages/AICampaignAnalyticsOSPage";
 import AIOfferOptimizationEnginePage from "./pages/AIOfferOptimizationEnginePage";
 import AICreativeQAComplianceEnginePage from "./pages/AICreativeQAComplianceEnginePage";
+import AIRetentionLifecycleEnginePage from "./pages/AIRetentionLifecycleEnginePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -128,6 +129,7 @@ export default function App() {
             <Route path="ai-campaign-analytics-os" element={<AICampaignAnalyticsOSPage />} />
             <Route path="ai-offer-optimization-engine" element={<AIOfferOptimizationEnginePage />} />
             <Route path="ai-creative-qa-compliance-engine" element={<AICreativeQAComplianceEnginePage />} />
+            <Route path="ai-retention-lifecycle-engine" element={<AIRetentionLifecycleEnginePage />} />
           </Route>
         </Routes>
       </Router>
