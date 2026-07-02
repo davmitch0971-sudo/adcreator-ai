@@ -43,7 +43,9 @@ const navItems = [
   { path: "/ai-audience-targeting-engine", label: "AI Audience Targeting Engine" },
   { path: "/ai-competitor-analyzer", label: "AI Competitor Analyzer" },
   { path: "/ai-email-sequence-generator", label: "AI Email Sequence Generator" },
-  { path: "/ai-brand-voice-generator", label: "AI Brand Voice Generator" }
+  { path: "/ai-brand-voice-generator", label: "AI Brand Voice Generator" },
+  { path: "/ai-creative-brief-generator", label: "AI Creative Brief Generator" },
+  { path: "/ai-video-ad-generator", label: "AI Video Ad Generator" }
 ];
 
 export default function Dashboard() {

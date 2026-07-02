@@ -41,6 +41,9 @@ import AIFullCampaignBuilderPage from "./pages/AIFullCampaignBuilderPage";
 import AIAudienceTargetingEnginePage from "./pages/AIAudienceTargetingEnginePage";
 import AICompetitorAnalyzerPage from "./pages/AICompetitorAnalyzerPage";
 import AIEmailSequenceGeneratorPage from "./pages/AIEmailSequenceGeneratorPage";
+import AIBrandVoiceGeneratorPage from "./pages/AIBrandVoiceGeneratorPage";
+import AICreativeBriefGeneratorPage from "./pages/AICreativeBriefGeneratorPage";
+import AIVideoAdGeneratorPage from "./pages/AIVideoAdGeneratorPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -90,6 +93,9 @@ export default function App() {
             <Route path="ai-audience-targeting-engine" element={<AIAudienceTargetingEnginePage />} />
             <Route path="ai-competitor-analyzer" element={<AICompetitorAnalyzerPage />} />
             <Route path="ai-email-sequence-generator" element={<AIEmailSequenceGeneratorPage />} />
+            <Route path="ai-brand-voice-generator" element={<AIBrandVoiceGeneratorPage />} />
+            <Route path="ai-creative-brief-generator" element={<AICreativeBriefGeneratorPage />} />
+            <Route path="ai-video-ad-generator" element={<AIVideoAdGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
