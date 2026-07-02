@@ -24,6 +24,7 @@ import SupportCenterPage from "./pages/SupportCenterPage";
 import StatusPage from "./pages/StatusPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
 import AutomationCenterPage from "./pages/AutomationCenterPage";
+import AIScriptGeneratorPage from "./pages/AIScriptGeneratorPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -56,6 +57,7 @@ export default function App() {
             <Route path="status" element={<StatusPage />} />
             <Route path="integrations" element={<IntegrationsPage />} />
             <Route path="automation" element={<AutomationCenterPage />} />
+            <Route path="ai-script-generator" element={<AIScriptGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
