@@ -36,6 +36,7 @@ import AiTeamCollaboration from "./pages/AiTeamCollaboration";
 import AiDistributionSuite from "./pages/AiDistributionSuite";
 import AiEngagementOptimizer from "./pages/AiEngagementOptimizer";
 import AiAudienceBuilder from "./pages/AiAudienceBuilder";
+import AiMonetizationPlanner from "./pages/AiMonetizationPlanner";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -80,6 +81,7 @@ export default function App() {
             <Route path="distribution" element={<AiDistributionSuite />} />
             <Route path="engagement" element={<AiEngagementOptimizer />} />
             <Route path="audience" element={<AiAudienceBuilder />} />
+            <Route path="monetization" element={<AiMonetizationPlanner />} />
           </Route>
         </Routes>
       </Router>
