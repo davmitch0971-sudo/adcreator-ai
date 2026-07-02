@@ -39,7 +39,8 @@ const navItems = [
   { path: "/ai-carousel-generator", label: "AI Carousel Generator" },
   { path: "/ai-ad-copy-optimizer", label: "AI Ad Copy Optimizer" },
   { path: "/ai-seo-content-generator", label: "AI SEO Content Generator" },
-  { path: "/ai-full-campaign-builder", label: "AI Full Campaign Builder" }
+  { path: "/ai-full-campaign-builder", label: "AI Full Campaign Builder" },
+  { path: "/ai-audience-targeting-engine", label: "AI Audience Targeting Engine" }
 ];
 
 export default function Dashboard() {

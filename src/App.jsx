@@ -38,6 +38,7 @@ import AICarouselGeneratorPage from "./pages/AICarouselGeneratorPage";
 import AIAdCopyOptimizerPage from "./pages/AIAdCopyOptimizerPage";
 import AISEOContentGeneratorPage from "./pages/AISEOContentGeneratorPage";
 import AIFullCampaignBuilderPage from "./pages/AIFullCampaignBuilderPage";
+import AIAudienceTargetingEnginePage from "./pages/AIAudienceTargetingEnginePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -84,6 +85,7 @@ export default function App() {
             <Route path="ai-ad-copy-optimizer" element={<AIAdCopyOptimizerPage />} />
             <Route path="ai-seo-content-generator" element={<AISEOContentGeneratorPage />} />
             <Route path="ai-full-campaign-builder" element={<AIFullCampaignBuilderPage />} />
+            <Route path="ai-audience-targeting-engine" element={<AIAudienceTargetingEnginePage />} />
           </Route>
         </Routes>
       </Router>
