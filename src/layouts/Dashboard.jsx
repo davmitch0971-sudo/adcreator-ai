@@ -20,6 +20,7 @@ const navItems = [
   { path: "/auto-storyboard", label: "Auto‑Storyboard" },
   { path: "/auto-shotlist", label: "Auto‑Shotlist" },
   { path: "/auto-camera-moves", label: "Auto‑Camera‑Moves" },
+  { path: "/auto-transitions", label: "Auto‑Transitions" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }

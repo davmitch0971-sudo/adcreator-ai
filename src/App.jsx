@@ -21,6 +21,7 @@ import TemplateEngine2 from "./pages/TemplateEngine2";
 import AiAutoStoryboard from "./pages/AiAutoStoryboard";
 import AiAutoShotlist from "./pages/AiAutoShotlist";
 import AiAutoCameraMoves from "./pages/AiAutoCameraMoves";
+import AiAutoTransitions from "./pages/AiAutoTransitions";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
             <Route path="auto-storyboard" element={<AiAutoStoryboard />} />
             <Route path="auto-shotlist" element={<AiAutoShotlist />} />
             <Route path="auto-camera-moves" element={<AiAutoCameraMoves />} />
+            <Route path="auto-transitions" element={<AiAutoTransitions />} />
           </Route>
         </Routes>
       </Router>
