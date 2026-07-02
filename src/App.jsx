@@ -27,6 +27,7 @@ import AiAutoColorGrade from "./pages/AiAutoColorGrade";
 import AiAutoSoundDesign from "./pages/AiAutoSoundDesign";
 import AiAutoVfx from "./pages/AiAutoVfx";
 import AiAutoVoiceSync from "./pages/AiAutoVoiceSync";
+import AiAutoMusic from "./pages/AiAutoMusic";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="auto-sound-design" element={<AiAutoSoundDesign />} />
             <Route path="auto-vfx" element={<AiAutoVfx />} />
             <Route path="auto-voice-sync" element={<AiAutoVoiceSync />} />
+            <Route path="auto-music" element={<AiAutoMusic />} />
           </Route>
         </Routes>
       </Router>
