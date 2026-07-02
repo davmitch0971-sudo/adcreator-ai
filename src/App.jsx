@@ -42,6 +42,7 @@ import AiCommunityBuilder from "./pages/AiCommunityBuilder";
 import AiEnterpriseSuite from "./pages/AiEnterpriseSuite";
 import AiTaskOrchestrator from "./pages/AiTaskOrchestrator";
 import AiRenderPipelineManager from "./pages/AiRenderPipelineManager";
+import AiAssetStorageEngine from "./pages/AiAssetStorageEngine";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -92,6 +93,7 @@ export default function App() {
             <Route path="enterprise" element={<AiEnterpriseSuite />} />
             <Route path="tasks" element={<AiTaskOrchestrator />} />
             <Route path="render-pipeline" element={<AiRenderPipelineManager />} />
+            <Route path="asset-storage" element={<AiAssetStorageEngine />} />
           </Route>
         </Routes>
       </Router>

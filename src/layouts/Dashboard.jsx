@@ -41,6 +41,7 @@ const navItems = [
   { path: "/enterprise", label: "Enterprise" },
   { path: "/tasks", label: "Tasks" },
   { path: "/render-pipeline", label: "Render Pipeline" },
+  { path: "/asset-storage", label: "Asset Storage" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
