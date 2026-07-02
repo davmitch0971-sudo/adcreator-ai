@@ -24,7 +24,8 @@ const navItems = [
   { path: "/admin-settings", label: "Admin Settings" },
   { path: "/support", label: "Support Center" },
   { path: "/status", label: "System Status" },
-  { path: "/integrations", label: "Integrations" }
+  { path: "/integrations", label: "Integrations" },
+  { path: "/automation", label: "Automation Center" }
 ];
 
 export default function Dashboard() {

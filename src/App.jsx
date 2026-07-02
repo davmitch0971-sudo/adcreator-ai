@@ -23,6 +23,7 @@ import SettingsAdminPage from "./pages/SettingsAdminPage";
 import SupportCenterPage from "./pages/SupportCenterPage";
 import StatusPage from "./pages/StatusPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
+import AutomationCenterPage from "./pages/AutomationCenterPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
             <Route path="support" element={<SupportCenterPage />} />
             <Route path="status" element={<StatusPage />} />
             <Route path="integrations" element={<IntegrationsPage />} />
+            <Route path="automation" element={<AutomationCenterPage />} />
           </Route>
         </Routes>
       </Router>
