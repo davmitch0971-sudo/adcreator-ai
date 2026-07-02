@@ -5,56 +5,8 @@ const navItems = [
   { path: "/landing", label: "Landing Page" },
   { path: "/pricing", label: "Pricing" },
   { path: "/checkout", label: "Checkout" },
-  { path: "/", label: "Super" },
-  { path: "/scripts", label: "Scripts" },
-  { path: "/videos", label: "Videos" },
-  { path: "/images", label: "Images" },
-  { path: "/captions", label: "Captions" },
-  { path: "/templates", label: "Templates" },
-  { path: "/posting", label: "Posting" },
-  { path: "/video-editor", label: "Video Editor" },
-  { path: "/scene-video", label: "Scene → Video" },
-  { path: "/voice-lab", label: "Voice Lab" },
-  { path: "/motion-graphics", label: "Motion Graphics" },
-  { path: "/video-export", label: "Export Video" },
-  { path: "/asset-studio", label: "Asset Studio" },
-  { path: "/brand-memory", label: "Brand Brain" },
-  { path: "/template-engine-2", label: "Template Engine 2.0" },
-  { path: "/auto-storyboard", label: "Auto‑Storyboard" },
-  { path: "/auto-shotlist", label: "Auto‑Shotlist" },
-  { path: "/auto-camera-moves", label: "Auto‑Camera‑Moves" },
-  { path: "/auto-transitions", label: "Auto‑Transitions" },
-  { path: "/auto-edit", label: "Auto‑Edit" },
-  { path: "/auto-color-grade", label: "Auto‑Color‑Grade" },
-  { path: "/auto-sound-design", label: "Auto‑Sound‑Design" },
-  { path: "/auto-vfx", label: "Auto‑VFX" },
-  { path: "/auto-voice-sync", label: "Auto‑Voice‑Sync" },
-  { path: "/auto-music", label: "Auto‑Music" },
-  { path: "/billing", label: "Billing" },
-  { path: "/subscription", label: "Subscription" },
-  { path: "/user-analytics", label: "User Analytics" },
-  { path: "/crm", label: "CRM" },
-  { path: "/team", label: "Team" },
-  { path: "/distribution", label: "Distribution" },
-  { path: "/engagement", label: "Engagement" },
-  { path: "/audience", label: "Audience" },
-  { path: "/monetization", label: "Monetization" },
-  { path: "/partnerships", label: "Partnerships" },
-  { path: "/community", label: "Community" },
-  { path: "/enterprise", label: "Enterprise" },
-  { path: "/tasks", label: "Tasks" },
-  { path: "/render-pipeline", label: "Render Pipeline" },
-  { path: "/asset-storage", label: "Asset Storage" },
-  { path: "/api-gateway", label: "API Gateway" },
-  { path: "/tenant-runtime", label: "Tenant Runtime" },
-  { path: "/cloud-control", label: "Cloud Control" },
-  { path: "/global-orchestration", label: "Global Orchestration" },
-  { path: "/autonomous-director", label: "Autonomous Director" },
-  { path: "/planetary-grid", label: "Planetary Grid" },
-  { path: "/multiversal-fabric", label: "Multiversal Fabric" },
-  { path: "/brands", label: "Brands" },
-  { path: "/projects", label: "Projects" },
-  { path: "/analytics", label: "Analytics" }
+  { path: "/signup", label: "Signup" },
+  { path: "/login", label: "Login" }
 ];
 
 export default function Dashboard() {
@@ -106,7 +58,6 @@ export default function Dashboard() {
             <NavLink
               key={item.path}
               to={item.path}
-              end={item.path === "/"}
               style={({ isActive }) => ({
                 padding: "6px 10px",
                 borderRadius: 6,
@@ -126,12 +77,7 @@ export default function Dashboard() {
         </nav>
       </aside>
 
-      <main
-        style={{
-          overflow: "auto",
-          padding: 12
-        }}
-      >
+      <main style={{ overflow: "auto", padding: 12 }}>
         <Outlet />
       </main>
     </div>
