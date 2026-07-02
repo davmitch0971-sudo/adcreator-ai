@@ -5,9 +5,10 @@ import PricingPage from "./pages/PricingPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import OnboardingPage from "./pages/OnboardingPage";
 import AccountSettingsPage from "./pages/AccountSettingsPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import DashboardHomePage from "./pages/DashboardHomePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard />}>
-            <Route index element={<LandingPage />} />
+            <Route index element={<DashboardHomePage />} />
             <Route path="landing" element={<LandingPage />} />
             <Route path="pricing" element={<PricingPage />} />
             <Route path="checkout" element={<CheckoutPage />} />

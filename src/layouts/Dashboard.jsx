@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 
 const navItems = [
+  { path: "/", label: "Dashboard Home" },
   { path: "/landing", label: "Landing Page" },
   { path: "/pricing", label: "Pricing" },
   { path: "/checkout", label: "Checkout" },
@@ -61,6 +62,7 @@ export default function Dashboard() {
             <NavLink
               key={item.path}
               to={item.path}
+              end={item.path === "/"}
               style={({ isActive }) => ({
                 padding: "6px 10px",
                 borderRadius: 6,
