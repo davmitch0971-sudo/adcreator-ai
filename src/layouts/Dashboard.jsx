@@ -59,7 +59,8 @@ const navItems = [
   { path: "/ai-brand-positioning-engine", label: "AI Brand Positioning Engine" },
   { path: "/ai-audience-research-engine", label: "AI Audience Research Engine" },
   { path: "/ai-market-trends-insights-engine", label: "AI Market Trends & Insights Engine" },
-  { path: "/ai-campaign-analytics-os", label: "AI Campaign Analytics OS" }
+  { path: "/ai-campaign-analytics-os", label: "AI Campaign Analytics OS" },
+  { path: "/ai-offer-optimization-engine", label: "AI Offer Optimization Engine" }
 ];
 
 export default function Dashboard() {

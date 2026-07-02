@@ -57,6 +57,8 @@ import AICreatorCollaborationHubPage from "./pages/AICreatorCollaborationHubPage
 import AIBrandPositioningEnginePage from "./pages/AIBrandPositioningEnginePage";
 import AIAudienceResearchEnginePage from "./pages/AIAudienceResearchEnginePage";
 import AIMarketTrendsInsightsEnginePage from "./pages/AIMarketTrendsInsightsEnginePage";
+import AICampaignAnalyticsOSPage from "./pages/AICampaignAnalyticsOSPage";
+import AIOfferOptimizationEnginePage from "./pages/AIOfferOptimizationEnginePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -122,6 +124,8 @@ export default function App() {
             <Route path="ai-brand-positioning-engine" element={<AIBrandPositioningEnginePage />} />
             <Route path="ai-audience-research-engine" element={<AIAudienceResearchEnginePage />} />
             <Route path="ai-market-trends-insights-engine" element={<AIMarketTrendsInsightsEnginePage />} />
+            <Route path="ai-campaign-analytics-os" element={<AICampaignAnalyticsOSPage />} />
+            <Route path="ai-offer-optimization-engine" element={<AIOfferOptimizationEnginePage />} />
           </Route>
         </Routes>
       </Router>
