@@ -53,7 +53,8 @@ const navItems = [
   { path: "/ai-funnel-builder", label: "AI Funnel Builder" },
   { path: "/ai-product-launch-system", label: "AI Product Launch System" },
   { path: "/ai-creative-strategy-os", label: "AI Creative Strategy OS" },
-  { path: "/ai-ad-testing-lab", label: "AI Ad Testing Lab" }
+  { path: "/ai-ad-testing-lab", label: "AI Ad Testing Lab" },
+  { path: "/ai-content-repurposing-engine", label: "AI Content Repurposing Engine" }
 ];
 
 export default function Dashboard() {
