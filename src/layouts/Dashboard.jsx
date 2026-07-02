@@ -22,7 +22,8 @@ const navItems = [
   { path: "/team", label: "Team Collaboration" },
   { path: "/notifications", label: "Notifications" },
   { path: "/admin-settings", label: "Admin Settings" },
-  { path: "/support", label: "Support Center" }
+  { path: "/support", label: "Support Center" },
+  { path: "/status", label: "System Status" }
 ];
 
 export default function Dashboard() {
