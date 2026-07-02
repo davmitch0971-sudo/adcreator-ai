@@ -11,6 +11,7 @@ import Projects from "./pages/Projects";
 import BrandAnalytics from "./pages/BrandAnalytics";
 import Brands from "./pages/Brands";
 import AiVideoEditor from "./pages/AiVideoEditor";
+import SceneToVideo from "./pages/SceneToVideo";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="analytics" element={<BrandAnalytics />} />
             <Route path="brands" element={<Brands />} />
             <Route path="video-editor" element={<AiVideoEditor />} />
+            <Route path="scene-video" element={<SceneToVideo />} />
           </Route>
         </Routes>
       </Router>

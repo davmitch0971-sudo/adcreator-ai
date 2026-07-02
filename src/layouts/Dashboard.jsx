@@ -10,6 +10,7 @@ const navItems = [
   { path: "/templates", label: "Templates" },
   { path: "/posting", label: "Posting" },
   { path: "/video-editor", label: "Video Editor" },
+  { path: "/scene-video", label: "Scene → Video" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
