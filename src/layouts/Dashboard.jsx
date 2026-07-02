@@ -29,6 +29,7 @@ const navItems = [
   { path: "/auto-music", label: "Auto‑Music" },
   { path: "/billing", label: "Billing" },
   { path: "/subscription", label: "Subscription" },
+  { path: "/user-analytics", label: "User Analytics" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
