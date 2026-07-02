@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import { callAdCreator } from "../api/adcreator";
 import BrandSelector from "../components/BrandSelector";
 import SaveProjectButton from "../components/SaveProjectButton";
+import { buildBrandStyle } from "../utils/BrandStyleEngine";
 
 export default function CaptionGenerator() {
   const { setOutput } = useOutletContext();
@@ -45,10 +46,13 @@ export default function CaptionGenerator() {
   const generate = async () => {
     setLoading(true);
 
+    const style = buildBrandStyle(brand);
+
     const payload = {
       brand: {
         audience: form.audience,
-        tone: form.tone
+        tone: form.tone,
+        style
       },
       offer: {
         productName: form.productName,
