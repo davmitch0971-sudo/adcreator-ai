@@ -40,6 +40,7 @@ import AISEOContentGeneratorPage from "./pages/AISEOContentGeneratorPage";
 import AIFullCampaignBuilderPage from "./pages/AIFullCampaignBuilderPage";
 import AIAudienceTargetingEnginePage from "./pages/AIAudienceTargetingEnginePage";
 import AICompetitorAnalyzerPage from "./pages/AICompetitorAnalyzerPage";
+import AIEmailSequenceGeneratorPage from "./pages/AIEmailSequenceGeneratorPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -88,6 +89,7 @@ export default function App() {
             <Route path="ai-full-campaign-builder" element={<AIFullCampaignBuilderPage />} />
             <Route path="ai-audience-targeting-engine" element={<AIAudienceTargetingEnginePage />} />
             <Route path="ai-competitor-analyzer" element={<AICompetitorAnalyzerPage />} />
+            <Route path="ai-email-sequence-generator" element={<AIEmailSequenceGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
