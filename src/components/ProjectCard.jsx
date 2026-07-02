@@ -1,3 +1,5 @@
+import ExportProjectButton from "./ExportProjectButton";
+
 export default function ProjectCard({ project }) {
   return (
     <div
@@ -27,6 +29,8 @@ export default function ProjectCard({ project }) {
       >
         {JSON.stringify(project.data, null, 2)}
       </pre>
+
+      <ExportProjectButton project={project} />
     </div>
   );
 }
