@@ -17,7 +17,8 @@ const navItems = [
   { path: "/projects", label: "Project Manager" },
   { path: "/assets", label: "Asset Library" },
   { path: "/analytics", label: "Analytics Dashboard" },
-  { path: "/video-editor", label: "AI Video Editor" }
+  { path: "/video-editor", label: "AI Video Editor" },
+  { path: "/templates", label: "Template Builder" }
 ];
 
 export default function Dashboard() {
