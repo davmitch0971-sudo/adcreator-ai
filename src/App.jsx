@@ -1,5 +1,5 @@
 ... (all previous imports)
-import AIBrandStyleGeneratorPage from "./pages/AIBrandStyleGeneratorPage";
+import AILandingPageGeneratorPage from "./pages/AILandingPageGeneratorPage";
 
 export default function App() {
   return (
@@ -7,8 +7,8 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard />}>
-            ... (all previous routes)
-            <Route path="ai-brand-style-generator" element={<AIBrandStyleGeneratorPage />} />
+            ... (previous routes)
+            <Route path="ai-landing-page-generator" element={<AILandingPageGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
