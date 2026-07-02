@@ -4,7 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import PricingPage from "./pages/PricingPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import SignupPage from "./pages/SignupPage";
-import LoginPage from "./pages/LoginPage"; // will build next if needed
+import LoginPage from "./pages/LoginPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
