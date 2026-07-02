@@ -40,6 +40,7 @@ const navItems = [
   { path: "/community", label: "Community" },
   { path: "/enterprise", label: "Enterprise" },
   { path: "/tasks", label: "Tasks" },
+  { path: "/render-pipeline", label: "Render Pipeline" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
