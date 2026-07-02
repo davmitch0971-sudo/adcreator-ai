@@ -29,7 +29,8 @@ const navItems = [
   { path: "/ai-script-generator", label: "AI Script Generator" },
   { path: "/ai-storyboard", label: "AI Storyboard" },
   { path: "/ai-voiceover", label: "AI Voiceover Generator" },
-  { path: "/ai-image-generator", label: "AI Image Generator" }
+  { path: "/ai-image-generator", label: "AI Image Generator" },
+  { path: "/ai-thumbnail-generator", label: "AI Thumbnail Generator" }
 ];
 
 export default function Dashboard() {
