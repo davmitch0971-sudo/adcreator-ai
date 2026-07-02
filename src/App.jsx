@@ -53,6 +53,7 @@ import AIProductLaunchSystemPage from "./pages/AIProductLaunchSystemPage";
 import AICreativeStrategyOSPage from "./pages/AICreativeStrategyOSPage";
 import AIAdTestingLabPage from "./pages/AIAdTestingLabPage";
 import AIContentRepurposingEnginePage from "./pages/AIContentRepurposingEnginePage";
+import AICreatorCollaborationHubPage from "./pages/AICreatorCollaborationHubPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -114,6 +115,7 @@ export default function App() {
             <Route path="ai-creative-strategy-os" element={<AICreativeStrategyOSPage />} />
             <Route path="ai-ad-testing-lab" element={<AIAdTestingLabPage />} />
             <Route path="ai-content-repurposing-engine" element={<AIContentRepurposingEnginePage />} />
+            <Route path="ai-creator-collaboration-hub" element={<AICreatorCollaborationHubPage />} />
           </Route>
         </Routes>
       </Router>
