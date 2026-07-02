@@ -11,7 +11,8 @@ const navItems = [
   { path: "/forgot", label: "Forgot Password" },
   { path: "/onboarding", label: "Onboarding" },
   { path: "/account", label: "Account Settings" },
-  { path: "/profile", label: "User Profile" }
+  { path: "/profile", label: "User Profile" },
+  { path: "/billing-portal", label: "Billing Portal" }
 ];
 
 export default function Dashboard() {
