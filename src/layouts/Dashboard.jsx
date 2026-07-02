@@ -18,6 +18,7 @@ const navItems = [
   { path: "/brand-memory", label: "Brand Brain" },
   { path: "/template-engine-2", label: "Template Engine 2.0" },
   { path: "/auto-storyboard", label: "Auto‑Storyboard" },
+  { path: "/auto-shotlist", label: "Auto‑Shotlist" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }

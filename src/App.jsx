@@ -19,6 +19,7 @@ import AiAssetStudio from "./pages/AiAssetStudio";
 import BrandMemoryEngine from "./pages/BrandMemoryEngine";
 import TemplateEngine2 from "./pages/TemplateEngine2";
 import AiAutoStoryboard from "./pages/AiAutoStoryboard";
+import AiAutoShotlist from "./pages/AiAutoShotlist";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
             <Route path="brand-memory" element={<BrandMemoryEngine />} />
             <Route path="template-engine-2" element={<TemplateEngine2 />} />
             <Route path="auto-storyboard" element={<AiAutoStoryboard />} />
+            <Route path="auto-shotlist" element={<AiAutoShotlist />} />
           </Route>
         </Routes>
       </Router>
