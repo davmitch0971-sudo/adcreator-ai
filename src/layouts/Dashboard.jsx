@@ -7,6 +7,7 @@ const navItems = [
   { path: "/checkout", label: "Checkout" },
   { path: "/signup", label: "Signup" },
   { path: "/login", label: "Login" },
+  { path: "/forgot", label: "Forgot Password" },
   { path: "/onboarding", label: "Onboarding" },
   { path: "/account", label: "Account Settings" }
 ];

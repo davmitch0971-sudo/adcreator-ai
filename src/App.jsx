@@ -7,6 +7,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import OnboardingPage from "./pages/OnboardingPage";
 import AccountSettingsPage from "./pages/AccountSettingsPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="checkout" element={<CheckoutPage />} />
             <Route path="signup" element={<SignupPage />} />
             <Route path="login" element={<LoginPage />} />
+            <Route path="forgot" element={<ForgotPasswordPage />} />
             <Route path="onboarding" element={<OnboardingPage />} />
             <Route path="account" element={<AccountSettingsPage />} />
           </Route>
