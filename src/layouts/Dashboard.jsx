@@ -4,31 +4,87 @@ import { useTheme } from "../context/ThemeContext";
 const navItems = [
   { path: "/landing", label: "Landing Page" },
   { path: "/pricing", label: "Pricing" },
-  // KEEP ALL YOUR OTHER NAV ITEMS
+  { path: "/checkout", label: "Checkout" },
+  { path: "/", label: "Super" },
+  { path: "/scripts", label: "Scripts" },
+  { path: "/videos", label: "Videos" },
+  { path: "/images", label: "Images" },
+  { path: "/captions", label: "Captions" },
+  { path: "/templates", label: "Templates" },
+  { path: "/posting", label: "Posting" },
+  { path: "/video-editor", label: "Video Editor" },
+  { path: "/scene-video", label: "Scene → Video" },
+  { path: "/voice-lab", label: "Voice Lab" },
+  { path: "/motion-graphics", label: "Motion Graphics" },
+  { path: "/video-export", label: "Export Video" },
+  { path: "/asset-studio", label: "Asset Studio" },
+  { path: "/brand-memory", label: "Brand Brain" },
+  { path: "/template-engine-2", label: "Template Engine 2.0" },
+  { path: "/auto-storyboard", label: "Auto‑Storyboard" },
+  { path: "/auto-shotlist", label: "Auto‑Shotlist" },
+  { path: "/auto-camera-moves", label: "Auto‑Camera‑Moves" },
+  { path: "/auto-transitions", label: "Auto‑Transitions" },
+  { path: "/auto-edit", label: "Auto‑Edit" },
+  { path: "/auto-color-grade", label: "Auto‑Color‑Grade" },
+  { path: "/auto-sound-design", label: "Auto‑Sound‑Design" },
+  { path: "/auto-vfx", label: "Auto‑VFX" },
+  { path: "/auto-voice-sync", label: "Auto‑Voice‑Sync" },
+  { path: "/auto-music", label: "Auto‑Music" },
+  { path: "/billing", label: "Billing" },
+  { path: "/subscription", label: "Subscription" },
+  { path: "/user-analytics", label: "User Analytics" },
+  { path: "/crm", label: "CRM" },
+  { path: "/team", label: "Team" },
+  { path: "/distribution", label: "Distribution" },
+  { path: "/engagement", label: "Engagement" },
+  { path: "/audience", label: "Audience" },
+  { path: "/monetization", label: "Monetization" },
+  { path: "/partnerships", label: "Partnerships" },
+  { path: "/community", label: "Community" },
+  { path: "/enterprise", label: "Enterprise" },
+  { path: "/tasks", label: "Tasks" },
+  { path: "/render-pipeline", label: "Render Pipeline" },
+  { path: "/asset-storage", label: "Asset Storage" },
+  { path: "/api-gateway", label: "API Gateway" },
+  { path: "/tenant-runtime", label: "Tenant Runtime" },
+  { path: "/cloud-control", label: "Cloud Control" },
+  { path: "/global-orchestration", label: "Global Orchestration" },
+  { path: "/autonomous-director", label: "Autonomous Director" },
+  { path: "/planetary-grid", label: "Planetary Grid" },
+  { path: "/multiversal-fabric", label: "Multiversal Fabric" },
+  { path: "/brands", label: "Brands" },
+  { path: "/projects", label: "Projects" },
+  { path: "/analytics", label: "Analytics" }
 ];
 
 export default function Dashboard() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "220px 1fr",
-      height: "100vh",
-      background: theme === "dark" ? "#05060a" : "#f4f5fb",
-      color: theme === "dark" ? "#f4f5fb" : "#111"
-    }}>
-      <aside style={{
-        borderRight: "1px solid rgba(255,255,255,0.08)",
-        padding: 12,
-        background: theme === "dark" ? "#0b0d14" : "#ffffff"
-      }}>
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 16
-        }}>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "220px 1fr",
+        height: "100vh",
+        background: theme === "dark" ? "#05060a" : "#f4f5fb",
+        color: theme === "dark" ? "#f4f5fb" : "#111"
+      }}
+    >
+      <aside
+        style={{
+          borderRight: "1px solid rgba(255,255,255,0.08)",
+          padding: 12,
+          background: theme === "dark" ? "#0b0d14" : "#ffffff"
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 16
+          }}
+        >
           <span style={{ fontWeight: 700 }}>AdCreator‑AI</span>
           <button
             onClick={toggleTheme}
@@ -50,6 +106,7 @@ export default function Dashboard() {
             <NavLink
               key={item.path}
               to={item.path}
+              end={item.path === "/"}
               style={({ isActive }) => ({
                 padding: "6px 10px",
                 borderRadius: 6,
@@ -69,7 +126,12 @@ export default function Dashboard() {
         </nav>
       </aside>
 
-      <main style={{ overflow: "auto", padding: 12 }}>
+      <main
+        style={{
+          overflow: "auto",
+          padding: 12
+        }}
+      >
         <Outlet />
       </main>
     </div>
