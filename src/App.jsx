@@ -17,6 +17,7 @@ import MotionGraphics from "./pages/MotionGraphics";
 import VideoExport from "./pages/VideoExport";
 import AiAssetStudio from "./pages/AiAssetStudio";
 import BrandMemoryEngine from "./pages/BrandMemoryEngine";
+import TemplateEngine2 from "./pages/TemplateEngine2";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="video-export" element={<VideoExport />} />
             <Route path="asset-studio" element={<AiAssetStudio />} />
             <Route path="brand-memory" element={<BrandMemoryEngine />} />
+            <Route path="template-engine-2" element={<TemplateEngine2 />} />
           </Route>
         </Routes>
       </Router>

@@ -16,6 +16,7 @@ const navItems = [
   { path: "/video-export", label: "Export Video" },
   { path: "/asset-studio", label: "Asset Studio" },
   { path: "/brand-memory", label: "Brand Brain" },
+  { path: "/template-engine-2", label: "Template Engine 2.0" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
@@ -36,7 +37,7 @@ export default function Dashboard() {
     >
       <aside
         style={{
-          borderRight: "1px solid rgba(255,255,255,0.08)",
+          borderRight: "11px solid rgba(255,255,255,0.08)",
           padding: 12,
           background: theme === "dark" ? "#0b0d14" : "#ffffff"
         }}
