@@ -30,7 +30,8 @@ const navItems = [
   { path: "/ai-storyboard", label: "AI Storyboard" },
   { path: "/ai-voiceover", label: "AI Voiceover Generator" },
   { path: "/ai-image-generator", label: "AI Image Generator" },
-  { path: "/ai-thumbnail-generator", label: "AI Thumbnail Generator" }
+  { path: "/ai-thumbnail-generator", label: "AI Thumbnail Generator" },
+  { path: "/ai-ad-creative-generator", label: "AI Ad Creative Generator" }
 ];
 
 export default function Dashboard() {

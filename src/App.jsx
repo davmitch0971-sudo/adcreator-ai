@@ -29,6 +29,7 @@ import AIStoryboardPage from "./pages/AIStoryboardPage";
 import AIVoiceoverGeneratorPage from "./pages/AIVoiceoverGeneratorPage";
 import AIImageGeneratorPage from "./pages/AIImageGeneratorPage";
 import AIThumbnailGeneratorPage from "./pages/AIThumbnailGeneratorPage";
+import AIAdCreativeGeneratorPage from "./pages/AIAdCreativeGeneratorPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -66,6 +67,7 @@ export default function App() {
             <Route path="ai-voiceover" element={<AIVoiceoverGeneratorPage />} />
             <Route path="ai-image-generator" element={<AIImageGeneratorPage />} />
             <Route path="ai-thumbnail-generator" element={<AIThumbnailGeneratorPage />} />
+            <Route path="ai-ad-creative-generator" element={<AIAdCreativeGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
