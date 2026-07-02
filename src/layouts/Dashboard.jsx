@@ -1,180 +1,121 @@
-import { Outlet, Link } from "react-router-dom";
-import { useState } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import PreviewPanel from "../components/PreviewPanel";
-
-import {
-  Home,
-  FileText,
-  Video,
-  Image as ImageIcon,
-  Layers,
-  Type,
-  Calendar,
-  Folder,
-  Book,
-  Settings
-} from "lucide-react";
+import { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 export default function Dashboard() {
-  const [collapsed, setCollapsed] = useState(false);
+  const location = useLocation();
+  const [output, setOutput] = useState({});
+  const { theme } = useTheme();
 
-  // GLOBAL OUTPUT STATE FOR PREVIEW PANEL
-  const [output, setOutput] = useState(null);
+  const navItems = [
+    { path: "/", label: "Super" },
+    { path: "/scripts", label: "Scripts" },
+    { path: "/videos", label: "Videos" },
+    { path: "/images", label: "Images" },
+    { path: "/captions", label: "Captions" },
+    { path: "/templates", label: "Templates" },
+    { path: "/posting", label: "Posting" },
+    { path: "/brands", label: "Brands" },
+    { path: "/projects", label: "Projects" }
+  ];
 
   return (
     <div
       style={{
         display: "flex",
         height: "100vh",
-        background: "#0d0f12",
-        color: "white",
-        overflow: "hidden",
-        fontFamily: "Inter, sans-serif"
+        background: theme.background,
+        color: theme.text,
+        fontFamily: "Inter, system-ui, sans-serif"
       }}
     >
-      {/* SIDEBAR */}
+      {/* LEFT SIDE */}
       <div
         style={{
-          width: collapsed ? "80px" : "260px",
-          background: "rgba(255,255,255,0.05)",
-          backdropFilter: "blur(20px)",
-          borderRight: "1px solid rgba(255,255,255,0.1)",
-          transition: "0.25s",
+          flex: 2,
           display: "flex",
           flexDirection: "column",
-          padding: "20px 10px"
+          padding: 20
         }}
       >
-        <button
-          onClick={() => setCollapsed(!collapsed)}
-          style={{
-            background: "none",
-            border: "none",
-            color: "white",
-            marginBottom: 20,
-            cursor: "pointer",
-            fontSize: 18
-          }}
-        >
-          {collapsed ? "»" : "«"}
-        </button>
-
-        <NavItem to="/" label="Super Generator" collapsed={collapsed} icon={Home} />
-        <NavItem to="/scripts" label="Scripts" collapsed={collapsed} icon={FileText} />
-        <NavItem to="/videos" label="Videos" collapsed={collapsed} icon={Video} />
-        <NavItem to="/images" label="Images" collapsed={collapsed} icon={ImageIcon} />
-        <NavItem to="/templates" label="Templates" collapsed={collapsed} icon={Layers} />
-        <NavItem to="/captions" label="Captions" collapsed={collapsed} icon={Type} />
-        <NavItem to="/posting" label="Posting Plan" collapsed={collapsed} icon={Calendar} />
-
-        <div style={{ marginTop: "auto" }}>
-          <NavItem to="/projects" label="Projects" collapsed={collapsed} icon={Folder} />
-          <NavItem to="/brands" label="Brand Library" collapsed={collapsed} icon={Book} />
-          <NavItem to="/settings" label="Settings" collapsed={collapsed} icon={Settings} />
-        </div>
-      </div>
-
-      {/* MAIN CONTENT */}
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          overflow: "hidden"
-        }}
-      >
-        {/* TOPBAR */}
         <div
           style={{
-            height: 70,
-            background: "rgba(255,255,255,0.04)",
-            backdropFilter: "blur(20px)",
-            borderBottom: "1px solid rgba(255,255,255,0.1)",
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
-            padding: "0 20px"
+            marginBottom: 20
           }}
         >
-          <div style={{ fontSize: 20, fontWeight: 600 }}>AdCreator‑AI Studio</div>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 15
-            }}
-          >
-            <div
-              style={{
-                background: "rgba(255,255,255,0.1)",
-                padding: "8px 14px",
-                borderRadius: 8
-              }}
-            >
-              Project: Default
-            </div>
-
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "50%",
-                background: "rgba(255,255,255,0.2)"
-              }}
-            ></div>
-          </div>
+          <h1 style={{ margin: 0 }}>AdCreator-AI Studio</h1>
+          <ThemeSwitcher />
         </div>
 
-        {/* CONTENT + PREVIEW */}
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            marginBottom: 20
+          }}
+        >
+          {navItems.map((item) => {
+            const active =
+              item.path === "/"
+                ? location.pathname === "/"
+                : location.pathname === item.path;
+
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: 999,
+                  fontSize: 13,
+                  textDecoration: "none",
+                  border: active
+                    ? `1px solid ${theme.accent}`
+                    : "1px solid rgba(148,163,184,0.4)",
+                  color: active ? theme.accent : theme.text,
+                  background: active
+                    ? "rgba(148,163,184,0.12)"
+                    : theme.panel
+                }}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+
         <div
           style={{
             flex: 1,
-            display: "flex",
-            overflow: "hidden"
+            borderRadius: 16,
+            padding: 16,
+            background: theme.panel,
+            border: `1px solid rgba(148,163,184,0.35)`,
+            overflow: "auto"
           }}
         >
-          {/* MAIN PANEL */}
-          <div
-            style={{
-              flex: 1,
-              overflowY: "auto",
-              padding: 30
-            }}
-          >
-            {/* Pass output + setOutput to all generator screens */}
-            <Outlet context={{ output, setOutput }} />
-          </div>
-
-          {/* PREVIEW PANEL */}
-          <PreviewPanel output={output} />
+          <Outlet context={{ setOutput }} />
         </div>
       </div>
-    </div>
-  );
-}
 
-function NavItem({ to, label, collapsed, icon: Icon }) {
-  return (
-    <Link
-      to={to}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: collapsed ? 0 : 12,
-        padding: collapsed ? "12px 10px" : "12px 20px",
-        marginBottom: 8,
-        borderRadius: 8,
-        background: "rgba(255,255,255,0.08)",
-        color: "white",
-        textDecoration: "none",
-        fontSize: collapsed ? 14 : 16,
-        transition: "0.2s",
-        overflow: "hidden"
-      }}
-    >
-      <Icon size={collapsed ? 20 : 22} />
-      {!collapsed && <span>{label}</span>}
-    </Link>
+      {/* RIGHT SIDE */}
+      <div
+        style={{
+          flex: 1.2,
+          padding: 20,
+          borderLeft: "1px solid rgba(148,163,184,0.35)",
+          background:
+            theme.name === "Minimal"
+              ? "#f3f4f6"
+              : "rgba(15,23,42,0.95)"
+        }}
+      >
+        <PreviewPanel output={output} />
+      </div>
+    </div>
   );
 }

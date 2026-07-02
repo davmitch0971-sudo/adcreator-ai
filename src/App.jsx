@@ -11,22 +11,26 @@ import PostingPlanGenerator from "./pages/PostingPlanGenerator";
 import BrandLibrary from "./pages/BrandLibrary";
 import Projects from "./pages/Projects";
 
+import { ThemeProvider } from "./context/ThemeContext";
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard />}>
-          <Route index element={<SuperGenerator />} />
-          <Route path="scripts" element={<ScriptGenerator />} />
-          <Route path="videos" element={<VideoGenerator />} />
-          <Route path="images" element={<ImagePromptGenerator />} />
-          <Route path="captions" element={<CaptionGenerator />} />
-          <Route path="templates" element={<TemplateBuilder />} />
-          <Route path="posting" element={<PostingPlanGenerator />} />
-          <Route path="brands" element={<BrandLibrary />} />
-          <Route path="projects" element={<Projects />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />}>
+            <Route index element={<SuperGenerator />} />
+            <Route path="scripts" element={<ScriptGenerator />} />
+            <Route path="videos" element={<VideoGenerator />} />
+            <Route path="images" element={<ImagePromptGenerator />} />
+            <Route path="captions" element={<CaptionGenerator />} />
+            <Route path="templates" element={<TemplateBuilder />} />
+            <Route path="posting" element={<PostingPlanGenerator />} />
+            <Route path="brands" element={<BrandLibrary />} />
+            <Route path="projects" element={<Projects />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
