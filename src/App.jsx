@@ -30,6 +30,7 @@ import AIVoiceoverGeneratorPage from "./pages/AIVoiceoverGeneratorPage";
 import AIImageGeneratorPage from "./pages/AIImageGeneratorPage";
 import AIThumbnailGeneratorPage from "./pages/AIThumbnailGeneratorPage";
 import AIAdCreativeGeneratorPage from "./pages/AIAdCreativeGeneratorPage";
+import AISocialPostGeneratorPage from "./pages/AISocialPostGeneratorPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -68,6 +69,7 @@ export default function App() {
             <Route path="ai-image-generator" element={<AIImageGeneratorPage />} />
             <Route path="ai-thumbnail-generator" element={<AIThumbnailGeneratorPage />} />
             <Route path="ai-ad-creative-generator" element={<AIAdCreativeGeneratorPage />} />
+            <Route path="ai-social-post-generator" element={<AISocialPostGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
