@@ -1,36 +1,57 @@
-import ExportProjectButton from "./ExportProjectButton";
+import { useTheme } from "../context/ThemeContext";
+import { panelStyle, buttonStyle } from "../styles/GlobalStyles";
 
 export default function ProjectCard({ project }) {
-  return (
-    <div
-      style={{
-        padding: 15,
-        borderRadius: 10,
-        background: "rgba(255,255,255,0.06)",
-        marginBottom: 12
-      }}
-    >
-      <h3 style={{ margin: 0 }}>{project.generator}</h3>
-      <p style={{ opacity: 0.7, marginTop: 4 }}>
-        Brand: {project.brand}
-      </p>
-      <p style={{ opacity: 0.7 }}>
-        Saved: {new Date(project.createdAt).toLocaleString()}
-      </p>
+  const { theme } = useTheme();
 
-      <pre
+  const handleCopy = () => {
+    navigator.clipboard.writeText(JSON.stringify(project.data, null, 2));
+    alert("Project data copied.");
+  };
+
+  const handleDelete = () => {
+    const projects = JSON.parse(localStorage.getItem("projects") || "[]");
+    const next = projects.filter((p) => p.id !== project.id);
+    localStorage.setItem("projects", JSON.stringify(next));
+    window.location.reload();
+  };
+
+  return (
+    <div style={{ marginBottom: 10, ...panelStyle(theme) }}>
+      <div
         style={{
-          background: "rgba(0,0,0,0.4)",
-          padding: 10,
-          borderRadius: 8,
-          whiteSpace: "pre-wrap",
-          marginTop: 10
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: 6
         }}
       >
-        {JSON.stringify(project.data, null, 2)}
-      </pre>
-
-      <ExportProjectButton project={project} />
+        <div>
+          <div style={{ fontWeight: 600 }}>{project.brand}</div>
+          <div style={{ fontSize: 12, opacity: 0.7 }}>
+            {project.generator} •{" "}
+            {new Date(project.createdAt).toLocaleString()}
+          </div>
+        </div>
+        <div style={{ display: "flex", gap: 6 }}>
+          <button
+            onClick={handleCopy}
+            style={{ ...buttonStyle(theme), padding: "4px 8px", fontSize: 11 }}
+          >
+            Copy
+          </button>
+          <button
+            onClick={handleDelete}
+            style={{
+              ...buttonStyle(theme),
+              padding: "4px 8px",
+              fontSize: 11,
+              background: "#b91c1c"
+            }}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

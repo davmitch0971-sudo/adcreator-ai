@@ -7,7 +7,6 @@ export default function Projects() {
 
   const projects = JSON.parse(localStorage.getItem("projects") || "[]");
 
-  // Group projects by brand
   const grouped = projects.reduce((acc, p) => {
     if (!acc[p.brand]) acc[p.brand] = [];
     acc[p.brand].push(p);

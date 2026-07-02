@@ -1,42 +1,30 @@
-export const ui = {
-  radius: 10,
-  radiusSm: 6,
-  padding: 12,
-  paddingLg: 20,
-  inputHeight: 42,
-  shadow: "0 4px 20px rgba(0,0,0,0.25)",
-  border: "1px solid rgba(148,163,184,0.35)",
-  transition: "all 0.15s ease"
-};
-
 export const inputStyle = (theme) => ({
-  height: ui.inputHeight,
-  padding: "0 12px",
-  borderRadius: ui.radiusSm,
-  border: ui.border,
-  background: theme.panel,
-  color: theme.text,
-  width: "100%",
-  marginBottom: 12,
-  outline: "none",
-  transition: ui.transition
+  padding: 8,
+  borderRadius: 6,
+  border: "1px solid",
+  borderColor: theme === "dark" ? "#374151" : "#d1d5db",
+  background: theme === "dark" ? "#020617" : "#ffffff",
+  color: theme === "dark" ? "#e5e7eb" : "#111827",
+  fontSize: 13
 });
 
 export const buttonStyle = (theme) => ({
-  padding: "10px 16px",
-  borderRadius: ui.radiusSm,
-  background: theme.accent,
-  color: "white",
+  padding: "8px 14px",
+  borderRadius: 6,
   border: "none",
   cursor: "pointer",
+  background: theme === "dark" ? "#2563eb" : "#1d4ed8",
+  color: "#ffffff",
   fontWeight: 600,
-  transition: ui.transition
+  fontSize: 13
 });
 
 export const panelStyle = (theme) => ({
-  background: theme.panel,
-  borderRadius: ui.radius,
-  padding: ui.paddingLg,
-  border: ui.border,
-  boxShadow: ui.shadow
+  borderRadius: 10,
+  padding: 12,
+  background:
+    theme === "dark"
+      ? "linear-gradient(135deg,#020617,#0f172a)"
+      : "linear-gradient(135deg,#ffffff,#e5e7eb)",
+  border: "1px solid rgba(148,163,184,0.35)"
 });

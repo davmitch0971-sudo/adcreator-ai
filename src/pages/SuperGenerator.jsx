@@ -8,7 +8,7 @@ import { useTheme } from "../context/ThemeContext";
 import { inputStyle, buttonStyle, panelStyle } from "../styles/GlobalStyles";
 
 export default function SuperGenerator() {
-  const { setOutput } = useOutletContext();
+  const { setOutput = () => {} } = useOutletContext() || {};
   const { theme } = useTheme();
 
   const [brand, setBrand] = useState(null);

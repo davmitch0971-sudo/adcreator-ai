@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./layouts/Dashboard";
-
 import SuperGenerator from "./pages/SuperGenerator";
 import ScriptGenerator from "./pages/ScriptGenerator";
 import VideoGenerator from "./pages/VideoGenerator";
@@ -8,15 +7,15 @@ import ImagePromptGenerator from "./pages/ImagePromptGenerator";
 import CaptionGenerator from "./pages/CaptionGenerator";
 import TemplateBuilder from "./pages/TemplateBuilder";
 import PostingPlanGenerator from "./pages/PostingPlanGenerator";
-import BrandLibrary from "./pages/BrandLibrary";
 import Projects from "./pages/Projects";
-
+import BrandAnalytics from "./pages/BrandAnalytics";
+import Brands from "./pages/Brands";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Dashboard />}>
             <Route index element={<SuperGenerator />} />
@@ -26,11 +25,12 @@ export default function App() {
             <Route path="captions" element={<CaptionGenerator />} />
             <Route path="templates" element={<TemplateBuilder />} />
             <Route path="posting" element={<PostingPlanGenerator />} />
-            <Route path="brands" element={<BrandLibrary />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="analytics" element={<BrandAnalytics />} />
+            <Route path="brands" element={<Brands />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ThemeProvider>
   );
 }

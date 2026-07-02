@@ -1,115 +1,96 @@
-import { Outlet, Link, useLocation } from "react-router-dom";
-import PreviewPanel from "../components/PreviewPanel";
-import { useState } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import ThemeSwitcher from "../components/ThemeSwitcher";
-import { panelStyle } from "../styles/GlobalStyles";
+
+const navItems = [
+  { path: "/", label: "Super" },
+  { path: "/scripts", label: "Scripts" },
+  { path: "/videos", label: "Videos" },
+  { path: "/images", label: "Images" },
+  { path: "/captions", label: "Captions" },
+  { path: "/templates", label: "Templates" },
+  { path: "/posting", label: "Posting" },
+  { path: "/brands", label: "Brands" },
+  { path: "/projects", label: "Projects" },
+  { path: "/analytics", label: "Analytics" }
+];
 
 export default function Dashboard() {
-  const location = useLocation();
-  const [output, setOutput] = useState({});
-  const { theme } = useTheme();
-
-  const navItems = [
-    { path: "/", label: "Super" },
-    { path: "/scripts", label: "Scripts" },
-    { path: "/videos", label: "Videos" },
-    { path: "/images", label: "Images" },
-    { path: "/captions", label: "Captions" },
-    { path: "/templates", label: "Templates" },
-    { path: "/posting", label: "Posting" },
-    { path: "/brands", label: "Brands" },
-    { path: "/projects", label: "Projects" }
-  ];
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div
       style={{
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "220px 1fr",
         height: "100vh",
-        background: theme.background,
-        color: theme.text,
-        fontFamily: "Inter, system-ui, sans-serif"
+        background: theme === "dark" ? "#05060a" : "#f4f5fb",
+        color: theme === "dark" ? "#f4f5fb" : "#111"
       }}
     >
-      {/* LEFT SIDE */}
-      <div
+      <aside
         style={{
-          flex: 2,
-          display: "flex",
-          flexDirection: "column",
-          padding: 20,
-          gap: 20
+          borderRight: "1px solid rgba(255,255,255,0.08)",
+          padding: 12,
+          background: theme === "dark" ? "#0b0d14" : "#ffffff"
         }}
       >
         <div
           style={{
             display: "flex",
+            justifyContent: "space-between",
             alignItems: "center",
-            gap: 12
+            marginBottom: 16
           }}
         >
-          <h1 style={{ margin: 0 }}>AdCreator-AI Studio</h1>
-          <ThemeSwitcher />
+          <span style={{ fontWeight: 700 }}>AdCreator‑AI</span>
+          <button
+            onClick={toggleTheme}
+            style={{
+              border: "none",
+              padding: "4px 8px",
+              borderRadius: 6,
+              cursor: "pointer",
+              background: theme === "dark" ? "#1f2937" : "#e5e7eb",
+              color: theme === "dark" ? "#f9fafb" : "#111827"
+            }}
+          >
+            {theme === "dark" ? "Light" : "Dark"}
+          </button>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            flexWrap: "wrap"
-          }}
-        >
-          {navItems.map((item) => {
-            const active =
-              item.path === "/"
-                ? location.pathname === "/"
-                : location.pathname === item.path;
+        <nav style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              end={item.path === "/"}
+              style={({ isActive }) => ({
+                padding: "6px 10px",
+                borderRadius: 6,
+                textDecoration: "none",
+                fontSize: 14,
+                background: isActive
+                  ? theme === "dark"
+                    ? "#111827"
+                    : "#e5e7eb"
+                  : "transparent",
+                color: theme === "dark" ? "#e5e7eb" : "#111827"
+              })}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+      </aside>
 
-            return (
-              <Link
-                key={item.path}
-                to={item.path}
-                style={{
-                  padding: "8px 14px",
-                  borderRadius: 999,
-                  fontSize: 14,
-                  textDecoration: "none",
-                  border: active
-                    ? `1px solid ${theme.accent}`
-                    : "1px solid rgba(148,163,184,0.4)",
-                  color: active ? theme.accent : theme.text,
-                  background: active
-                    ? "rgba(148,163,184,0.12)"
-                    : theme.panel,
-                  transition: "all 0.15s ease"
-                }}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
-
-        <div style={{ flex: 1, overflow: "auto", ...panelStyle(theme) }}>
-          <Outlet context={{ setOutput }} />
-        </div>
-      </div>
-
-      {/* RIGHT SIDE */}
-      <div
+      <main
         style={{
-          flex: 1.2,
-          padding: 20,
-          borderLeft: "1px solid rgba(148,163,184,0.35)",
-          background:
-            theme.name === "Minimal"
-              ? "#f3f4f6"
-              : "rgba(15,23,42,0.95)"
+          overflow: "auto",
+          padding: 12
         }}
       >
-        <PreviewPanel output={output} />
-      </div>
+        <Outlet context={{}} />
+      </main>
     </div>
   );
 }

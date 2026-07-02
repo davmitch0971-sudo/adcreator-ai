@@ -8,7 +8,7 @@ import { useTheme } from "../context/ThemeContext";
 import { inputStyle, buttonStyle, panelStyle } from "../styles/GlobalStyles";
 
 export default function ImagePromptGenerator() {
-  const { setOutput } = useOutletContext();
+  const { setOutput = () => {} } = useOutletContext() || {};
   const { theme } = useTheme();
 
   const [brand, setBrand] = useState(null);
@@ -22,13 +22,13 @@ export default function ImagePromptGenerator() {
     platform: ""
   });
 
-  const autoFill = (brand) => {
-    if (!brand) return;
+  const autoFill = (b) => {
+    if (!b) return;
     setForm((prev) => ({
       ...prev,
-      audience: brand.audience || prev.audience,
-      tone: brand.tone || prev.tone,
-      productName: brand.name || prev.productName
+      audience: b.audience || prev.audience,
+      tone: b.tone || prev.tone,
+      productName: b.name || prev.productName
     }));
   };
 

@@ -1,38 +1,45 @@
-import { useState, useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
+import { panelStyle, buttonStyle } from "../styles/GlobalStyles";
 
 export default function BrandSelector({ onSelect }) {
-  const [brands, setBrands] = useState([]);
+  const { theme } = useTheme();
 
-  useEffect(() => {
-    const saved = localStorage.getItem("adcreator_brands");
-    if (saved) setBrands(JSON.parse(saved));
-  }, []);
+  const brands = JSON.parse(localStorage.getItem("brands") || "[]");
+
+  const handleSelect = (b) => {
+    onSelect(b);
+  };
 
   return (
-    <div style={{ marginBottom: 20 }}>
-      <h3>Select Brand</h3>
+    <div style={panelStyle(theme)}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <span style={{ fontWeight: 600 }}>Brands</span>
+        <span style={{ fontSize: 12, opacity: 0.7 }}>
+          {brands.length} saved
+        </span>
+      </div>
 
-      <select
-        onChange={(e) => {
-          const brand = brands.find((b) => b.id === Number(e.target.value));
-          onSelect(brand || null);
-        }}
-        style={{
-          padding: 8,
-          borderRadius: 6,
-          width: "100%",
-          background: "rgba(0,0,0,0.4)",
-          color: "white",
-          border: "1px solid rgba(255,255,255,0.2)"
-        }}
-      >
-        <option value="">-- None --</option>
+      {brands.length === 0 && (
+        <p style={{ fontSize: 12, opacity: 0.7, marginTop: 8 }}>
+          No brands yet. Create some in the Brands page.
+        </p>
+      )}
+
+      <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 6 }}>
         {brands.map((b) => (
-          <option key={b.id} value={b.id}>
+          <button
+            key={b.id}
+            onClick={() => handleSelect(b)}
+            style={{
+              ...buttonStyle(theme),
+              padding: "4px 10px",
+              fontSize: 12
+            }}
+          >
             {b.name}
-          </option>
+          </button>
         ))}
-      </select>
+      </div>
     </div>
   );
 }
