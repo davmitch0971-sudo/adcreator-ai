@@ -32,6 +32,7 @@ import AiBillingEngine from "./pages/AiBillingEngine";
 import AiSubscriptionManager from "./pages/AiSubscriptionManager";
 import AiUserAnalytics from "./pages/AiUserAnalytics";
 import AiCrm from "./pages/AiCrm";
+import AiTeamCollaboration from "./pages/AiTeamCollaboration";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -72,6 +73,7 @@ export default function App() {
             <Route path="subscription" element={<AiSubscriptionManager />} />
             <Route path="user-analytics" element={<AiUserAnalytics />} />
             <Route path="crm" element={<AiCrm />} />
+            <Route path="team" element={<AiTeamCollaboration />} />
           </Route>
         </Routes>
       </Router>
