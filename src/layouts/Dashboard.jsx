@@ -14,6 +14,7 @@ const navItems = [
   { path: "/voice-lab", label: "Voice Lab" },
   { path: "/motion-graphics", label: "Motion Graphics" },
   { path: "/video-export", label: "Export Video" },
+  { path: "/asset-studio", label: "Asset Studio" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
