@@ -48,6 +48,7 @@ import AiTenantRuntime from "./pages/AiTenantRuntime";
 import AiCloudControlPlane from "./pages/AiCloudControlPlane";
 import AiGlobalOrchestration from "./pages/AiGlobalOrchestration";
 import AiAutonomousCloudDirector from "./pages/AiAutonomousCloudDirector";
+import AiPlanetaryIntelligenceGrid from "./pages/AiPlanetaryIntelligenceGrid";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -104,6 +105,7 @@ export default function App() {
             <Route path="cloud-control" element={<AiCloudControlPlane />} />
             <Route path="global-orchestration" element={<AiGlobalOrchestration />} />
             <Route path="autonomous-director" element={<AiAutonomousCloudDirector />} />
+            <Route path="planetary-grid" element={<AiPlanetaryIntelligenceGrid />} />
           </Route>
         </Routes>
       </Router>
