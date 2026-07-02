@@ -9,6 +9,7 @@ import CaptionGenerator from "./pages/CaptionGenerator";
 import TemplateBuilder from "./pages/TemplateBuilder";
 import PostingPlanGenerator from "./pages/PostingPlanGenerator";
 import BrandLibrary from "./pages/BrandLibrary";
+import Projects from "./pages/Projects";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="templates" element={<TemplateBuilder />} />
           <Route path="posting" element={<PostingPlanGenerator />} />
           <Route path="brands" element={<BrandLibrary />} />
+          <Route path="projects" element={<Projects />} />
         </Route>
       </Routes>
     </BrowserRouter>

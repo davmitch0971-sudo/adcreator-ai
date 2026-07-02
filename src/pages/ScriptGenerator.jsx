@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { callAdCreator } from "../api/adcreator";
 import BrandSelector from "../components/BrandSelector";
+import SaveProjectButton from "../components/SaveProjectButton";
 
 export default function ScriptGenerator() {
   const { setOutput } = useOutletContext();
 
   const [brand, setBrand] = useState(null);
+  const [result, setResult] = useState(null);
 
   const [form, setForm] = useState({
     audience: "",
@@ -23,7 +25,6 @@ export default function ScriptGenerator() {
 
   const autoFill = (brand) => {
     if (!brand) return;
-
     setForm((prev) => ({
       ...prev,
       audience: brand.audience || prev.audience,
@@ -62,9 +63,10 @@ export default function ScriptGenerator() {
       goal: form.goal
     };
 
-    const result = await callAdCreator("scripts", payload);
+    const r = await callAdCreator("scripts", payload);
 
-    setOutput({ script: result.script });
+    setResult(r);
+    setOutput({ script: r.script });
 
     setLoading(false);
   };
@@ -82,18 +84,21 @@ export default function ScriptGenerator() {
           value={form[key]}
           placeholder={key}
           onChange={handleChange}
-          style={{
-            display: "block",
-            marginBottom: 10,
-            padding: 8,
-            width: "100%"
-          }}
+          style={{ display: "block", marginBottom: 10, padding: 8, width: "100%" }}
         />
       ))}
 
       <button onClick={generate}>
         {loading ? "Generating..." : "Generate Script"}
       </button>
+
+      {result && (
+        <SaveProjectButton
+          brand={brand}
+          generator="Script"
+          data={result}
+        />
+      )}
     </div>
   );
 }

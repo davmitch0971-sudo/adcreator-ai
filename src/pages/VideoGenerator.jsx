@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { callAdCreator } from "../api/adcreator";
 import BrandSelector from "../components/BrandSelector";
+import SaveProjectButton from "../components/SaveProjectButton";
 
 export default function VideoGenerator() {
   const { setOutput } = useOutletContext();
 
   const [brand, setBrand] = useState(null);
+  const [result, setResult] = useState(null);
 
   const [form, setForm] = useState({
     audience: "",
@@ -23,7 +25,6 @@ export default function VideoGenerator() {
 
   const autoFill = (brand) => {
     if (!brand) return;
-
     setForm((prev) => ({
       ...prev,
       audience: brand.audience || prev.audience,
@@ -62,11 +63,10 @@ export default function VideoGenerator() {
       length: form.length
     };
 
-    const result = await callAdCreator("videos", payload);
+    const r = await callAdCreator("videos", payload);
 
-    setOutput({
-      video: result.videoScript
-    });
+    setResult(r);
+    setOutput({ video: r.videoScript });
 
     setLoading(false);
   };
@@ -84,18 +84,21 @@ export default function VideoGenerator() {
           value={form[key]}
           placeholder={key}
           onChange={handleChange}
-          style={{
-            display: "block",
-            marginBottom: 10,
-            padding: 8,
-            width: "100%"
-          }}
+          style={{ display: "block", marginBottom: 10, padding: 8, width: "100%" }}
         />
       ))}
 
       <button onClick={generate}>
         {loading ? "Generating..." : "Generate Video Script"}
       </button>
+
+      {result && (
+        <SaveProjectButton
+          brand={brand}
+          generator="Video"
+          data={result}
+        />
+      )}
     </div>
   );
 }

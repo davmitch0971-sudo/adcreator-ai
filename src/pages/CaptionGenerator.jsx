@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { callAdCreator } from "../api/adcreator";
 import BrandSelector from "../components/BrandSelector";
+import SaveProjectButton from "../components/SaveProjectButton";
 
 export default function CaptionGenerator() {
   const { setOutput } = useOutletContext();
 
   const [brand, setBrand] = useState(null);
+  const [result, setResult] = useState(null);
 
   const [form, setForm] = useState({
     audience: "",
@@ -22,7 +24,6 @@ export default function CaptionGenerator() {
 
   const autoFill = (brand) => {
     if (!brand) return;
-
     setForm((prev) => ({
       ...prev,
       audience: brand.audience || prev.audience,
@@ -60,11 +61,10 @@ export default function CaptionGenerator() {
       platform: form.platform
     };
 
-    const result = await callAdCreator("captions", payload);
+    const r = await callAdCreator("captions", payload);
 
-    setOutput({
-      caption: result.caption
-    });
+    setResult(r);
+    setOutput({ caption: r.caption });
 
     setLoading(false);
   };
@@ -82,18 +82,21 @@ export default function CaptionGenerator() {
           value={form[key]}
           placeholder={key}
           onChange={handleChange}
-          style={{
-            display: "block",
-            marginBottom: 10,
-            padding: 8,
-            width: "100%"
-          }}
+          style={{ display: "block", marginBottom: 10, padding: 8, width: "100%" }}
         />
       ))}
 
       <button onClick={generate}>
         {loading ? "Generating..." : "Generate Caption"}
       </button>
+
+      {result && (
+        <SaveProjectButton
+          brand={brand}
+          generator="Caption"
+          data={result}
+        />
+      )}
     </div>
   );
 }
