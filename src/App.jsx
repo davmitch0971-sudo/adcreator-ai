@@ -45,6 +45,7 @@ import AiRenderPipelineManager from "./pages/AiRenderPipelineManager";
 import AiAssetStorageEngine from "./pages/AiAssetStorageEngine";
 import AiApiGateway from "./pages/AiApiGateway";
 import AiTenantRuntime from "./pages/AiTenantRuntime";
+import AiCloudControlPlane from "./pages/AiCloudControlPlane";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -98,6 +99,7 @@ export default function App() {
             <Route path="asset-storage" element={<AiAssetStorageEngine />} />
             <Route path="api-gateway" element={<AiApiGateway />} />
             <Route path="tenant-runtime" element={<AiTenantRuntime />} />
+            <Route path="cloud-control" element={<AiCloudControlPlane />} />
           </Route>
         </Routes>
       </Router>
