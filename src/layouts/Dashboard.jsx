@@ -57,7 +57,8 @@ const navItems = [
   { path: "/ai-content-repurposing-engine", label: "AI Content Repurposing Engine" },
   { path: "/ai-creator-collaboration-hub", label: "AI Creator Collaboration Hub" },
   { path: "/ai-brand-positioning-engine", label: "AI Brand Positioning Engine" },
-  { path: "/ai-audience-research-engine", label: "AI Audience Research Engine" }
+  { path: "/ai-audience-research-engine", label: "AI Audience Research Engine" },
+  { path: "/ai-market-trends-insights-engine", label: "AI Market Trends & Insights Engine" }
 ];
 
 export default function Dashboard() {

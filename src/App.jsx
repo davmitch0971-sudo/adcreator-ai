@@ -56,6 +56,7 @@ import AIContentRepurposingEnginePage from "./pages/AIContentRepurposingEnginePa
 import AICreatorCollaborationHubPage from "./pages/AICreatorCollaborationHubPage";
 import AIBrandPositioningEnginePage from "./pages/AIBrandPositioningEnginePage";
 import AIAudienceResearchEnginePage from "./pages/AIAudienceResearchEnginePage";
+import AIMarketTrendsInsightsEnginePage from "./pages/AIMarketTrendsInsightsEnginePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -120,6 +121,7 @@ export default function App() {
             <Route path="ai-creator-collaboration-hub" element={<AICreatorCollaborationHubPage />} />
             <Route path="ai-brand-positioning-engine" element={<AIBrandPositioningEnginePage />} />
             <Route path="ai-audience-research-engine" element={<AIAudienceResearchEnginePage />} />
+            <Route path="ai-market-trends-insights-engine" element={<AIMarketTrendsInsightsEnginePage />} />
           </Route>
         </Routes>
       </Router>
