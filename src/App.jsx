@@ -46,6 +46,7 @@ import AICreativeBriefGeneratorPage from "./pages/AICreativeBriefGeneratorPage";
 import AIVideoAdGeneratorPage from "./pages/AIVideoAdGeneratorPage";
 import AIOfferBuilderPage from "./pages/AIOfferBuilderPage";
 import AIUGCScriptGeneratorPage from "./pages/AIUGCScriptGeneratorPage";
+import AIAdVariationsEnginePage from "./pages/AIAdVariationsEnginePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -100,6 +101,7 @@ export default function App() {
             <Route path="ai-video-ad-generator" element={<AIVideoAdGeneratorPage />} />
             <Route path="ai-offer-builder" element={<AIOfferBuilderPage />} />
             <Route path="ai-ugc-script-generator" element={<AIUGCScriptGeneratorPage />} />
+            <Route path="ai-ad-variations-engine" element={<AIAdVariationsEnginePage />} />
           </Route>
         </Routes>
       </Router>
