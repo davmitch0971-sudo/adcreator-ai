@@ -1,18 +1,1 @@
-import express from "express";
-import cors from "cors";
-import authRoutes from "./routes/auth.mjs";
-import generateRoutes from "./routes/generate.mjs";
-import usageRoutes from "./routes/usage.mjs";
-import apiKeyRoutes from "./routes/apikey.mjs";
-import adminRoutes from "./routes/admin.mjs";
-import { auth } from "./middleware/auth.mjs";
-import { admin } from "./middleware/admin.mjs";
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use("/auth", authRoutes);
-app.use("/api/generate", auth, generateRoutes);
-app.use("/api/usage", auth, usageRoutes);
-app.use("/api/key", auth, apiKeyRoutes);
-app.use("/admin", auth, admin, adminRoutes);
-app.listen(3000, () => console.log("AdCreator backend running on port 3000"));
+ 
