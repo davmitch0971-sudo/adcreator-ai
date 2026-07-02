@@ -11,6 +11,9 @@ const navItems = [
   { path: "/posting", label: "Posting" },
   { path: "/video-editor", label: "Video Editor" },
   { path: "/scene-video", label: "Scene → Video" },
+  { path: "/voice-lab", label: "Voice Lab" },
+  { path: "/motion-graphics", label: "Motion Graphics" },
+  { path: "/video-export", label: "Export Video" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }

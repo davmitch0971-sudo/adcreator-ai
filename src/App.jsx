@@ -12,6 +12,9 @@ import BrandAnalytics from "./pages/BrandAnalytics";
 import Brands from "./pages/Brands";
 import AiVideoEditor from "./pages/AiVideoEditor";
 import SceneToVideo from "./pages/SceneToVideo";
+import AiVoiceLab from "./pages/AiVoiceLab";
+import MotionGraphics from "./pages/MotionGraphics";
+import VideoExport from "./pages/VideoExport";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -32,6 +35,9 @@ export default function App() {
             <Route path="brands" element={<Brands />} />
             <Route path="video-editor" element={<AiVideoEditor />} />
             <Route path="scene-video" element={<SceneToVideo />} />
+            <Route path="voice-lab" element={<AiVoiceLab />} />
+            <Route path="motion-graphics" element={<MotionGraphics />} />
+            <Route path="video-export" element={<VideoExport />} />
           </Route>
         </Routes>
       </Router>
