@@ -12,7 +12,8 @@ const navItems = [
   { path: "/onboarding", label: "Onboarding" },
   { path: "/account", label: "Account Settings" },
   { path: "/profile", label: "User Profile" },
-  { path: "/billing-portal", label: "Billing Portal" }
+  { path: "/billing-portal", label: "Billing Portal" },
+  { path: "/brands", label: "Brand Manager" }
 ];
 
 export default function Dashboard() {

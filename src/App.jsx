@@ -11,6 +11,7 @@ import AccountSettingsPage from "./pages/AccountSettingsPage";
 import DashboardHomePage from "./pages/DashboardHomePage";
 import UserProfilePage from "./pages/UserProfilePage";
 import BillingPortalPage from "./pages/BillingPortalPage";
+import BrandManagerPage from "./pages/BrandManagerPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="account" element={<AccountSettingsPage />} />
             <Route path="profile" element={<UserProfilePage />} />
             <Route path="billing-portal" element={<BillingPortalPage />} />
+            <Route path="brands" element={<BrandManagerPage />} />
           </Route>
         </Routes>
       </Router>
