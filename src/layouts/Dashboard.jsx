@@ -43,6 +43,7 @@ const navItems = [
   { path: "/render-pipeline", label: "Render Pipeline" },
   { path: "/asset-storage", label: "Asset Storage" },
   { path: "/api-gateway", label: "API Gateway" },
+  { path: "/tenant-runtime", label: "Tenant Runtime" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }

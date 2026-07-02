@@ -44,6 +44,7 @@ import AiTaskOrchestrator from "./pages/AiTaskOrchestrator";
 import AiRenderPipelineManager from "./pages/AiRenderPipelineManager";
 import AiAssetStorageEngine from "./pages/AiAssetStorageEngine";
 import AiApiGateway from "./pages/AiApiGateway";
+import AiTenantRuntime from "./pages/AiTenantRuntime";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -96,6 +97,7 @@ export default function App() {
             <Route path="render-pipeline" element={<AiRenderPipelineManager />} />
             <Route path="asset-storage" element={<AiAssetStorageEngine />} />
             <Route path="api-gateway" element={<AiApiGateway />} />
+            <Route path="tenant-runtime" element={<AiTenantRuntime />} />
           </Route>
         </Routes>
       </Router>
