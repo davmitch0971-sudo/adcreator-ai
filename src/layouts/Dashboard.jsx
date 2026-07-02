@@ -37,6 +37,7 @@ const navItems = [
   { path: "/audience", label: "Audience" },
   { path: "/monetization", label: "Monetization" },
   { path: "/partnerships", label: "Partnerships" },
+  { path: "/community", label: "Community" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
