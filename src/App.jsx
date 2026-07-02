@@ -19,6 +19,7 @@ import AIVideoEditorPage from "./pages/AIVideoEditorPage";
 import TemplateBuilderPage from "./pages/TemplateBuilderPage";
 import TeamCollaborationPage from "./pages/TeamCollaborationPage";
 import NotificationsPage from "./pages/NotificationsPage";
+import SettingsAdminPage from "./pages/SettingsAdminPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
             <Route path="templates" element={<TemplateBuilderPage />} />
             <Route path="team" element={<TeamCollaborationPage />} />
             <Route path="notifications" element={<NotificationsPage />} />
+            <Route path="admin-settings" element={<SettingsAdminPage />} />
           </Route>
         </Routes>
       </Router>

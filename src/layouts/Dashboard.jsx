@@ -20,7 +20,8 @@ const navItems = [
   { path: "/video-editor", label: "AI Video Editor" },
   { path: "/templates", label: "Template Builder" },
   { path: "/team", label: "Team Collaboration" },
-  { path: "/notifications", label: "Notifications" }
+  { path: "/notifications", label: "Notifications" },
+  { path: "/admin-settings", label: "Admin Settings" }
 ];
 
 export default function Dashboard() {
