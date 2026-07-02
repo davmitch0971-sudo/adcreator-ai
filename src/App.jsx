@@ -40,6 +40,7 @@ import AiMonetizationPlanner from "./pages/AiMonetizationPlanner";
 import AiPartnershipsEngine from "./pages/AiPartnershipsEngine";
 import AiCommunityBuilder from "./pages/AiCommunityBuilder";
 import AiEnterpriseSuite from "./pages/AiEnterpriseSuite";
+import AiTaskOrchestrator from "./pages/AiTaskOrchestrator";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -88,6 +89,7 @@ export default function App() {
             <Route path="partnerships" element={<AiPartnershipsEngine />} />
             <Route path="community" element={<AiCommunityBuilder />} />
             <Route path="enterprise" element={<AiEnterpriseSuite />} />
+            <Route path="tasks" element={<AiTaskOrchestrator />} />
           </Route>
         </Routes>
       </Router>
