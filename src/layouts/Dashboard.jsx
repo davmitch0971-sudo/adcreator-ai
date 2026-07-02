@@ -50,7 +50,8 @@ const navItems = [
   { path: "/ai-ugc-script-generator", label: "AI UGC Script Generator" },
   { path: "/ai-ad-variations-engine", label: "AI Ad Variations Engine" },
   { path: "/ai-sales-page-generator", label: "AI Sales Page Generator" },
-  { path: "/ai-funnel-builder", label: "AI Funnel Builder" }
+  { path: "/ai-funnel-builder", label: "AI Funnel Builder" },
+  { path: "/ai-product-launch-system", label: "AI Product Launch System" }
 ];
 
 export default function Dashboard() {
