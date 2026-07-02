@@ -15,6 +15,7 @@ import BrandManagerPage from "./pages/BrandManagerPage";
 import ProjectManagerPage from "./pages/ProjectManagerPage";
 import AssetLibraryPage from "./pages/AssetLibraryPage";
 import AnalyticsDashboardPage from "./pages/AnalyticsDashboardPage";
+import AIVideoEditorPage from "./pages/AIVideoEditorPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
             <Route path="projects" element={<ProjectManagerPage />} />
             <Route path="assets" element={<AssetLibraryPage />} />
             <Route path="analytics" element={<AnalyticsDashboardPage />} />
+            <Route path="video-editor" element={<AIVideoEditorPage />} />
           </Route>
         </Routes>
       </Router>

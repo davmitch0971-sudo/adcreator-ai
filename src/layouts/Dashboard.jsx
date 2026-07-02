@@ -16,7 +16,8 @@ const navItems = [
   { path: "/brands", label: "Brand Manager" },
   { path: "/projects", label: "Project Manager" },
   { path: "/assets", label: "Asset Library" },
-  { path: "/analytics", label: "Analytics Dashboard" }
+  { path: "/analytics", label: "Analytics Dashboard" },
+  { path: "/video-editor", label: "AI Video Editor" }
 ];
 
 export default function Dashboard() {
