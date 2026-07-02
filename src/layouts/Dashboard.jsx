@@ -2,7 +2,7 @@
 
 const navItems = [
   ... (previous items)
-  { path: "/ai-landing-page-generator", label: "AI Landing Page Generator" }
+  { path: "/ai-carousel-generator", label: "AI Carousel Generator" }
 ];
 
 export default function Dashboard() {

@@ -1,5 +1,5 @@
 ... (all previous imports)
-import AILandingPageGeneratorPage from "./pages/AILandingPageGeneratorPage";
+import AICarouselGeneratorPage from "./pages/AICarouselGeneratorPage";
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Dashboard />}>
             ... (previous routes)
-            <Route path="ai-landing-page-generator" element={<AILandingPageGeneratorPage />} />
+            <Route path="ai-carousel-generator" element={<AICarouselGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
