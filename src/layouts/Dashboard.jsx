@@ -56,7 +56,8 @@ const navItems = [
   { path: "/ai-ad-testing-lab", label: "AI Ad Testing Lab" },
   { path: "/ai-content-repurposing-engine", label: "AI Content Repurposing Engine" },
   { path: "/ai-creator-collaboration-hub", label: "AI Creator Collaboration Hub" },
-  { path: "/ai-brand-positioning-engine", label: "AI Brand Positioning Engine" }
+  { path: "/ai-brand-positioning-engine", label: "AI Brand Positioning Engine" },
+  { path: "/ai-audience-research-engine", label: "AI Audience Research Engine" }
 ];
 
 export default function Dashboard() {
