@@ -9,6 +9,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import OnboardingPage from "./pages/OnboardingPage";
 import AccountSettingsPage from "./pages/AccountSettingsPage";
 import DashboardHomePage from "./pages/DashboardHomePage";
+import UserProfilePage from "./pages/UserProfilePage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="forgot" element={<ForgotPasswordPage />} />
             <Route path="onboarding" element={<OnboardingPage />} />
             <Route path="account" element={<AccountSettingsPage />} />
+            <Route path="profile" element={<UserProfilePage />} />
           </Route>
         </Routes>
       </Router>

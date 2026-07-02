@@ -10,7 +10,8 @@ const navItems = [
   { path: "/login", label: "Login" },
   { path: "/forgot", label: "Forgot Password" },
   { path: "/onboarding", label: "Onboarding" },
-  { path: "/account", label: "Account Settings" }
+  { path: "/account", label: "Account Settings" },
+  { path: "/profile", label: "User Profile" }
 ];
 
 export default function Dashboard() {
