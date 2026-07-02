@@ -51,6 +51,7 @@ import AISalesPageGeneratorPage from "./pages/AISalesPageGeneratorPage";
 import AIFunnelBuilderPage from "./pages/AIFunnelBuilderPage";
 import AIProductLaunchSystemPage from "./pages/AIProductLaunchSystemPage";
 import AICreativeStrategyOSPage from "./pages/AICreativeStrategyOSPage";
+import AIAdTestingLabPage from "./pages/AIAdTestingLabPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -110,6 +111,7 @@ export default function App() {
             <Route path="ai-funnel-builder" element={<AIFunnelBuilderPage />} />
             <Route path="ai-product-launch-system" element={<AIProductLaunchSystemPage />} />
             <Route path="ai-creative-strategy-os" element={<AICreativeStrategyOSPage />} />
+            <Route path="ai-ad-testing-lab" element={<AIAdTestingLabPage />} />
           </Route>
         </Routes>
       </Router>
