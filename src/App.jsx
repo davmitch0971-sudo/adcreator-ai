@@ -1,5 +1,5 @@
 ... (all previous imports)
-import AICarouselGeneratorPage from "./pages/AICarouselGeneratorPage";
+import AIAdCopyOptimizerPage from "./pages/AIAdCopyOptimizerPage";
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Dashboard />}>
             ... (previous routes)
-            <Route path="ai-carousel-generator" element={<AICarouselGeneratorPage />} />
+            <Route path="ai-ad-copy-optimizer" element={<AIAdCopyOptimizerPage />} />
           </Route>
         </Routes>
       </Router>
