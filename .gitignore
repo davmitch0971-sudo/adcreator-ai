@@ -6,3 +6,9 @@ adcreator-ai/node_modules/
 node_modules/
 *.zip
 .env
+cookies.txt
+create_sub.json
+login.json
+my.env
+script_deployed.js
+webhook.json
