@@ -22,6 +22,7 @@ import NotificationsPage from "./pages/NotificationsPage";
 import SettingsAdminPage from "./pages/SettingsAdminPage";
 import SupportCenterPage from "./pages/SupportCenterPage";
 import StatusPage from "./pages/StatusPage";
+import IntegrationsPage from "./pages/IntegrationsPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="admin-settings" element={<SettingsAdminPage />} />
             <Route path="support" element={<SupportCenterPage />} />
             <Route path="status" element={<StatusPage />} />
+            <Route path="integrations" element={<IntegrationsPage />} />
           </Route>
         </Routes>
       </Router>
