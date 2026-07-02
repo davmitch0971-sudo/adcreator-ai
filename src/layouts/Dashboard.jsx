@@ -26,7 +26,8 @@ const navItems = [
   { path: "/status", label: "System Status" },
   { path: "/integrations", label: "Integrations" },
   { path: "/automation", label: "Automation Center" },
-  { path: "/ai-script-generator", label: "AI Script Generator" }
+  { path: "/ai-script-generator", label: "AI Script Generator" },
+  { path: "/ai-storyboard", label: "AI Storyboard" }
 ];
 
 export default function Dashboard() {
