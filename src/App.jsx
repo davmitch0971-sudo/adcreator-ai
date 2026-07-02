@@ -14,6 +14,7 @@ import BillingPortalPage from "./pages/BillingPortalPage";
 import BrandManagerPage from "./pages/BrandManagerPage";
 import ProjectManagerPage from "./pages/ProjectManagerPage";
 import AssetLibraryPage from "./pages/AssetLibraryPage";
+import AnalyticsDashboardPage from "./pages/AnalyticsDashboardPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="brands" element={<BrandManagerPage />} />
             <Route path="projects" element={<ProjectManagerPage />} />
             <Route path="assets" element={<AssetLibraryPage />} />
+            <Route path="analytics" element={<AnalyticsDashboardPage />} />
           </Route>
         </Routes>
       </Router>
