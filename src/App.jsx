@@ -1,5 +1,5 @@
 ... (all previous imports)
-import AIAdCopyOptimizerPage from "./pages/AIAdCopyOptimizerPage";
+import AISEOContentGeneratorPage from "./pages/AISEOContentGeneratorPage";
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Dashboard />}>
             ... (previous routes)
-            <Route path="ai-ad-copy-optimizer" element={<AIAdCopyOptimizerPage />} />
+            <Route path="ai-seo-content-generator" element={<AISEOContentGeneratorPage />} />
           </Route>
         </Routes>
       </Router>
