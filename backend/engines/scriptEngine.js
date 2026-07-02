@@ -27,7 +27,7 @@ const buildCTA = ({ platform, action }) => {
   return `Click the button below to ${action} now.`;
 };
 
-const generateScript = (payload) => {
+export function generateScript(payload) {
   const { brand, offer, platform, goal } = payload;
 
   const hook = buildHook({
@@ -61,8 +61,4 @@ const generateScript = (payload) => {
     script: [hook, problem, solution, proof, cta].join(' '),
     sections: { hook, problem, solution, proof, cta },
   };
-};
-
-module.exports = {
-  generateScript,
-};
+}

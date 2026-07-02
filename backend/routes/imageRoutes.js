@@ -1,12 +1,12 @@
 import express from 'express';
-import { generateScript } from '../engines/scriptEngine.js';
+import { generateImagePrompt } from '../engines/imageEngine.js';
 
 const router = express.Router();
 
 router.post('/generate', (req, res) => {
   try {
-    const script = generateScript(req.body);
-    res.json({ success: true, script });
+    const imagePrompt = generateImagePrompt(req.body);
+    res.json({ success: true, imagePrompt });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

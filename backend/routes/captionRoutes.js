@@ -1,12 +1,12 @@
 import express from 'express';
-import { generateScript } from '../engines/scriptEngine.js';
+import { generateCaption } from '../engines/captionEngine.js';
 
 const router = express.Router();
 
 router.post('/generate', (req, res) => {
   try {
-    const script = generateScript(req.body);
-    res.json({ success: true, script });
+    const caption = generateCaption(req.body);
+    res.json({ success: true, caption });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

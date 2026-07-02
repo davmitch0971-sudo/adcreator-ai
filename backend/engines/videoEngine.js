@@ -1,125 +1,60 @@
-/**
- * Video Engine — AdCreator‑AI
- * 
- * This engine generates platform‑optimized video scripts,
- * shot lists, transitions, captions, and pacing instructions.
- * 
- * It does NOT generate actual video files — that will be handled
- * by your Video Generation Engine later (Runway / VEO‑style).
- */
-
 const buildHook = ({ audience, painPoint, platform }) => {
-  if (platform === 'TikTok' || platform === 'Reels') {
-    return `POV: You're a ${audience} tired of ${painPoint}.`;
-  }
-  return `Attention ${audience}: struggling with ${painPoint}?`;
+  return `If you're a ${audience} dealing with ${painPoint}, this is for you — especially on ${platform}.`;
 };
 
-const buildScene1 = ({ productName, coreBenefit }) => {
-  return {
-    scene: "Scene 1",
-    description: `Show the product (${productName}) in action.`,
-    voiceover: `${productName} gives you ${coreBenefit} instantly.`,
-    duration: "2-3 seconds"
-  };
+const buildProblem = ({ painPoint }) => {
+  return `Everyone knows how frustrating ${painPoint} can be. It slows everything down.`;
 };
 
-const buildScene2 = ({ painPoint }) => {
-  return {
-    scene: "Scene 2",
-    description: `Show the pain point visually.`,
-    voiceover: `No more dealing with ${painPoint}.`,
-    duration: "2-3 seconds"
-  };
+const buildSolution = ({ productName, coreBenefit }) => {
+  return `${productName} fixes that by giving you ${coreBenefit} faster than anything else.`;
 };
 
-const buildScene3 = ({ coreBenefit }) => {
-  return {
-    scene: "Scene 3",
-    description: `Show the transformation.`,
-    voiceover: `Imagine having ${coreBenefit} every single day.`,
-    duration: "3 seconds"
-  };
-};
-
-const buildProofScene = ({ proofType, proofDetail }) => {
+const buildProof = ({ proofType, proofDetail }) => {
   if (proofType === 'social') {
-    return {
-      scene: "Proof",
-      description: "Show social proof screenshots or testimonials.",
-      voiceover: `Trusted by ${proofDetail} creators.`,
-      duration: "2 seconds"
-    };
+    return `${proofDetail}+ people already swear by it.`;
   }
-
-  return {
-    scene: "Proof",
-    description: "Show results or before/after.",
-    voiceover: `Users report ${proofDetail}.`,
-    duration: "2 seconds"
-  };
+  if (proofType === 'results') {
+    return `Users report ${proofDetail} after consistent use.`;
+  }
+  return `Real results. Real users. Real impact.`;
 };
 
-const buildCTA = ({ platform, action }) => {
-  if (platform === 'TikTok' || platform === 'Reels') {
-    return {
-      scene: "CTA",
-      description: "Show product + bold text overlay.",
-      voiceover: `Tap the link in bio to ${action}.`,
-      duration: "2 seconds"
-    };
-  }
-
-  return {
-    scene: "CTA",
-    description: "Show product + button animation.",
-    voiceover: `Click below to ${action}.`,
-    duration: "3 seconds"
-  };
+const buildCTA = ({ action }) => {
+  return `Hit the button and ${action} today.`;
 };
 
-const generateVideoScript = (payload) => {
-  const { brand, offer, platform, goal } = payload;
+export function generateVideoScript(payload) {
+  const { brand, offer, platform, length } = payload;
 
   const hook = buildHook({
     audience: brand.audience,
     painPoint: offer.painPoint,
-    platform
+    platform,
   });
 
-  const scenes = [
-    buildScene1({
-      productName: offer.productName,
-      coreBenefit: offer.coreBenefit
-    }),
-    buildScene2({
-      painPoint: offer.painPoint
-    }),
-    buildScene3({
-      coreBenefit: offer.coreBenefit
-    }),
-    buildProofScene({
-      proofType: offer.proofType,
-      proofDetail: offer.proofDetail
-    }),
-    buildCTA({
-      platform,
-      action: offer.action
-    })
-  ];
+  const problem = buildProblem({
+    painPoint: offer.painPoint,
+  });
+
+  const solution = buildSolution({
+    productName: offer.productName,
+    coreBenefit: offer.coreBenefit,
+  });
+
+  const proof = buildProof({
+    proofType: offer.proofType,
+    proofDetail: offer.proofDetail,
+  });
+
+  const cta = buildCTA({
+    action: offer.action,
+  });
 
   return {
     platform,
-    goal,
-    hook,
-    scenes,
-    fullScript: [
-      hook,
-      ...scenes.map(s => `${s.scene}: ${s.voiceover}`)
-    ].join(" "),
+    length,
+    videoScript: [hook, problem, solution, proof, cta].join(' '),
+    sections: { hook, problem, solution, proof, cta }
   };
-};
-
-module.exports = {
-  generateVideoScript,
-};
+}

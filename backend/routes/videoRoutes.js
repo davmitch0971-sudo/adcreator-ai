@@ -1,18 +1,15 @@
 import express from 'express';
-import {
-  createVideo,
-  getVideos,
-  getVideo,
-  updateVideo,
-  deleteVideo
-} from '../controllers/videoController.js';
+import { generateVideoScript } from '../engines/videoEngine.js';
 
 const router = express.Router();
 
-router.post('/', createVideo);
-router.get('/', getVideos);
-router.get('/:id', getVideo);
-router.put('/:id', updateVideo);
-router.delete('/:id', deleteVideo);
+router.post('/generate', (req, res) => {
+  try {
+    const videoScript = generateVideoScript(req.body);
+    res.json({ success: true, videoScript });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
 
 export default router;

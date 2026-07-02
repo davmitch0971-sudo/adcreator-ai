@@ -1,12 +1,12 @@
 import express from 'express';
-import { generateScript } from '../engines/scriptEngine.js';
+import { generatePostingPlan } from '../engines/postingEngine.js';
 
 const router = express.Router();
 
 router.post('/generate', (req, res) => {
   try {
-    const script = generateScript(req.body);
-    res.json({ success: true, script });
+    const postingPlan = generatePostingPlan(req.body);
+    res.json({ success: true, postingPlan });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

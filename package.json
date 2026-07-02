@@ -1,28 +1,16 @@
 {
   "name": "adcreator-ai",
   "version": "1.0.0",
-  "description": "AI-powered ad creation platform backend",
-  "main": "backend/server.js",
+  "description": "AdCreator-AI Backend Server",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "node backend/server.js"
+    "start": "node server.js"
   },
-  "keywords": [
-    "ai",
-    "ads",
-    "video",
-    "marketing",
-    "saas"
-  ],
-  "author": "David",
-  "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^17.4.2",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^8.3.1",
-    "morgan": "^1.10.0"
+    "lucide-react": "^1.23.0"
   }
 }
