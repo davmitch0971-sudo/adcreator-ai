@@ -23,6 +23,7 @@ const navItems = [
   { path: "/auto-transitions", label: "Auto‑Transitions" },
   { path: "/auto-edit", label: "Auto‑Edit" },
   { path: "/auto-color-grade", label: "Auto‑Color‑Grade" },
+  { path: "/auto-sound-design", label: "Auto‑Sound‑Design" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
