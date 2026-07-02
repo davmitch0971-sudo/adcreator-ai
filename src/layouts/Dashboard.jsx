@@ -28,7 +28,8 @@ const navItems = [
   { path: "/automation", label: "Automation Center" },
   { path: "/ai-script-generator", label: "AI Script Generator" },
   { path: "/ai-storyboard", label: "AI Storyboard" },
-  { path: "/ai-voiceover", label: "AI Voiceover Generator" }
+  { path: "/ai-voiceover", label: "AI Voiceover Generator" },
+  { path: "/ai-image-generator", label: "AI Image Generator" }
 ];
 
 export default function Dashboard() {
