@@ -1,24 +1,41 @@
-import { useState, useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
+import { panelStyle } from "../styles/GlobalStyles";
 import ProjectCard from "../components/ProjectCard";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
+  const { theme } = useTheme();
 
-  useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem("adcreator_projects") || "[]");
-    setProjects(saved);
-  }, []);
+  const projects = JSON.parse(localStorage.getItem("projects") || "[]");
+
+  // Group projects by brand
+  const grouped = projects.reduce((acc, p) => {
+    if (!acc[p.brand]) acc[p.brand] = [];
+    acc[p.brand].push(p);
+    return acc;
+  }, {});
 
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Saved Projects</h1>
+    <div style={{ padding: 10 }}>
+      <h1 style={{ marginBottom: 16 }}>Projects</h1>
 
-      {projects.length === 0 && (
-        <p style={{ opacity: 0.7 }}>No saved projects yet.</p>
+      {Object.keys(grouped).length === 0 && (
+        <p style={{ opacity: 0.7 }}>No projects saved yet.</p>
       )}
 
-      {projects.map((p) => (
-        <ProjectCard key={p.id} project={p} />
+      {Object.keys(grouped).map((brand) => (
+        <div
+          key={brand}
+          style={{
+            marginBottom: 20,
+            ...panelStyle(theme)
+          }}
+        >
+          <h2 style={{ marginTop: 0 }}>{brand}</h2>
+
+          {grouped[brand].map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
       ))}
     </div>
   );
