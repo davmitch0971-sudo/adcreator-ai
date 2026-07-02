@@ -19,6 +19,7 @@ const navItems = [
   { path: "/template-engine-2", label: "Template Engine 2.0" },
   { path: "/auto-storyboard", label: "Auto‑Storyboard" },
   { path: "/auto-shotlist", label: "Auto‑Shotlist" },
+  { path: "/auto-camera-moves", label: "Auto‑Camera‑Moves" },
   { path: "/brands", label: "Brands" },
   { path: "/projects", label: "Projects" },
   { path: "/analytics", label: "Analytics" }
