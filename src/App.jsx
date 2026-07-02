@@ -10,6 +10,7 @@ import PostingPlanGenerator from "./pages/PostingPlanGenerator";
 import Projects from "./pages/Projects";
 import BrandAnalytics from "./pages/BrandAnalytics";
 import Brands from "./pages/Brands";
+import AiVideoEditor from "./pages/AiVideoEditor";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="projects" element={<Projects />} />
             <Route path="analytics" element={<BrandAnalytics />} />
             <Route path="brands" element={<Brands />} />
+            <Route path="video-editor" element={<AiVideoEditor />} />
           </Route>
         </Routes>
       </Router>
