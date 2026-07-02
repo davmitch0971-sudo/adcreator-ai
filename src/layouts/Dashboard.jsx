@@ -62,10 +62,11 @@ const navItems = [
   { path: "/ai-campaign-analytics-os", label: "AI Campaign Analytics OS" },
   { path: "/ai-offer-optimization-engine", label: "AI Offer Optimization Engine" },
 
-  /* NEW GROWTH INTELLIGENCE CLUSTER */
+  /* GROWTH INTELLIGENCE CLUSTER */
   { path: "/ai-creative-qa-compliance-engine", label: "AI Creative QA & Compliance Engine" },
   { path: "/ai-retention-lifecycle-engine", label: "AI Retention & Lifecycle Engine" },
-  { path: "/ai-creative-risk-detection-engine", label: "AI Creative Risk Detection Engine" }
+  { path: "/ai-creative-risk-detection-engine", label: "AI Creative Risk Detection Engine" },
+  { path: "/ai-market-positioning-forecaster", label: "AI Market Positioning Forecaster" }
 ];
 
 export default function Dashboard() {
