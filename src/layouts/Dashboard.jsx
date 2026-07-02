@@ -32,7 +32,8 @@ const navItems = [
   { path: "/ai-image-generator", label: "AI Image Generator" },
   { path: "/ai-thumbnail-generator", label: "AI Thumbnail Generator" },
   { path: "/ai-ad-creative-generator", label: "AI Ad Creative Generator" },
-  { path: "/ai-social-post-generator", label: "AI Social Post Generator" }
+  { path: "/ai-social-post-generator", label: "AI Social Post Generator" },
+  { path: "/ai-product-photo-enhancer", label: "AI Product Photo Enhancer" }
 ];
 
 export default function Dashboard() {
