@@ -14,9 +14,12 @@ import mongoose from 'mongoose';
 import logger from './config/logger.js';
 import { streamOpenRouterCompletion } from './services/openRouter.js';
 
-// BRAND + PROJECT ROUTES
+// ROUTES
 import brandRoutes from './routes/brandRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
+import scriptRoutes from './routes/scriptRoutes.js';
+import videoRoutes from './routes/videoRoutes.js';
+import postRoutes from './routes/postRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,9 +84,12 @@ const apiLimiter = rateLimit({
 
 app.use('/api/', apiLimiter);
 
-// --- BRAND + PROJECT ROUTES ---
+// --- API ROUTES ---
 app.use('/api/brands', brandRoutes);
 app.use('/api/projects', projectRoutes);
+app.use('/api/scripts', scriptRoutes);
+app.use('/api/videos', videoRoutes);
+app.use('/api/posts', postRoutes);
 
 // --- STREAMING PIPELINE ENTRYPOINT ---
 app.post(

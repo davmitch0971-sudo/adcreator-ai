@@ -1,294 +1,272 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="AdCreator AI: Enterprise-grade intelligence for brand design and creative workflows.">
-    <meta name="author" content="Mitch">
-    <title>AdCreator AI | Enterprise Intelligence Matrix</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>AdCreator-AI Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #111; color: #fff; padding: 20px; }
+    h2 { margin-top: 40px; }
+    input, textarea, select { width: 100%; padding: 10px; margin: 5px 0; }
+    button { padding: 10px 20px; margin-top: 10px; cursor: pointer; }
+    .card { background: #222; padding: 15px; margin: 10px 0; border-radius: 8px; }
+  </style>
 </head>
+
 <body>
-    <div id="app-root" role="application" aria-label="Enterprise Intelligence Matrix">
-        <nav class="sidebar" role="navigation" aria-label="Primary Navigation">
-            <div class="logo-area">
-                <span class="logo-icon">▲</span> ADCREATOR <span class="accent">AI</span>
-            </div>
-            <ul class="nav-links">
-                <li class="nav-item active" data-target="dashboard-view">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-                    Dashboard
-                </li>
-                <li class="nav-item" data-target="workspace-view">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5"/><polyline points="14 2 14 8 20 8"/><path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l1-3.95 5.42-5.44z"/></svg>
-                    Workspace
-                </li>
-                <li class="nav-item" data-target="analytics-view">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                    Analytics
-                </li>
-                <li class="nav-item" data-target="settings-view">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                    Settings
-                </li>
-            </ul>
-            <div class="system-status-pill">
-                <span class="pulse-green"></span> Matrix Online
-            </div>
-        </nav>
 
-        <main class="content-viewport" role="main">
-            <header class="app-header">
-                <div class="header-title-group">
-                    <h1 id="page-title">Executive Overview</h1>
-                    <p class="header-subtitle">Creative intelligence engine for high-value enterprise positioning</p>
-                </div>
-                <div class="user-meta" aria-label="Active Profile">
-                    <span class="user-email">mitchdav0518@gmail.com</span>
-                    <div class="avatar-node">MD</div>
-                </div>
-            </header>
+  <h1>AdCreator-AI Dashboard</h1>
 
-            <section id="dashboard-view" class="app-view active">
-                <div class="dashboard-grid">
-                    <div class="card main-hero" role="region" aria-label="Generative Canvas">
-                        <div class="hero-content-wrapper">
-                            <h2>Creative Intelligence Matrix</h2>
-                            <p>Advanced generative streaming architectures processing live tokens. Precision calibrated for extreme brand positioning.</p>
-                            <div class="action-row">
-                                <button class="btn-primary" onclick="switchView('workspace-view')">Deploy Instance</button>
-                                <button class="btn-secondary" onclick="triggerCheck()">Run Diagnostic</button>
-                            </div>
-                        </div>
-                        <div class="holographic-node">
-                            <div class="holo-ring holo-ring-1"></div>
-                            <div class="holo-ring holo-ring-2"></div>
-                            <div class="holo-core">A.I</div>
-                        </div>
-                    </div>
+  <!-- BRAND MODULE -->
+  <h2>Brand Module</h2>
+  <input id="brandName" placeholder="Brand Name">
+  <textarea id="brandDescription" placeholder="Brand Description"></textarea>
+  <input id="brandTone" placeholder="Tone">
+  <input id="brandColors" placeholder="Colors (comma separated)">
+  <input id="brandAudience" placeholder="Audience">
+  <input id="brandMission" placeholder="Mission">
+  <input id="brandVision" placeholder="Vision">
+  <button onclick="createBrand()">Save Brand</button>
+  <div id="brandList"></div>
 
-                    <div class="card stat-widget" role="contentinfo" aria-label="System Uptime">
-                        <h3>System Uptime</h3>
-                        <div class="metric-value">99.99%</div>
-                        <div class="metric-subtext text-success">Nominal latency: 12ms</div>
-                    </div>
-                    
-                    <div class="card stat-widget" role="contentinfo" aria-label="Active Core Workers">
-                        <h3>Active Core Workers</h3>
-                        <div class="metric-value">1 / 1</div>
-                        <div class="metric-subtext">Optimized compute thread</div>
-                    </div>
+  <!-- PROJECT MODULE -->
+  <h2>Project Module</h2>
+  <select id="projectBrand"></select>
+  <input id="projectName" placeholder="Project Name">
+  <textarea id="projectDescription" placeholder="Project Description"></textarea>
+  <input id="projectGoal" placeholder="Project Goal">
+  <input id="projectType" placeholder="Project Type">
+  <input id="projectAudience" placeholder="Target Audience">
+  <input id="projectStatus" placeholder="Status (planning, active, completed)">
+  <button onclick="createProject()">Save Project</button>
+  <div id="projectList"></div>
 
-                    <div class="card stat-widget" role="contentinfo" aria-label="Compute Tokens">
-                        <h3>Compute Tokens</h3>
-                        <div class="metric-value">419.2K</div>
-                        <div class="metric-subtext text-accent">Allocated threshold</div>
-                    </div>
+  <!-- SCRIPT ENGINE -->
+  <h2>Script Engine</h2>
+  <select id="scriptProject"></select>
+  <input id="scriptTitle" placeholder="Script Title">
+  <textarea id="scriptPrompt" placeholder="Prompt / Idea"></textarea>
+  <input id="scriptTone" placeholder="Tone">
+  <input id="scriptLength" placeholder="Length (short, medium, long)">
+  <button onclick="createScript()">Save Script</button>
+  <div id="scriptList"></div>
 
-                    <div class="card activity-feed" role="region" aria-label="Real-time Operational Log">
-                        <h3>System Logs & Telemetry</h3>
-                        <div class="log-scroller" id="log-box">
-                            <div class="log-item"><span class="log-time">[System]</span> Matrix system booted successfully.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <!-- VIDEO ENGINE -->
+  <h2>Video Engine</h2>
+  <select id="videoProject"></select>
+  <select id="videoScript"></select>
+  <input id="videoTitle" placeholder="Video Title">
+  <input id="videoFormat" placeholder="Format (vertical, horizontal, square)">
+  <input id="videoDuration" placeholder="Duration (15s, 30s, 60s)">
+  <input id="videoResolution" placeholder="Resolution (1080x1920)">
+  <input id="videoStatus" placeholder="Status (planning, rendering, completed)">
+  <textarea id="videoNotes" placeholder="Notes"></textarea>
+  <button onclick="createVideo()">Save Video</button>
+  <div id="videoList"></div>
 
-            <section id="workspace-view" class="app-view">
-                <div class="workspace-split">
-                    <div class="workspace-panel">
-                        <div class="card prompt-builder">
-                            <h3>Prompt Architecture</h3>
-                            <p class="panel-desc">Configure parameters for the OpenRouter AI generation node.</p>
-                            
-                            <div class="form-group">
-                                <label for="model-select">Target Inference Engine</label>
-                                <select id="model-select" class="premium-select">
-                                    <option value="openai/gpt-4o-mini">OpenAI: GPT-4o-Mini (Elite Fallback)</option>
-                                    <option value="anthropic/claude-3.5-sonnet">Anthropic: Claude 3.5 Sonnet</option>
-                                    <option value="google/gemini-pro-1.5">Google: Gemini Pro 1.5</option>
-                                    <option value="meta/llama-3-70b-instruct">Meta: Llama 3 70B Instruct</option>
-                                </select>
-                            </div>
+  <!-- POSTING ENGINE -->
+  <h2>Posting Engine</h2>
+  <select id="postProject"></select>
+  <select id="postScript"></select>
+  <input id="postPlatform" placeholder="Platform (facebook, instagram, tiktok, etc.)">
+  <textarea id="postContent" placeholder="Post Content"></textarea>
+  <input id="postStatus" placeholder="Status (draft, scheduled, published)">
+  <input id="postScheduledAt" placeholder="Scheduled At (YYYY-MM-DD HH:MM)">
+  <input id="postLink" placeholder="Published Link (optional)">
+  <button onclick="createPost()">Save Post</button>
+  <div id="postList"></div>
 
-                            <div class="form-group">
-                                <label for="ai-prompt">Primary Directive / Context</label>
-                                <textarea id="ai-prompt" rows="6" class="premium-textarea" placeholder="Input high-value creative prompt here..."></textarea>
-                            </div>
+<script>
+// ---------------- BRAND ENGINE ----------------
+async function createBrand() {
+  const data = {
+    name: brandName.value,
+    description: brandDescription.value,
+    tone: brandTone.value,
+    colors: brandColors.value.split(','),
+    audience: brandAudience.value,
+    mission: brandMission.value,
+    vision: brandVision.value
+  };
 
-                            <button id="submit-btn" class="btn-primary btn-block" onclick="executeStream()">Initialize Generation Stream</button>
-                        </div>
-                    </div>
+  await fetch('/api/brands', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
-                    <div class="workspace-panel">
-                        <div class="card stream-output-card">
-                            <div class="card-header-flex">
-                                <h3>Real-time Token Stream</h3>
-                                <div class="stream-badge"><span class="pulse-blue"></span> Live Streaming Engine</div>
-                            </div>
-                            <div class="stream-content-wrapper">
-                                <pre id="output-window" class="stream-window">Awaiting invocation parameters...</pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  loadBrands();
+}
 
-            <section id="analytics-view" class="app-view">
-                <div class="dashboard-grid">
-                    <div class="card" style="grid-column: span 3;">
-                        <h3>Hardware Telemetry Metrics</h3>
-                        <p>Real-time system hardware profiling, memory usage, and load arrays.</p>
-                        <div style="margin-top: 20px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; font-family: monospace; color: #fff; overflow-x: auto;" id="hw-box">
-                            Pinging hardware telemetry registers...
-                        </div>
-                    </div>
-                </div>
-            </section>
+async function loadBrands() {
+  const res = await fetch('/api/brands');
+  const brands = await res.json();
 
-            <section id="settings-view" class="app-view">
-                <div class="dashboard-grid">
-                    <div class="card" style="grid-column: span 2;">
-                        <h3>System Configuration</h3>
-                        <div class="form-group" style="margin-top:20px;">
-                            <label>Admin Email Anchor</label>
-                            <input type="text" class="premium-input" value="mitchdav0518@gmail.com" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label>Client Origin Scope</label>
-                            <input type="text" class="premium-input" value="*" placeholder="e.g. https://yourdomain.com">
-                        </div>
-                        <button class="btn-primary" style="margin-top: 10px;">Commit Configurations</button>
-                    </div>
-                    <div class="card">
-                        <h3>Environment Security</h3>
-                        <p style="font-size: 0.85rem; color: #a1a1a6; margin: 15px 0;">Ensure OpenRouter API key exists within your hidden .env file.</p>
-                        <div style="background: rgba(52,199,89,0.15); border: 1px solid #34c759; color: #34c759; padding: 10px; border-radius: 10px; text-align: center; font-size: 0.85rem; font-weight: 600;">ENV Key Vault: Secure</div>
-                    </div>
-                </div>
-            </section>
-        </main>
+  let html = "<h3>Brands</h3>";
+  brands.forEach(b => {
+    html += `<div class="card"><strong>${b.name}</strong><br>${b.description}</div>`;
+  });
 
-        <footer class="app-footer" role="contentinfo">
-            <p>&copy; 2026 AdCreator AI Enterprise Architecture. System deployed for mitchdav0518@gmail.com.</p>
-        </footer>
-    </div>
+  brandList.innerHTML = html;
 
-    <script>
-        // Log Tracker Utility
-        function appendLog(message) {
-            const logBox = document.getElementById('log-box');
-            if (logBox) {
-                const time = new Date().toLocaleTimeString();
-                const logItem = document.createElement('div');
-                logItem.className = 'log-item';
-                logItem.innerHTML = `<span class="log-time">[${time}]</span> ${message}`;
-                logBox.appendChild(logItem);
-                logBox.scrollTop = logBox.scrollHeight;
-            }
-        }
+  let brandOptions = "";
+  brands.forEach(b => brandOptions += `<option value="${b._id}">${b.name}</option>`);
+  projectBrand.innerHTML = brandOptions;
+}
+loadBrands();
 
-        // View Switching Array
-        function switchView(viewId) {
-            document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            
-            const targetView = document.getElementById(viewId);
-            if(targetView) targetView.classList.add('active');
+// ---------------- PROJECT ENGINE ----------------
+async function createProject() {
+  const data = {
+    brandId: projectBrand.value,
+    name: projectName.value,
+    description: projectDescription.value,
+    goal: projectGoal.value,
+    type: projectType.value,
+    audience: projectAudience.value,
+    status: projectStatus.value
+  };
 
-            const activeNav = document.querySelector(`[data-target="${viewId}"]`);
-            if(activeNav) activeNav.classList.add('active');
+  await fetch('/api/projects', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
-            const titles = {
-                'dashboard-view': 'Executive Overview',
-                'workspace-view': 'Creative Workspace Suite',
-                'analytics-view': 'Analytics Matrix',
-                'settings-view': 'System Settings Console'
-            };
-            
-            const titleEl = document.getElementById('page-title');
-            if(titleEl) titleEl.textContent = titles[viewId] || 'Executive Overview';
-            appendLog(`Switched view to ${viewId}`);
-        }
+  loadProjects();
+}
 
-        // Sidebar Wiring
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const target = this.getAttribute('data-target');
-                switchView(target);
-            });
-        });
+async function loadProjects() {
+  const res = await fetch('/api/projects');
+  const projects = await res.json();
 
-        // Health Telemetry Probe
-        async function triggerCheck() {
-            try {
-                const res = await fetch('/health');
-                const data = await res.json();
-                const hwBox = document.getElementById('hw-box');
-                if(hwBox) {
-                    hwBox.innerHTML = JSON.stringify(data, null, 4).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
-                }
-                appendLog('System hardware diagnostic checked successfully.');
-            } catch (err) {
-                alert('Diagnostic probe failed: ' + err.message);
-                appendLog('Error running hardware telemetry diagnostic.');
-            }
-        }
+  let html = "<h3>Projects</h3>";
+  projects.forEach(p => {
+    html += `<div class="card"><strong>${p.name}</strong><br>${p.description}</div>`;
+  });
 
-        // Streaming Logic with resilient direct-stream text reading
-        async function executeStream() {
-            const promptText = document.getElementById('ai-prompt').value;
-            const modelSelect = document.getElementById('model-select').value;
-            const outputWindow = document.getElementById('output-window');
-            const submitBtn = document.getElementById('submit-btn');
+  projectList.innerHTML = html;
 
-            if (!promptText.trim()) {
-                alert('Directive matrix void. Please input prompt text.');
-                return;
-            }
+  let projectOptions = "";
+  projects.forEach(p => projectOptions += `<option value="${p._id}">${p.name}</option>`);
+  scriptProject.innerHTML = projectOptions;
+  videoProject.innerHTML = projectOptions;
+  postProject.innerHTML = projectOptions;
+}
+loadProjects();
 
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Streaming Generation Pipeline Active...';
-            outputWindow.textContent = '';
-            appendLog(`Initializing generation stream with model: ${modelSelect}`);
+// ---------------- SCRIPT ENGINE ----------------
+async function createScript() {
+  const data = {
+    projectId: scriptProject.value,
+    title: scriptTitle.value,
+    prompt: scriptPrompt.value,
+    tone: scriptTone.value,
+    length: scriptLength.value
+  };
 
-            try {
-                const response = await fetch('/api/generate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: promptText, model: modelSelect })
-                });
+  await fetch('/api/scripts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
-                if (!response.ok) {
-                    const errData = await response.json().catch(() => ({ error: 'Server stream failed' }));
-                    throw new Error(errData.error || 'Server stream failed');
-                }
+  loadScripts();
+}
 
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder();
-                
-                while (true) {
-                    const { value, done } = await reader.read();
-                    if (done) break;
-                    // Directly append raw text chunks as they hit the pipeline
-                    outputWindow.textContent += decoder.decode(value, { stream: true });
-                    outputWindow.scrollTop = outputWindow.scrollHeight;
-                }
-                appendLog('Generation stream finalized successfully.');
-            } catch (err) {
-                outputWindow.textContent += `\n[FatalExceptionTrap]: ${err.message}`;
-                appendLog(`Error during stream execution: ${err.message}`);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Initialize Generation Stream';
-            }
-        }
+async function loadScripts() {
+  const res = await fetch('/api/scripts');
+  const scripts = await res.json();
 
-        appendLog('Interface initialization matrix complete.');
-    </script>
+  let html = "<h3>Scripts</h3>";
+  scripts.forEach(s => {
+    html += `<div class="card"><strong>${s.title}</strong><br>${s.prompt}</div>`;
+  });
+
+  scriptList.innerHTML = html;
+
+  let scriptOptions = "";
+  scripts.forEach(s => scriptOptions += `<option value="${s._id}">${s.title}</option>`);
+  videoScript.innerHTML = scriptOptions;
+  postScript.innerHTML = scriptOptions;
+}
+loadScripts();
+
+// ---------------- VIDEO ENGINE ----------------
+async function createVideo() {
+  const data = {
+    projectId: videoProject.value,
+    scriptId: videoScript.value,
+    title: videoTitle.value,
+    format: videoFormat.value,
+    duration: videoDuration.value,
+    resolution: videoResolution.value,
+    status: videoStatus.value,
+    notes: videoNotes.value
+  };
+
+  await fetch('/api/videos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  loadVideos();
+}
+
+async function loadVideos() {
+  const res = await fetch('/api/videos');
+  const videos = await res.json();
+
+  let html = "<h3>Videos</h3>";
+  videos.forEach(v => {
+    html += `<div class="card"><strong>${v.title}</strong><br>${v.format} - ${v.duration}</div>`;
+  });
+
+  videoList.innerHTML = html;
+}
+loadVideos();
+
+// ---------------- POSTING ENGINE ----------------
+async function createPost() {
+  const scheduledRaw = postScheduledAt.value.trim();
+  const scheduledAt = scheduledRaw ? new Date(scheduledRaw) : null;
+
+  const data = {
+    projectId: postProject.value,
+    scriptId: postScript.value || null,
+    platform: postPlatform.value,
+    content: postContent.value,
+    status: postStatus.value || 'draft',
+    scheduledAt,
+    link: postLink.value
+  };
+
+  await fetch('/api/posts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  loadPosts();
+}
+
+async function loadPosts() {
+  const res = await fetch('/api/posts');
+  const posts = await res.json();
+
+  let html = "<h3>Posts</h3>";
+  posts.forEach(p => {
+    html += `<div class="card">
+      <strong>${p.platform}</strong> | ${p.status}<br>
+      ${p.content}<br>
+      <small>Project: ${p.projectId?.name || 'N/A'} | Script: ${p.scriptId?.title || 'N/A'}</small>
+    </div>`;
+  });
+
+  postList.innerHTML = html;
+}
+loadPosts();
+
+</script>
+
 </body>
 </html>
-
