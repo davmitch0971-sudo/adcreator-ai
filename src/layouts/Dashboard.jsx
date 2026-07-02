@@ -3,6 +3,7 @@ import PreviewPanel from "../components/PreviewPanel";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import ThemeSwitcher from "../components/ThemeSwitcher";
+import { panelStyle } from "../styles/GlobalStyles";
 
 export default function Dashboard() {
   const location = useLocation();
@@ -37,14 +38,15 @@ export default function Dashboard() {
           flex: 2,
           display: "flex",
           flexDirection: "column",
-          padding: 20
+          padding: 20,
+          gap: 20
         }}
       >
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            marginBottom: 20
+            gap: 12
           }}
         >
           <h1 style={{ margin: 0 }}>AdCreator-AI Studio</h1>
@@ -54,8 +56,8 @@ export default function Dashboard() {
         <div
           style={{
             display: "flex",
-            gap: 8,
-            marginBottom: 20
+            gap: 10,
+            flexWrap: "wrap"
           }}
         >
           {navItems.map((item) => {
@@ -69,9 +71,9 @@ export default function Dashboard() {
                 key={item.path}
                 to={item.path}
                 style={{
-                  padding: "6px 10px",
+                  padding: "8px 14px",
                   borderRadius: 999,
-                  fontSize: 13,
+                  fontSize: 14,
                   textDecoration: "none",
                   border: active
                     ? `1px solid ${theme.accent}`
@@ -79,7 +81,8 @@ export default function Dashboard() {
                   color: active ? theme.accent : theme.text,
                   background: active
                     ? "rgba(148,163,184,0.12)"
-                    : theme.panel
+                    : theme.panel,
+                  transition: "all 0.15s ease"
                 }}
               >
                 {item.label}
@@ -88,16 +91,7 @@ export default function Dashboard() {
           })}
         </div>
 
-        <div
-          style={{
-            flex: 1,
-            borderRadius: 16,
-            padding: 16,
-            background: theme.panel,
-            border: `1px solid rgba(148,163,184,0.35)`,
-            overflow: "auto"
-          }}
-        >
+        <div style={{ flex: 1, overflow: "auto", ...panelStyle(theme) }}>
           <Outlet context={{ setOutput }} />
         </div>
       </div>
